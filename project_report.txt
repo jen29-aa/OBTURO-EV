@@ -1,0 +1,983 @@
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND
+MANAGEMENT SYSTEM
+A PROJECT REPORT (PHASE-1)
+by
+JEN JOJO (VJC22CS072)
+in partial fulfillment for the award of the degree
+of
+BACHELOR OF TECHNOLOGY
+in
+COMPUTER SCIENCE AND ENGINEERING
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+OCTOBER 2025
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND
+MANAGEMENT SYSTEM
+A PROJECT REPORT (PHASE-1)
+by
+JEN JOJO (VJC22CS072)
+in partial fulfillment for the award of the degree
+of
+BACHELOR OF TECHNOLOGY
+in
+COMPUTER SCIENCE AND ENGINEERING
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+under the guidance
+of
+Mr. Andrews Jose
+Assistant Professor, CSE Dept.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+OCTOBER 2025
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+Department of Computer Science and Engineering
+Vision
+Moulding socially responsible and professionally competent Computer Engineers to adapt
+to the dynamic technological landscape
+Mission
+1. Foster the principles and practices of computer science to empower life-long learning and
+build careers in software and hardware development.
+2. Impart value education to elevate students to be successful, ethical and effective problem￾solvers to serve the needs of the industry, government, society and the scientific community.
+3. Promote industry interaction to pursue new technologies in Computer Science and provide
+excellent infrastructure to engage faculty and students in scholarly research activities.
+Program Educational Objectives
+Our Graduates
+1. Shall have creative aid critical reasoning skills to solve technical problems ethically and
+responsibly to serve the society.
+2. Shall have competency to collaborate as a team member and team leader to address social,
+technical and engineering challenges.
+3. Shall have ability to contribute to the development of the next generation of information
+technology either through innovative research or through practice in a corporate setting
+4. Shall have potential to build start-up companies with the foundations, knowledge and expe￾rience they acquired from undergraduate education
+Program Outcomes
+1. Engineering knowledge:Apply the knowledge of mathematics, science, engineering funda￾mentals, and an engineering specialization to the solution of complex engineering problems.
+2. Problem analysis:Identify, formulate, review research literature, and analyze complex en￾gineering problems reaching substantiated conclusions using first principles of mathematics,
+natural sciences, and engineering sciences
+3. Design / development of solutions:Design solutions for complex engineering problems and
+design system components or processes that meet the specified needs with appropriate con￾sideration for the public health and safety, and the cultural, societal, and environmental con￾siderations.
+4. Conduct investigations of complex problems:Use research-based knowledge and research
+methods including design of experiments, analysis and interpretation of data, and synthesis
+of the information to provide valid conclusions.
+5. Modern tool usage:Create, select, and apply appropriate techniques, resources, and modern
+engineering and IT tools including prediction and modelling to complex engineering activi￾ties with an understanding of the limitations.
+6. The engineer and society:Apply reasoning informed by the contextual knowledge to assess
+societal, health, safety, legal and cultural issues and the consequent responsibilities relevant
+to the professional engineering practice.
+7. Environment and sustainability:Understand the impact of the professional engineering so￾lutions in societal and environmental contexts, and demonstrate the knowledge of, and need
+for sustainable development.
+8. Ethics:Apply ethical principles and commit to professional ethics and responsibilities and
+norms of the engineering practice
+9. Individual and team work:Function effectively as an individual, and as a member or leader
+in diverse teams, and in multidisciplinary settings
+10. Communication:Communicate effectively on complex engineering activities with the engi￾neering community and with society at large, such as, being able to comprehend and write
+effective reports and design documentation, make effective presentations, and give and re￾ceive clear instructions.
+11. Project management and finance: Demonstrate knowledge and understanding of the en￾gineering and management principles and apply these to one’s own work, as a member and
+unread in a team, to manage projects and in multidisciplinary environments.
+12. Life-long learning:Recognize the need for, and have the preparation and ability to engage in
+independent and life-long learning in the broadest context of technological change.
+Program Specific Outcomes
+1. Ability to integrate theory and practice to construct software systems of varying complexity
+2. Able to Apply Computer Science skills, tools and mathematical techniques to analyse, design
+and model complex systems
+3. Ability to design and manage small-scale projects to develop a career in a related industry.
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+BONAFIDE CERTIFICATE
+This is to certify that the project report (phase-1) entitled “ OBTURO-EV – INTELLIGENT EV
+CHARGER BOOKING AND MANAGEMENT SYSTEM” is a bonafide record of the work
+done by JEN JOJO (VJC22CS072) in partial fulfillment of the requirements for the award of the
+Degree of Bachelor of Technology in Computer Science and Engineering of APJ Abdul Kalam
+Technological University.
+Dr. Amel Austine
+Head Of Department
+Dept. of CSE
+VJCET
+Ms. Lakshmi Suresh
+Project Coordinator
+Asst. Professor
+Dept. of CSE
+VJCET
+Mr. Andrews Jose
+Project Guide
+Asst. Professor
+Dept. of CSE
+VJCET
+ACKNOWLEDGEMENT
+First and foremost, I thank God Almighty for His divine grace and blessings in making all these
+possible. May he continue to lead us in the years. It is my privilege to render my heartfelt thanks
+to our beloved Manager, Rev. Msgr. Dr. Pius Malekandathil , our director Rev. Fr. Paul Parathazham
+and our Principal Dr. K K Rajan for providing me the opportunity to do this project report (phase-1)
+during the Fourth year (2025) of my B.Tech degree course. I am deeply thankful to my Head of
+the Department, Dr. Amel Austine for his support and encouragement. I would like to express my
+sincere gratitude and heartfelt thanks to my Project Guide Mr.Andrews Jose,Assistant Professor,
+Department of Computer Science and Engineering for her motivation, assistance and help for
+the project. I also express sincere thanks our Project Coordinator Ms. Lakshmi Suresh,Assistant
+Professor, Department of Computer Science and Engineering for her guidance and support. I also
+thank all the staff members of the Computer Science Department for providing their assistance and
+support. Last, but not the least, I would like to thank all my friends and family for their valuable
+feedback from time to time as well as their help and encouragement.
+DECLARATION
+I undersigned hereby declare that the project report (phase-1) “ OBTURO-EV – INTELLIGENT
+EV CHARGER BOOKING AND MANAGEMENT SYSTEM”, submitted for partial fulfillment
+of the requirements for the award of the Degree of Bachelor of Technology of the APJ Abdul
+Kalam Technological University is a bonafide work done by myself under the supervision of
+Mr. Andrews Jose. This submission represents ideas in my own words and where ideas or words
+of others have been included, I have adequately and accurately cited and referenced the original
+sources. I also declare that I have adhered to the ethics of academic honesty and integrity and have
+not misrepresented or fabricated any data or idea or fact or source in my submission. I understand
+that any violation of the above will be a cause for disciplinary action by the institute and/or the
+University and can also evoke penal action from the sources which have thus not been properly
+cited or formed the basis for the award of any degree, diploma or similar title of any other Univer￾sity.
+Place: Vazhakulam
+Date:
+JEN JOJO
+ABSTRACT
+The Obturo-EV Intelligent Electric Vehicle (EV) Charger Booking and Management System is an
+innovative web-based platform designed to revolutionize the electric vehicle charging experience
+through intelligent decision-making and real-time availability integration. The system addresses
+major challenges faced by EV users such as limited charger accessibility, booking conflicts, and
+unreliable status updates. Obturo-EV enables users to search, compare, and reserve charging
+stations based on personalized preferences including price, distance, waiting time, and charging
+speed. By leveraging Multi-Attribute Decision-Making (MADM) methods and the TOPSIS algo￾rithm, the system provides ranked recommendations that dynamically adapt to user priorities. It
+further incorporates route-based discovery, conflict-free booking, and queue management to en￾sure guaranteed charger availability. The inclusion of Peer-to-Peer (P2P) charger listings enhances
+network scalability and optimizes infrastructure utilization. Built with robust authentication, pol￾icy enforcement, and real-time data handling, Obturo-EV ensures fairness, reliability, and data
+integrity throughout the charging process. Ultimately, this intelligent platform aims to promote
+sustainable transportation by offering a unified, efficient, and user-centric EV charging experi￾ence.
+Contents
+List of Figures i
+List of Abbreviations ii
+1 INTRODUCTION 1
+1.1 Problem Statement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.2 Objective . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3 Scope . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2 LITERATURE SURVEY 3
+2.1 Integrated Route Planning Algorithm Based on Spot Price and Classified Travel
+Objectives for EV Users [1] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 Enhancing Electric Vehicle Security and Privacy through Decentralized Identity
+Management [2] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.2.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.3 A Data-Driven and Human-Centric EV Charging Recommendation System at
+City-Scale [3] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.3.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.3.2 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.3.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.3.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.4 Development of a Smart Electric Vehicle Charging Station Management System [4] 10
+2.4.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.4.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.4.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.4.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.5 Detection of Anomalies in Electric Vehicle Charging Sessions[5] . . . . . . . . . . 12
+2.5.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.5.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.5.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.5.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2.6 An In-Depth Exploration of Electric Vehicle Charging Station Infrastructure: A
+Comprehensive Review of Challenges, Mitigation Approaches, and Optimization
+Strategies [6] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.6.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.6.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.6.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+2.6.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+2.7 Optimal Location of Electric Vehicle Charging Stations Using Geospatial Big Data
+[7] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.7.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.7.2 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.7.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.7.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+2.8 Cybersecurity and Digital Privacy Aspects of V2X in the EV Charging Structure [8] 18
+2.8.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+2.8.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+2.8.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+2.8.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+2.9 Explainable Deep Learning for Cyber Attack Detection in Electric Vehicle Charging
+Stations [9] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.9.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.9.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+2.9.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+2.9.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+2.10 A User-Preference-Based Charging Station Recommendation for Electric Vehicles
+[10] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2.10.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2.10.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+2.10.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+2.10.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+2.11 How to Distribute Charging Requests of Electronic Vehicles? A Reservation-based
+Approach [11] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+2.11.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+2.11.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+2.11.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+2.11.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+2.12 Alleviating range anxiety with ‘Enroute’: A real-time mobile solution and infras￾tructure innovation for electric vehicle users [12] . . . . . . . . . . . . . . . . . . 29
+2.12.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+2.12.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+2.12.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+2.12.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+2.13 Optimization Schedule Schemes for Charging Electric Vehicles: Overview,
+Challenges, and Solutions [13] . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+2.13.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+2.13.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+2.13.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+2.13.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+3 PROPOSED SYSTEM 34
+3.1 Process Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+3.1.1 Process Flow Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+3.1.2 Architecture Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+3.1.3 Use Case Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+3.1.4 Data Flow Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+3.1.5 Data Flow Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+3.1.6 Data Flow Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+3.1.7 Entity Relationship (ER) Diagram . . . . . . . . . . . . . . . . . . . . . . 41
+3.1.8 Class Daigram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+4 CONCLUSION 43
+References iii
+List of Figures
+2.1 (a) GRU cell structure, (b) Encoder-Decoder framework for sequence-to-sequence
+prediction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 The general framework for enhanced security and privacy for EVs . . . . . . . . . 6
+2.3 A The proposed Deep-Q-Network (DQN) based deep reinforcement learning . . . 8
+2.4 Flowchart of the smart charging algorithm . . . . . . . . . . . . . . . . . . . . . . 10
+2.5 Concept of an IDS for EV Charging Sessions . . . . . . . . . . . . . . . . . . . . 12
+2.6 Overview of EVCS categories . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.7 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.8 Cyber-Physical-Social Systems structure of V2X . . . . . . . . . . . . . . . . . . 19
+2.9 Network Architecture for EVCS . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+2.10 System model for this study. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+2.11 Basic reservation and utilization improvement method . . . . . . . . . . . . . . . 27
+2.12 System Diagram for Adoption of EV . . . . . . . . . . . . . . . . . . . . . . . . . 30
+2.13 The architecture of a centralized system for EV charging . . . . . . . . . . . . . . 33
+3.1 Process Flow Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . 36
+3.2 System Architecture of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . . 37
+3.3 Use Case Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+3.4 Data Flow Diagram Level 0 of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . 39
+3.5 Data Flow Diagram Level 1 of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . 39
+3.6 Data Flow Diagram Level 2 of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . 40
+3.7 Entity Relationship Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . 41
+3.8 Class Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+i
+List of Abbreviations
+EV Electric Vehicle
+GUI Graphical User Interface
+API Application Programming Interface
+GPS Global Postioning System
+P2P Peer-to-Peer
+MADM Multi-Attribute Decision Making
+CT Charging Time
+UI User Interface
+AES Advanced EN
+OTP One-Time Password
+ii
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 1
+INTRODUCTION
+In today’s rapidly advancing world, the rise of electric vehicles (EVs) represents a major step
+toward sustainable and eco-friendly transportation . However, despite the growing adoption of
+EVs, one of the major challenges faced by users is the limited availability and accessibility of
+charging infrastructure . Traditional EV charging systems rely mainly on static filtering methods,
+such as proximity or price, which fail to address dynamic user needs like waiting time, budget, or
+charging speed .
+To overcome these challenges, the Obturo-EV Intelligent Charger Booking and Management Sys￾tem has been proposed. This web-based application provides EV users with an intelligent plat￾form to discover, compare, and reserve charging stations efficiently. It integrates Multi-Attribute
+Decision-Making (MADM) techniques and the TOPSIS (Technique for Order of Preference by
+Similarity to Ideal Solution) algorithm to deliver personalized and optimized recommendations
+based on user preferences such as waiting time, price, distance, and charging duration.
+By combining real-time data processing, smart booking, and conflict handling, Obturo-EV ensures
+a seamless charging experience that minimizes waiting time, prevents double booking, and pro￾motes fairness through queue management and penalty enforcement. Ultimately, the system aims
+to make EV charging more reliable, convenient, and user-centric, encouraging wider adoption of
+electric mobility .
+1.1 Problem Statement
+The rapid growth of electric vehicles has not been matched by an equally efficient and intelligent
+charging network. Existing EV charging platforms are limited to basic filters such as nearest loca￾tion or static cost, without considering dynamic user requirements or real-time station availability.
+This often leads to long waiting times, inefficient resource utilization, and double booking
+conflicts. Moreover, the absence of unified data from multiple charging operators results in poor
+Dept. of Computer Science & Engineering, VJCET Page 1
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+reliability and lack of transparency in slot availability.
+1.2 Objective
+1. Personalized Recommendation: Implement the TOPSIS algorithm to rank charging stations
+according to user-defined weights for distance, price, waiting time, and charging speed.
+2. Guaranteed Availability: Prevent overbooking through server-side validation and conflict￾handling logic.
+3.Route-Based Discovery: Integrate mapping APIs to show relevant charging stations along the
+user’s planned travel route.
+1.3 Scope
+1. The system provides secure user registration and vehicle profiling, ensuring charging needs are
+calculated accurately based on battery capacity and model.
+2. It allows intelligent discovery of chargers along a specified route, filtering out irrelevant stations
+and ranking the remaining ones based on real-time availability and user preferences.
+3. The booking module guarantees conflict-free reservations through automated overlap detection
+and queue management.
+4.The system supports both commercial and peer-to-peer (P2P) charging stations, enhancing ac￾cessibility and utilization.
+5. The application ensures data security and privacy, employing encryption and authentication for
+all transactions and user information.
+6. The system enforces penalty policies for users who fail to initiate booked sessions within the
+valid time frame, maintaining fairness for other users.
+Dept. of Computer Science & Engineering, VJCET Page 2
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 2
+LITERATURE SURVEY
+2.1 Integrated Route Planning Algorithm Based on Spot Price and
+Classified Travel Objectives for EV Users [1]
+This paper presents an integrated route planning algorithm that provides optimal routes and cor￾responding charging schemes for EV users with different travel objectives based on spot price
+forecasting and traffic conditions, combining traditional path planning algorithms with optimiza￾tion techniques.
+2.1.1 Methodology
+The methodology classifies EV user travel objectives into three categories: in-situ charging (find￾ing nearby stations), close-range travel (requiring one charging station), and multi-site travel (re￾quiring multiple stations). Each category is further subdivided based on parking requirements
+and duration. A time-window electricity price forecasting model based on GRU (Gated Recurrent
+Unit) neural network with Encoder-Decoder framework is established to generate pricing informa￾tion. The model performs two types of prediction: intraday prediction (360 minutes) for long-term
+trends and time-window prediction (60 minutes with higher accuracy) that updates every 15 min￾utes. The integrated route planning algorithm combines Simulated Annealing Algorithm (SAA)
+with A* and Dijkstra algorithms, selecting appropriate methods based on travel objectives.
+Dept. of Computer Science & Engineering, VJCET Page 3
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.1.2 Model Architecture
+Figure 2.1: (a) GRU cell structure, (b) Encoder-Decoder framework for sequence-to-sequence prediction
+2.1.3 Advantages
+1. Accurate Price Forecasting: The time-window GRU-based prediction[5] achieves MAPE
+of 1.57% and RMSE of 0.131 for 60-minute forecasts, significantly outperforming intraday
+prediction (MAPE 6.51%, RMSE 0.236) and providing reliable price information for route
+planning.
+2. Objective-Specific Optimization: By classifying travel objectives into eight distinct types and
+applying tailored algorithms (Dijkstra for in-situ, A* variants for close-range, A*-SAA for
+multi-site), the system provides personalized recommendations matching user needs better
+than one-size-fits-all approaches.
+3. Comprehensive Evaluation Framework: Uses multiple indicators (travel time, charging time)
+displayed in radar charts, enabling users to make informed decisions based on their priorities
+and trade-offs.
+4. Cost Reduction Benefits: Simulation results show charging costs 30-60% lower than tra￾ditional fastest/shortest path routing when considering spot price variations, demonstrating
+practical economic benefits for users while potentially reducing grid load during peak peri￾ods.
+2.1.4 Disadvantages
+1. Limited Charging Station Support: The algorithm assumes all charging stations provide the
+same Type-II chargers with fixed 10 kW charging rate, not accounting for varying charging
+speeds (Level I, II, III) or different charger types (AC/DC fast charging) available at real
+stations.
+Dept. of Computer Science & Engineering, VJCET Page 4
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2. Idealized User Behavior Assumptions: Assumes users will follow recommended routes and
+charging schedules precisely, not accounting for spontaneous decisions, preference changes,
+or real-world disruptions that may cause deviation from planned behavior.
+3. Computational Complexity for Multi-Site Travel: The A*-SAA combination, while effec￾tive, requires significant computational resources for optimization across multiple charging
+stations, potentially impacting real-time responsiveness for long-distance travel scenarios.
+4. Historical Data Dependency: The price forecasting model relies heavily on historical charg￾ing price data patterns, which may not generalize well to areas with newly implemented spot
+pricing schemes or during unusual grid conditions not represented in training data.
+Dept. of Computer Science & Engineering, VJCET Page 5
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.2 Enhancing Electric Vehicle Security and Privacy through De￾centralized Identity Management [2]
+This paper introduces a novel approach by integrating blockchain-based Self-Sovereign Identity
+(SSI)[6] to enhance the security and privacy of EV charging systems, addressing vulnerabilities
+in existing EV charging methods and ensuring compliance with cybersecurity regulations like
+UNECE R155.
+2.2.1 Methodology
+The methodology integrates blockchain-based SSI into the EV charging ecosystem through a
+three-layer framework. The system employs Decentralized Identifiers (DIDs) and Verifiable Cre￾dentials (VCs) for identity management, with cryptographic verification replacing centralized au￾thentication. An experimental testbed was implemented using the GNS3 emulation environment
+with four Open vSwitch instances and four Ubuntu VMs representing different network compo￾nents: EV Node, CSMS, SSI blockchain network (Hyperledger Indy), and backend management
+system. The STRIDE threat model was applied to analyze security vulnerabilities across spoof￾ing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege
+categories.
+2.2.2 Model Architecture
+Figure 2.2: The general framework for enhanced security and privacy for EVs
+Dept. of Computer Science & Engineering, VJCET Page 6
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.2.3 Advantages
+1. Enhanced Authentication Security: By using DIDs and VCs stored on blockchain, the system
+eliminates hard-coded credentials and reduces side-channel attack risks, providing robust
+decentralized authentication that prevents identity theft and unauthorized access.
+2. Comprehensive Security Coverage: The framework addresses multiple STRIDE threat cate￾gories simultaneously, including spoofing through cryptographic signatures, tampering through
+immutable blockchain records, and information disclosure through user-controlled encrypted
+credentials.
+3. Regulatory Compliance: The system aligns with UNECE R155 cybersecurity requirements
+through systematic risk management, decentralized authentication, data protection via cryp￾tographic encryption, and blockchain-based audit trails for regulatory certification.
+4. Practical Performance: Despite more comprehensive identity networking operations, the sys￾tem achieves acceptable latency for wallet creation (200ms), identity verification (5 seconds),
+and service orchestration (40ms for Kubernetes, 100ms for OpenDaylight configuration).
+2.2.4 Disadvantages
+1. Higher Latency Overhead: Compared to traditional V2G authentication systems (28ms for
+EV authentication), the comprehensive SSI framework requires longer identity verification
+(5 seconds) and presentation times (11 seconds) due to broader identity networking tasks
+including credential management and metadata validation.
+2. Identity Revocation Delays: The system requires approximately 19 seconds to revoke creden￾tials, which may be too slow for real-time security responses when compromised credentials
+need immediate invalidation.
+3. Implementation Complexity: The integration requires sophisticated infrastructure including
+blockchain nodes at charging stations, digital wallet management systems, and coordination
+between multiple entities (regulatory authorities, CSs, and backend systems).
+4. Scalability Concerns: While designed to scale with network growth, the blockchain-based
+approach may face performance challenges with massive simultaneous authentication re￾quests across large-scale charging networks, potentially impacting real-time responsiveness.
+Dept. of Computer Science & Engineering, VJCET Page 7
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.3 A Data-Driven and Human-Centric EV Charging Recommen￾dation System at City-Scale [3]
+The data-driven and human-centric EV charging recommendation system introduces a city-scale
+framework that leverages large-scale real-world mobility and charging datasets to optimize station
+selection for electric vehicle users. Instead of relying on static filtering or simple proximity-based
+choices, the system incorporates behavioral patterns, station load conditions, traffic dynamics,
+and temporal usage trends to generate intelligent charging recommendations. By combining data
+analytics, machine learning, and user-centric modeling, the approach aims to reduce waiting times,
+improve charging efficiency, and enhance overall user satisfaction in dense urban environments .
+2.3.1 Methodology
+The methodology involves careful construction of a city-scale EV driving dataset through augmen￾tation and aggregation of multiple data sources with different formats and granularities. Vehicle
+mobility traces were collected from INRIX, HERE, and RITIS covering Manhattan from Novem￾ber 2022, supplemented by NHTSA coarse-grained trip data. SoC data was obtained from the
+Vehicle Energy Dataset (27 EVs) and three volunteers using OBD-II devices (2 Tesla Model Y
+and 1 Hyundai MPV) over three months. A Coulomb Counting method was used for SoC estima￾tion, with the relationship between SoC and vehicle speed modeled as a first-order approximation.
+The system employs a DQN-based DRL framework where charging stations act as agents selecting
+from 1,000 EV drivers at each timestep, with careful reward function design considering distance,
+SoC levels, grid capacity, charging price, and switching costs.
+2.3.2 Architecture
+Figure 2.3: A The proposed Deep-Q-Network (DQN) based deep reinforcement learning
+Dept. of Computer Science & Engineering, VJCET Page 8
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.3.3 Advantages
+1. Comprehensive Dataset Integration: Successfully combines information from two domains—EV
+driving behaviors and EV chargers—with fine time granularity (per-minute data over 30 days
+covering 61,392 trips), creating a realistic foundation for training and evaluation unavailable
+in previous research.
+2. Significant Performance Improvements: The DRL-based recommendation system reduces
+average driver-to-charger distance by 32% compared to baseline approaches, demonstrating
+practical optimization benefits while maintaining acceptable computational efficiency.
+3. Multi-Objective Optimization: Co-optimizes welfare of both EV drivers and grid by consid￾ering varying demand, charging prices, grid capacity, and infrastructure status dynamically,
+unlike previous works that focused on single objectives like cost minimization.
+4. Novel Agent Design: Treats chargers as agents rather than drivers, which is more directly re￾lated to grid capacity and infrastructure management, improving scalability as charger num￾bers remain relatively constant compared to fluctuating driver populations.
+2.3.4 Disadvantages
+1. Limited Real-World Validation: The system relies heavily on augmented and simulated data
+rather than comprehensive real-world EV driving behavior, with only three volunteers pro￾viding actual EV data over three months, potentially limiting generalizability.
+2. 2.Cold Start Problem: The data-hungry nature of model-based and model-free RL methods
+requires substantial real-world data for optimal policy convergence, creating challenges for
+deployment in new areas without existing charging infrastructure and historical data.
+3. Simplified Assumptions: Assumes all users are rule-followers, excludes individual willing￾ness and unpredictable behaviors, assumes constant Type-II charger specifications (10 kWh),
+and requires holistic ”God’s eye view” of all chargers and drivers, which may not reflect
+real-world complexity.
+4. Privacy and Security Concerns: Collection and usage of personal EV driving data with GPS
+locations, statistics, and timestamps raises serious privacy concerns that the paper acknowl￾edges but does not fully address, requiring future work on decentralized approaches and
+federated learning.
+Dept. of Computer Science & Engineering, VJCET Page 9
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.4 Development of a Smart Electric Vehicle Charging Station Man￾agement System [4]
+This paper presents the development of a smart Charging Station Management System (CSMS)
+that optimizes EV charging by calculating charging schedules based on day-ahead electricity
+prices, aiming at minimization of energy costs while implementing user authorization, transac￾tion management, and charger monitoring based on OCPP 2.0.1.
+2.4.1 Methodology
+The system implements a smart charging algorithm that calculates optimal charging profiles based
+on user reservations, required energy, charging duration, dynamic electricity prices, maximum CP
+power, and grid constraints. The algorithm ensures EVs charge during low-price periods while
+avoiding expensive time slots. Evaluation was performed using real day-ahead electricity prices
+from ENTSO-E covering the period from August 2023 to July 2024, analyzing cost savings across
+different charging scenarios including varying energy requirements (20, 30, 40 kWh), charging
+durations (8 hours), time periods (day, evening, night), and connector capacities (7 kW, 11 kW).
+2.4.2 Model Architecture
+Figure 2.4: Flowchart of the smart charging algorithm
+Dept. of Computer Science & Engineering, VJCET Page 10
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.4.3 Advantages
+1. Significant Cost Savings: The smart charging profile achieved an average of 34.1% cost
+reduction compared to fast charging, with monthly savings of approximately C24.2 and total
+annual savings of C290 for daily charging scenarios.
+2. Price Volatility Optimization: The system effectively exploits electricity price variability,
+with greater savings correlating to higher standard deviation in energy prices during charging
+periods.
+3. Standardized Communication: Implementation of OCPP 2.0.1 ensures interoperability be￾tween different manufacturers’ charging equipment and provides enhanced security through
+encryption.
+4. Reservation Integration: The system supports user reservations specifying charging period
+and desired energy amount, enabling proactive charging schedule optimization.
+2.4.4 Disadvantages
+1. Limited Battery Considerations: The system does not explicitly account for battery degra￾dation, state-of-health, or temperature management, which can significantly impact actual
+charging costs and requirements.
+2. Fixed Time Windows: The 8-hour charging duration assumption may not suit all user needs,
+particularly those requiring faster charging or having unpredictable schedules.
+3. Price Prediction Dependency: The system relies on day-ahead electricity prices, which may
+not always be available or accurate, and does not consider real-time price adjustments or grid
+congestion pricing.
+4. Scalability Concerns: The centralized architecture may face performance challenges when
+managing large numbers of simultaneous charging sessions and complex optimization calcu￾lations.
+Dept. of Computer Science & Engineering, VJCET Page 11
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.5 Detection of Anomalies in Electric Vehicle Charging Sessions[5]
+This paper proposes a hybrid Intrusion Detection System (IDS) for detecting anomalies in EV
+charging sessions, addressing cyber-physical threats including battery fires and power grid black￾outs through regression-based charging session forecasting and anomaly detection.
+2.5.1 Methodology
+The methodology combines regression-based forecasting with anomaly detection using both clas￾sification and novelty detection models. Random forest regression is used to predict future charg￾ing behavior based on past measurements, while MLPClassifier provides classification-based de￾tection and LocalOutlierFactor enables novelty detection. The system is evaluated using real￾world EV charging data sets (ACN Caltech, ACN JPL, ACN Office, and ElaadNL) with simulated
+attacks including random anomalies and targeted attacks based on synchronized changes in charg￾ing behavior.
+2.5.2 Model Architecture
+Figure 2.5: Concept of an IDS for EV Charging Sessions
+2.5.3 Advantages
+Detection Accuracy: The classification-based method achieves high detection rates for known
+attacks with low false alarm rates, while the ensemble method maintains good performance
+Dept. of Computer Science & Engineering, VJCET Page 12
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+across both known and previously unseen attacks.
+1. Regression-Based Enhancement: The use of regression-based forecasting provides signifi￾cant improvement in detection performance for attacks affecting individual reports during a
+charging session, enabling identification of stealthy attacks that may not be detectable from
+high-level session features.
+2. Adaptability: The novelty detection approach offers high degree of generalization to previ￾ously unseen attacks without requiring pre-labeled anomalous data for training.
+3. Practical Tuning: The ensemble method can be optimized toward acceptable false positive
+rate thresholds (0.03, 0.06, 0.09), addressing alarm burnout concerns and enhancing practical
+usability.
+2.5.4 Disadvantages
+1. Computational Requirements: The system requires significant computational resources for
+training multiple regression models and detection algorithms, potentially impacting real-time
+performance.
+2. Limited Attack Scope: The evaluation relies on simulated attacks rather than real-world
+attack data, which may not fully capture the complexity and variety of actual adversarial
+behavior.
+3. Data Dependency: The system’s performance depends heavily on the quality and represen￾tativeness of historic charging session data, requiring periodic retraining to adapt to changes
+in the e-mobility environment.
+4. False Positive Trade-offs: Novelty detection models incur higher false positive rates com￾pared to classification-based approaches, potentially leading to unnecessary service disrup￾tions if not properly tuned.
+Dept. of Computer Science & Engineering, VJCET Page 13
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.6 An In-Depth Exploration of Electric Vehicle Charging Station
+Infrastructure: A Comprehensive Review of Challenges, Miti￾gation Approaches, and Optimization Strategies [6]
+This comprehensive review explores the challenges, mitigation approaches, and optimization strate￾gies for electric vehicle charging station (EVCS) infrastructure, addressing the increasing global
+demand for efficient and reliable EV charging solutions.
+2.6.1 Methodology
+The study categorizes EV chargers and charging stations based on power levels, transfer proto￾cols, physical infrastructure, mobility, and power flow direction. It investigates obstacles related
+to widespread EV adoption and concurrent development of robust charging infrastructure. The
+research examines power quality issues including voltage profile, power demand, harmonics, and
+transformer power loss through simulation and analysis of grid-connected EVCSs on utility sys￾tems.
+2.6.2 Model Architecture
+Figure 2.6: Overview of EVCS categories
+Dept. of Computer Science & Engineering, VJCET Page 14
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.6.3 Advantages
+1. Comprehensive Framework: The study provides a holistic understanding of EVCS network
+deployment, covering technologies, protocols, challenges, and optimization strategies.
+2. Power Quality Solutions: Proposes multiple approaches including harmonic filters, power
+factor correction circuits, voltage regulators, and smart grid integration to improve power
+quality and system stability.
+3. Optimization Techniques: Highlights various optimization strategies such as location plan￾ning, network integration, scheduling charging time, and pricing algorithms using techniques
+like queuing theory, Monte Carlo simulation, machine learning, and Mixed-Integer Linear
+Programming (MILP).
+4. Flexibility Options: Addresses both fixed and mobile charging stations, including truck￾mobile-charging-stations and portable charging robots, providing scalable solutions for dif￾ferent scenarios.
+2.6.4 Disadvantages
+1. Implementation Complexity: The high installation and maintenance costs of EVCS infras￾tructure, along with the need for sophisticated battery management systems and control
+strategies, create barriers to widespread deployment.
+2. Grid Impact Concerns: Uncontrolled distributed charging can cause stress on the power sys￾tem, leading to transformer overloading, power losses, feeder congestion, and unexpected
+peak demand that may result in power outages or system failure.
+3. Battery Technology Challenges: Battery degradation and aging issues, varying battery types
+with different performance parameters, and the lack of standardization among EV manufac￾turers complicate EVCS planning and operation.
+4. Demand Uncertainty: The unpredictability of electric power requirements at charging sta￾tions, depending on factors such as charging rate, location, user habits, and weather, makes
+it difficult to maintain generation-demand balance.
+Dept. of Computer Science & Engineering, VJCET Page 15
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.7 Optimal Location of Electric Vehicle Charging Stations Using
+Geospatial Big Data [7]
+Electric vehicles (EVs) are becoming central to sustainable transportation, but their rapid adop￾tion depends on efficient charging infrastructure. This study presents a data-driven framework to
+optimize the placement of EV charging stations in Georgia using geospatial big data. Historical
+EV trends, travel survey data, and optimization algorithms are integrated to ensure maximum cov￾erage, social equity, and urban–rural balance. The model combines Mixed-Integer Programming
+(MIP) and a genetic algorithm to determine ideal locations while minimizing installation costs.
+2.7.1 Methodology
+The research methodology adopted in this study integrates data forecasting, spatial analysis, and
+mathematical optimization to determine the most suitable locations for electric vehicle (EV) charg￾ing stations in Georgia by 2030. Initially, historical EV registration data collected from 2016 to
+2024 by the Georgia Department of Revenue was analyzed to predict future adoption trends. Three
+different market share scenarios low (48%), baseline (50%), and high (61%)were considered to
+estimate the total number of EVs expected by 2030, with the baseline forecast projecting approx￾imately 815,942 electric vehicles on Georgia’s roads.
+2.7.2 Architecture
+Figure 2.7: Architecture
+2.7.3 Advantages
+1. Data-Driven Planning: Integrates geospatial and behavioral data to ensure realistic, demand￾based infrastructure design.
+2. Equitable Distribution:Promotes social equity by prioritizing underserved and rural regions
+under the Justice40 Initiative.
+3. Efficiency and Coverage:Optimizes the number and location of stations to minimize redun￾dancy and maximize accessibility.
+Dept. of Computer Science & Engineering, VJCET Page 16
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+4. Policy Support:Aligns with NEVI standards ensuring national compatibility, accessibility,
+and reliability (97% uptime).
+2.7.4 Disadvantages
+1. Simplified Assumptions:The forecasting assumes constant new car sales and linear growth,
+which may not reflect real-world market dynamics.
+2. Limited Behavioral Data:The model relies on simulated travel patterns and excludes private
+charging behavior, potentially underestimating total demand.
+3. Dynamic Uncertainty:Rapid technological and policy changes may affect long-term accuracy
+of the predicted station.
+Dept. of Computer Science & Engineering, VJCET Page 17
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.8 Cybersecurity and Digital Privacy Aspects of V2X in the EV
+Charging Structure [8]
+The advancement of Vehicle-to-Everything (V2X) communication has transformed modern elec￾tric vehicle (EV) ecosystems by enabling real-time data exchange between vehicles, infrastructure,
+the power grid, and cloud-based services. This interconnectivity ensures efficient energy utiliza￾tion, road safety, and smart mobility. However, such high levels of integration also introduce
+major challenges related to cybersecurity and digital privacy.In this paper, the authors explore
+these challenges by developing a multi-layer Cyber-Physical-Social Systems (CPSS) architecture
+that links physical EV infrastructure, cyber communication networks, and social-legal domains.
+The study highlights the necessity of strong cryptographic protection, robust data governance, and
+international regulations to protect user data, ensure secure communication, and maintain trust in
+intelligent transportation systems.
+2.8.1 Methodology
+The authors adopt a multi-layer Cyber-Physical-Social Systems (CPSS) framework to investi￾gate cybersecurity and digital privacy concerns within the Vehicle-to-Everything (V2X) enabled
+EV-charging ecosystem. Firstly, they conduct a comprehensive literature review of existing EV
+charging infrastructure, V2X communication technologies, and relevant regulations (such as the
+General Data Protection Regulation—GDPR and the Network and Information Systems Directive,
+NIS/NIS2) to establish the baseline threat landscape. Secondly, building on that review, they pro￾pose a conceptual CPSS architecture that integrates the physical (EVs, chargers, power grid), cy￾ber (IoT, blockchain, communication networks), and social (regulation, governance, user-privacy)
+layers of the system. Thirdly, the architecture is analysed through scenario-based evaluation: rep￾resentative EV/V2X charging use-cases are considered to identify attack surfaces, data flows, and
+governance gaps, focusing on how physical, cyber and social components interact and how privacy
+and security risks emerge across the layers.
+Dept. of Computer Science & Engineering, VJCET Page 18
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.8.2 Model Architecture
+Figure 2.8: Cyber-Physical-Social Systems structure of V2X
+2.8.3 Advantages
+1. Improved Data Security:Encryption, authentication, and blockchain integration significantly
+enhance the confidentiality and integrity of V2X data during charging and communication.
+2. Enhanced Privacy Protection:GDPR and similar regulations ensure users maintain control
+over their personal and vehicle-generated data.
+3. Resilience Against Cyber Threats:AI and ML applications detect anomalies and predict in￾trusions, increasing the robustness of EV communication systems.
+4. Regulatory Alignment:The CPSS framework aligns with global digital privacy and cyberse￾curity laws, ensuring compliance across EU and US infrastructures.
+2.8.4 Disadvantages
+1. Complex Implementation:Integrating multiple domains (physical, cyber, and social) requires
+advanced coordination, standardization, and high infrastructure costs.
+Dept. of Computer Science & Engineering, VJCET Page 19
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2. Regulatory Fragmentation:Inconsistent privacy and cybersecurity regulations across regions
+create interoperability and compliance challenges.
+3. High Data Management Load:Continuous real-time communication generates massive data
+streams requiring secure and efficient processing frameworks.
+Dept. of Computer Science & Engineering, VJCET Page 20
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.9 Explainable Deep Learning for Cyber Attack Detection in Elec￾tric Vehicle Charging Stations [9]
+The transformation of the global transportation sector towards electrification has accelerated the
+deployment of Electric Vehicles (EVs) and their supporting infrastructure. Among these, Elec￾tric Vehicle Charging Stations (EVCSs) serve as a critical component, facilitating the efficient
+exchange of energy and data between vehicles and the grid. However, as EVCSs increasingly in￾tegrate with smart grid technologies and the Internet of Things (IoT), they become potential targets
+for cyberattacks that threaten both operational reliability and user safety.The interconnected nature
+of EVCSs involves communication among multiple subsystems such as the Electric Vehicle Sup￾ply Equipment (EVSE), Charging Station Management System (CSMS), and Distribution System
+Operator (DSO). These entities communicate using protocols such as ISO 15118 and Open Charge
+Point Protocol (OCPP). While these standards improve interoperability and enable smart charging,
+they also expose vulnerabilities through continuous internet connectivity and open communication
+channels.Cyberattacks like Denial of Service (DoS), Man-in-the-Middle (MitM), Reconnaissance,
+and Injection attacks can disrupt service availability, manipulate billing systems, or even compro￾mise the stability of the broader energy grid. Such incidents not only impact the functionality
+of EVCSs but also pose significant risks to critical energy infrastructure. Consequently, ensuring
+the security, resilience, and trustworthiness of EVCS communication networks has become a top
+priority for both researchers and industry stakeholders.
+2.9.1 Methodology
+The methodology adopted in this study focuses on developing and evaluating a deep learning￾based framework capable of detecting cyberattacks within Electric Vehicle Charging Stations
+(EVCSs). The research employed the CIC EV Charger Attack Dataset (CICEVSE2024), which
+was specifically designed to capture real-world EVCS communication patterns and attack scenar￾ios. This dataset was collected from an operational testbed consisting of two charging environ￾ments EVSE-A and EVSE-B—each configured to simulate both benign and malicious network
+behaviors. The malicious traffic included common threats such as Denial of Service (DoS) and
+Reconnaissance attacks, which target the EVSE during both idle and charging states. Before model
+training, the dataset underwent a preprocessing phase that involved the removal of irrelevant at￾tributes like IP addresses to ensure anonymity and prevent model overfitting. The data was then
+standardized using the StandardScaler technique to normalize the features, ensuring consistent
+numerical ranges for optimal deep learning performance.
+Dept. of Computer Science & Engineering, VJCET Page 21
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.9.2 Model Architecture
+Figure 2.9: Network Architecture for EVCS
+2.9.3 Advantages
+1. High Detection Accuracy: Achieves over 97 percentage accuracy, effectively distinguishing
+between benign and attack traffic.
+2. Explainable AI Integration: SHAP enhances transparency and interpretability of model pre￾dictions.
+3. Adaptability: Suitable for a variety of EVCS and IoT attack scenarios.
+4. Real-World Relevance: Utilizes a realistic, testbed-generated dataset (CICEVSE2024).
+2.9.4 Disadvantages
+1. Real-Time Constraints: Deep learning models may face delays in real-time EVCS operations.
+2. Dataset Scope: Current dataset covers limited attack types; broader data needed for robust
+deployment.
+3. Computational Complexity: CNN–LSTM models require significant hardware and process￾ing resources.
+Dept. of Computer Science & Engineering, VJCET Page 22
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.10 A User-Preference-Based Charging Station Recommendation
+for Electric Vehicles [10]
+Electric vehicles (EVs) are rising in popularity, reducing petroleum use (60 percentage from au￾tos) and emissions via Intelligent Transportation Systems (ITS). Over 23,000 U.S. public stations
+exist, with growth expected. Challenges: longer charging vs. refueling, varying prices/technolo￾gies, dynamic pricing (e.g., Electrify America/Tesla). Current centralized selections ignore user
+preferences (elastic: price/waiting/travel time). This study addresses EV users’ suitable charging
+station (EVCS) selection for independent decisions, enhancing comfort/price/QoS and network vi￾ability. Proposes User-Preferences based Charging Station Recommendation Scheme (UPCSRS)
+integrating preferences with Multiple Attribute Decision Making (MADM): Analytical Hierar￾chical Process (AHP) weights criteria; Technique for Order of Preference by Similarity to Ideal
+Solution (TOPSIS) ranks stations. Mathematical model evaluated via MATLAB/US DoE dataset,
+showing precise/personalized recommendations over nearest/cheapest. Contributes to EV adop￾tion via customized/efficient selection.
+2.10.1 Methodology
+The methodology for UPCSRS is structured across several phases. The system model (Section III)
+defines components, including EV charging stations (EVCS), EV users, and mobile edge comput￾ing, with technical criteria (State of Charge, plug type, charging level) and user preferences (travel
+distance, waiting time, charging time, price). MADM implementation begins with AHP, construct￾ing a hierarchy of goals, criteria, and alternatives, using pairwise comparisons on a Saaty 1-9 scale
+for weighting. Normalization and consistency ratio (CR ¡ 0.1) ensure reliability. TOPSIS follows,
+creating a decision matrix from the dataset, normalizing values, applying weights, and calculat￾ing positive/negative ideal solutions. Separation measures and closeness coefficients rank EVCS
+options. The dataset, sourced from the U.S. Department of Energy (New York region), includes fa￾cility details, pricing, and renewable integration, pre-processed for 100 simulation iterations with
+random EV locations at 60 km/h. Evaluation (Section VI) uses accuracy, precision, recall, and
+F1-score metrics, comparing UPCSRS against best-price, nearest, and BlockEV methods across
+distance, price, and random scenarios. An abnormality test re-ranks after removing the top sta￾tion, ensuring consistency. Simulations run on MATLAB with Intel i7/16GB RAM, validating the
+scheme’s effectiveness in real-world conditions.
+Dept. of Computer Science & Engineering, VJCET Page 23
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.10.2 Model Architecture
+Figure 2.10: System model for this study.
+2.10.3 Advantages
+1. Provides personalized recommendations considering multiple user preferences (e.g., time,
+cost, facilities), outperforming proximity/price-only methods and enhancing QoS/user satis￾faction.
+2. Integrates MADM (AHP for weighting, TOPSIS for ranking) with real US DoE data, offering
+precise, mathematical modeling for EV adoption in ITS.
+3. Addresses EV growth challenges like dynamic pricing and long charging times, potentially
+reducing petroleum dependence and emissions.
+4. MATLAB simulations validate accuracy, making it a viable tool for independent user deci￾sions and long-term EVCS network viability.
+Dept. of Computer Science & Engineering, VJCET Page 24
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.10.4 Disadvantages
+1. Dataset-specific (US-focused, New York EVCSs); generalizability to other regions with dif￾ferent pricing/infrastructure is untested.
+2. Computational complexity of AHP/TOPSIS may delay real-time applications on mobile de￾vices, especially with large datasets.
+3. Relies on user input for preferences, which could be subjective or inconsistent, leading to
+suboptimal recommendations if not accurately provided.
+Dept. of Computer Science & Engineering, VJCET Page 25
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.11 How to Distribute Charging Requests of Electronic Vehicles?
+A Reservation-based Approach [11]
+Electric vehicle (EV) adoption is surging globally, with a 29.3 per rise in registrations in Germany
+from January to March 2022 compared to the prior year . This growth reflects a shift towards
+sustainable transport, driven by environmental concerns, policy support, and battery technology
+advancements improving range and efficiency. However, challenges persist, including limited EV
+range requiring careful trip planning and prolonged charging times compared to refueling inter￾nal combustion engines, straining station availability . In urban areas, high-demand stations near
+popular locations are often occupied, causing traffic, lengthy searches, and driver frustration. Re￾serving stations in advance could save time and help operators optimize utilization. The rapid EV
+increase exacerbates infrastructure limits, leading to overcrowded central stations while peripheral
+ones remain underused, a trend evident in operator data. Prior research uses real-time data systems
+for utilization, assuming full EV-station-operator communication , which is impractical due to pri￾vacy issues and the lack of widespread infrastructure . This paper addresses this gap by designing a
+reservation system to distribute utilization without complete transparency, employing a design sci￾ence approach with interviews and simulations using data from 49 German stations (2020-2021).
+It contributes requirements, a model, app instantiation, and simulated impact analysis.
+2.11.1 Methodology
+The methodology follows the design science research (DSR) paradigm , creating and evaluating
+IT artifacts (e.g., models, methods) to solve organizational problems . It adheres to Peffers et al.’s
+six-phase model—Problem Identification, Objective Definition, Design/Development, Demon￾stration, Evaluation, and Communication—iteratively applied. Problem identification leveraged
+operator insights on urban overloads and privacy concerns, supported by a literature review (Sec￾tion 2) revealing a gap in reservation-utilization integration without full transparency. Objectives
+were shaped by analyzing reservation apps and conducting six driver interviews (Microsoft Teams,
+December 7-22, 2021, averaging 18 minutes) plus one operator interview, transcribed via Amazon
+Transcribe and analyzed qualitatively . A Figma mock-up guided initial requirements. Design
+and development involved five iterations, yielding a utilization method (Level 2) and app proto￾type (Level 1), refined with simulation feedback. Demonstration tested integration functional￾ity. Evaluation used 2020-2021 data from 49 stations (28,393 and 40,818 operations) to simulate
+distribution, varying parameters (e.g., 500m/1000m distance). Metrics like daily (Ac) and time￾frame-specific (Acd1−3) utilization assessed effectiveness. Tools included Figma, Ionic/Angular,
+MySQL, and Google Maps API.
+Dept. of Computer Science & Engineering, VJCET Page 26
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.11.2 Model Architecture
+Figure 2.11: Basic reservation and utilization improvement method
+2.11.3 Advantages
+1. Improves charging station utilization in urban areas by distributing requests via reservations,
+reducing overloads, search time, and user frustration without requiring full communication
+infrastructure.
+2. Uses real-world data from 49 German stations for simulations, providing practical insights
+into distribution effects and scalability.
+3. Adaptability: Suitable for a variety of EVCS and IoT attack scenarios.
+4. Addresses privacy by avoiding extensive data sharing, making it feasible for near-term im￾plementation and potentially extending station usage.
+Dept. of Computer Science & Engineering, VJCET Page 27
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.11.4 Disadvantages
+1. Penalty systems for non-compliance (e.g., price changes) may discourage users or lead to
+dissatisfaction if perceived as unfair.
+2. Evaluation is simulation-based on historical data (2020-2021), which may not capture dy￾namic real-time factors like traffic or EV growth post-2023.
+3. Limited to urban settings with existing stations; doesn’t address infrastructure expansion or
+integration with broader smart city systems.
+4. Limited to urban settings with existing stations; doesn’t address infrastructure expansion or
+integration with broader smart city systems.
+Dept. of Computer Science & Engineering, VJCET Page 28
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.12 Alleviating range anxiety with ‘Enroute’: A real-time mo￾bile solution and infrastructure innovation for electric vehicle
+users [12]
+The growing adoption of electric vehicles (EVs) reflects their role in sustainable transportation,
+particularly Battery Electric Vehicles (BEVs) in regions like India. Despite benefits such as
+lower costs and reduced emissions, ”range anxiety”—the fear of battery depletion during jour￾neys—remains a key barrier. Existing infrastructure, concentrated in urban areas, leaves drivers
+vulnerable in remote regions. This study addresses this by developing ’Enroute’, a mobile app
+providing real-time solutions using crowd-sourced data and partnerships with charging providers.
+It enables locating stations or booking on-site charging (e.g., porter services). Objectives include
+analyzing infrastructure limitations, EV user challenges, and creating a Product-Service System
+(PSS) for timely assistance. The app integrates with EV systems, enhancing long-distance confi￾dence and EV adoption. Results show effectiveness in alleviating anxiety, with future refinements
+focusing on app improvements, expanded partnerships, and manufacturer collaborations for sus￾tainable mobility.
+2.12.1 Methodology
+The research employs a structured approach: background/objectives (Section 1), literature/mar￾ket review (Section 2), methodology (Section 3), results (Section 4), discussions (Section 5), and
+conclusion/future scope (Section 6). Literature covers EV adoption, infrastructure, range anxiety,
+battery management, and apps. Market research analyzes apps like Shell Recharge and Tata Power
+EZ Charge via SWOT. Methodology involves interviews/surveys with 30 EV users for insights on
+anxiety/infrastructure. TRIZ methodology solves problems, leading to a conceptual framework
+for app features and infrastructure. Giga mapping visualizes networks; user journeys identify
+pain points. Prototyping uses Figma for wireframes, Android Studio for development. Evaluation
+includes remote user testing (24 participants) assessing usability via tasks rated 1-5, thoughts ver￾balized, and post-interviews on features/effectiveness. Integrated framework (iFEV) incorporates
+app, profiles, stations, maintenance, billing, dispatch, geolocation, analytics, and sustainability.
+Stakeholder analysis identifies primary (users), secondary (government/providers), and tertiary
+(developers/advocates) groups. Implementation uses mobile app for real-time crowd-sourced as￾sistance.
+Dept. of Computer Science & Engineering, VJCET Page 29
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.12.2 Model Architecture
+Figure 2.12: System Diagram for Adoption of EV
+2.12.3 Advantages
+1. Reduces range anxiety by providing real-time, crowd-sourced charging options, enhancing
+user confidence for long trips.
+2. Integrates with EV systems for seamless assistance, potentially increasing EV adoption by
+70% through renewable energy ties (e.g., PV integration)
+3. Cost-effective for users in remote areas via on-demand ”porter” services, minimizing grid
+overload and promoting sustainable mobility.
+4. Scalable through partnerships, with low implementation costs for app-based solutions.
+Dept. of Computer Science & Engineering, VJCET Page 30
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.12.4 Disadvantages
+1. Relies on crowd-sourced data, which may be inaccurate or sparse in low-traffic areas, leading
+to unreliable recommendations.
+2. Privacy concerns with user location tracking and data sharing among partners.
+3. High dependency on partnerships (e.g., with OEMs), which could delay rollout if collabora￾tions fail.
+Dept. of Computer Science & Engineering, VJCET Page 31
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.13 Optimization Schedule Schemes for Charging Electric Vehi￾cles: Overview, Challenges, and Solutions [13]
+Electric vehicles (EVs) have gained global attention due to climate concerns, battery advance￾ments, and incentives for sustainable transport. Types include BEVs (zero emissions, plug-in
+charging), PHEVs (battery + engine, hybrid modes), HEVs (self-sufficient, regenerative brak￾ing), and FCEVs (hydrogen-powered, water emissions). Challenges include grid stability with
+rising EV numbers, optimizing schedules to balance demand/capacity, and addressing limited
+range/user behavior. Uncoordinated charging causes congestion/overloads; optimized schemes
+consider prices, renewables, networks. Surveys review scheduling algorithms (unidirectional/bidi￾rectional, centralized/decentralized), dynamic pricing (RTP/TOU/CPP/PTR), charging/discharg￾ing coordination, and methods (BSS/WPT/CC). This article focuses on user demands/infrastruc￾ture, grid impact, modes/patterns (home/public/mobile), systems (centralized/decentralized), and
+EV types. It critically reviews optimization techniques, analyzes limitations/gaps, identifies open
+issues, and suggests research directions for efficient/sustainable/user-friendly schemes.
+2.13.1 Methodology
+As a comprehensive overview, the methodology involves systematic literature review and anal￾ysis. Key sections: EV types (II), charging modes (III: levels 1-4), patterns (IV: home/pub￾lic/mobile), strategies (V: uncoordinated/coordinated, centralized/decentralized). Classical opti￾mization (VI: linear/dynamic programming, heuristics like PSO/GA/ACO) and machine learning
+(VII: supervised/unsupervised/semi-supervised/reinforcement/deep learning, interpretability via
+SHAP) are examined for scheduling. Comparisons/gaps (VIII) use tables evaluating perspectives
+(grid/user), systems, complexity/time, costs/efficiency, integration (V2G/RES). Potential direc￾tions: public datasets, RES maximization, time efficiency, grid stability , user convenience. No
+primary data collection; relies on existing studies/simulations for insights. Evaluation criteria:
+scalability, user-centricity, real-time data handling, technology integration. Future: dynamic/adap￾tive schemes, ML for predictions/load balancing.
+Dept. of Computer Science & Engineering, VJCET Page 32
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.13.2 Model Architecture
+Figure 2.13: The architecture of a centralized system for EV charging
+2.13.3 Advantages
+1. Highlights user demands and grid impacts, promoting coordinated schemes to avoid conges￾tion and balance loads, with potential for RES integration.
+2. Covers diverse aspects like V2G and dynamic pricing, providing a foundation for efficient,
+user-friendly systems that reduce emissions and costs.
+3. Open research issues (e.g., datasets, time efficiency) guide future work, making it valuable
+for researchers and policymakers.
+2.13.4 Disadvantages
+1. As a review paper, it lacks original implementations or empirical data, relying on existing
+studies which may have outdated assumptions (pre-2024).
+challenges (e.g., grid stability, user behavior) but offers high-level solutions without detailed
+evaluations or prototypes.
+Dept. of Computer Science & Engineering, VJCET Page 33
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 3
+PROPOSED SYSTEM
+The proposed system, named Obturo-EV - Intelligent EV Charger Booking and Management Sys￾tem , is designed to address the critical challenges of limited and fragmented EV charging infras￾tructure by providing a unified, reliable, and highly personalized service. The primary objective
+of the Obturo-EV system is to dynamically generate the most efficient, conflict-free, and personal￾ized path to EV charging for every user. It achieves this by combining real-time discovery, guaran￾teed reservation management, and its core intelligence: the TOPSIS algorithm (Technique for Or￾der Preference by Similarity to Ideal Solution). This Multi-Attribute Decision Making (MADM)
+framework allows users to input their subjective dynamic priorities (e.g., preference for distance
+, short waiting time, or quick charging speed,price), enabling the system to mathematically rank
+all available commercial and Peer-to-Peer (P2P) stations from best-fit to worst-fit. By integrat￾ing intelligent recommendation with robust Conflict Handling for slot booking, Obturo-EV aims
+to revolutionize the EV charging experience by significantly minimizing user waiting time and
+maximizing resource utilization.
+3.1 Process Overview
+1. Project Planning
+• Define Project Scope and Objectives : The goals of OBTURO-EV – Intelligent EV
+Charger Booking and Management System to provide a seamless, secure, and user￾friendly platform for EV charging station booking, real-time navigation, and trip plan￾ning in India.
+• Identify Target Audience : Focus on individual EV drivers in urban and semi-urban In￾dia (e.g., Kerala,Delhi, Bengaluru), including novice users, daily commuters, and long￾distance travelers.
+Dept. of Computer Science & Engineering, VJCET Page 34
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+• Establish Project Timeline and Milestones: Create a detailed project timeline with
+milestones to track progress and ensure timely completion.
+2. Requirements Gathering and Analysis
+• Gather User Requirements: We dove into existing research and foundational papers
+to discussed the main challenges faced by EV owners in India to identify pain points:
+charger availability, traffic delays, weather impact, and cost transparency.
+• Analyze User Feedback: We analyzed the collected user data to identify common
+themes, prioritize features, and refine the app’s design: need for real-time availability,
+offline booking support, multilingual UI (Hindi, Tamil), and cost comparison tools..
+• Define Functional and Non-functional Requirements:
+– Functional: Station search, booking with conflict detection, map-based navigation,
+weather/traffic-aware recommendations, booking history.
+– Non-functional: Fast response ( less than 2 s), offline mode, secure data storage
+(encrypted MongoDB), scalable to 10,000+ users, multilingual support.
+3. Design and Development.
+• App Design: Create intuitive Flutter UI with map-centric interface, clear booking flow,
+and visual feedback (e.g., availability indicators, cost badges).
+• Geospatial Integration: Integrate Google Maps SDK for real-time traffic, distance
+calculation, and route planning with charging stop suggestions.
+• External Data Integration Connect to OpenWeather/IMD API for weather data and
+city event calendars to adjust recommendations during monsoons or festivals.
+• Software Development: Implement backend in Flask with RESTful APIs (/recommend
+station, /book slot, /user history), using rule-based logic for scoring stations (distance,
+cost, waiting time, charging time).
+4. Testing and Quality Assurance
+• Unit Testing: : We’ve got plans in place for testing each module individually, including
+ranking system,booking module,station management,user management
+• Integration Testing: We lookforward to verify seamless interaction between Flutter
+frontend, Flask backend, and external APIs (Google Maps, OpenChargeMap API)..
+• User Acceptance Testing (UAT): Engage a group of EV users in Kerala to test usability,
+booking flow, and recommendation accuracy.
+Dept. of Computer Science & Engineering, VJCET Page 35
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+• Performance Testing: Evaluate the app’s performance under various load conditions
+and network scenarios
+5. Deployment and Maintenance
+• App Store Deployment: Publish OBTURO-EV on Google Play Store and Apple App
+Store with region-specific listings (India).
+• Monitoring and Support: Continuously monitor the app’s performance, address user
+feedback, and provide ongoing maintenance and support.
+• Security Updates: Regularly release security updates to address any vulnerabilities and
+maintain a high level of data protection.
+• Feature Enhancements: Implement new features and enhancements based on user
+needs and market trends.
+3.1.1 Process Flow Diagram
+Figure 3.1: Process Flow Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 36
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.2 Architecture Diagram
+Figure 3.2: System Architecture of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 37
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.3 Use Case Diagram
+Figure 3.3: Use Case Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 38
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.4 Data Flow Diagram
+Figure 3.4: Data Flow Diagram Level 0 of Obturo-EV
+3.1.5 Data Flow Diagram
+Figure 3.5: Data Flow Diagram Level 1 of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 39
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.6 Data Flow Diagram
+Figure 3.6: Data Flow Diagram Level 2 of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 40
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.7 Entity Relationship (ER) Diagram
+Figure 3.7: Entity Relationship Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 41
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.8 Class Daigram
+Figure 3.8: Class Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 42
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 4
+CONCLUSION
+The proposed OBTURO-EV – Intelligent EV Charger Booking and Management System has the
+potential to significantly enhance the electric vehicle charging experience by providing a unified,
+intelligent, and reliable platform for drivers across India. Through the integration of the TOPSIS
+algorithm for personalized recommendations, user-actioned real-time status updates, and robust
+booking management, the system effectively addresses key challenges in EV charging—such as
+fragmented information, uncertain charger availability, and booking conflicts—thereby improving
+the overall convenience and practicality of owning an electric vehicle .
+By offering intelligent ranking functionalities based on dynamic user preferences (including
+distance, cost, waiting time, and charging duration), the platform empowers drivers to make in￾formed decisions tailored to their immediate needs, surpassing traditional proximity-based filters.
+Furthermore, guaranteed booking slots are ensured through server-side conflict detection and res￾olution mechanisms , while efficient queue management minimizes congestion at high-demand
+stations.
+The inclusion of a Peer-to-Peer (P2P) charging network expands the availability of charging
+points by enabling users to share or access private chargers, significantly increasing accessibility
+in regions underserved by commercial infrastructure. Overall, the system aligns with the grow￾ing demand for secure, scalable, and user-centric EV charging solutions and contributes toward
+strengthening India’s electric mobility ecosystem .
+Dept. of Computer Science & Engineering, VJCET Page 43
+References
+[1] J. Zhou, Y. Wang, Y. Jia, and J. Wang, “Integrated Route Planning Algorithm Based on
+Spot Price and Classified Travel Objectives for EV Users,” IEEE Transactions on Intelligent
+Transportation Systems, vol. 24, no. 6, pp. 6321–6333, 2024.
+[2] A. Aydeger, E. Zeydan, J. Mangues-Bafalluy, S. S. Arslan, and Y. Turk, “Enhancing electric
+vehicle security and privacy through decentralized identity management,” Digit. Threat. Res.
+Pract., vol. 6, no. 3, Art. 11, pp. 1–20, Sep. 2025,
+[3] J. Nie, S. Xia, Y. Liu, S. Ding, L. Hu, M. Zhao, Y. Fan, M. Abdel-Aty, M. Preindl, and X.
+Jiang, “A data-driven and human-centric EV charging recommendation system at city-scale,”
+in Proc. 14th ACM Int. Conf. Future Energy Syst. (e-Energy), Orlando, FL, USA, Jun. 2023.
+[4] K. Papapostolou and V. Kapsalis, “Development of a Smart EV Charging Station Manage￾ment System,” IEEE Access, vol. 11, pp. 1–?, 2023.
+[5] D. Kern, C. Krauß, and M. Hollick, “Detection of Anomalies in EV Charging Sessions,” in
+Proc. 2023 IEEE International Conference on Communications, 2024, pp. 1–6.
+[6] A. K. M. Yousuf, Z. Wang, R. Paranjape, and Y. Tang, “An In-Depth Exploration of Electric
+Vehicle Charging Station Infrastructure: A Comprehensive Review of Challenges, Mitigation
+Approaches, and Optimization Strategies,” IEEE Access, vol. 11, pp. 1–?, 2023.
+[7] Z. Liu, M.-P. Kwan, and J. Wu, “Optimal Location of Electric Vehicle Charging Stations
+Using Geospatial Big Data,” in Proc. ACM SIGSPATIAL ’24, Atlanta, GA, USA, Oct. 2024
+[8] U. Cali, M. Kuzlu, O. Elma, O. G. Gucluturk, A. Kilic, and F. O. Catak, “Cybersecurity and
+Digital Privacy Aspects of V2X in the EV Charging Structure,” in Proc. European Interdis￾ciplinary Cybersecurity Conference (EICC 2023), Stavanger, Norway, Jun. 14–15, 2023, pp.
+1–7.
+[9] M. M. Rahman, M. M. H. Chayan, K. Mehrin, A. Sultana, and M. M. Hamed, “Explain￾able Deep Learning for Cyber Attack Detection in Electric Vehicle Charging Stations,” Proc.
+NSysS ’24, pp. 1–7, Dec. 2024.
+iii
+[10] A. Habbal and M. F. Alrifaie, “A User-Preference-Based Charging Station Recommendation
+for Electric Vehicles,” IEEE Transactions on Intelligent Transportation Systems, vol. 25, no.
+9, pp. 1–13, Sep. 2024 .
+[11] Mathias Eggert& Rene Kling, “How to Distribute Charging Requests of Electronic Vehicles?
+A Reservation-based Approach,” IEEE Access, vol. 11, pp. 1–?, 2023.
+[12] Ria Vijay B, Tarun Kumarc, “Alleviating Range Anxiety With ‘Enroute’: A Real-Time Mo￾bile Solution and Infrastructure Innovation for Electric Vehicle Users,” IEEE Access, vol. 11,
+pp. , 2024
+[13] H. M. Al-Alwash, E. Borcoci, M.-C. Vochin, I. A. M. Balapuwaduge, and F. Y.
+Li,”Optimization Schedule Schemes for Charging Electric Vehicles: Overview, Challenges,
+and Solutions,” IEEE Access, vol. 12, pp. 32801–32820, Mar. 2025

@@ -2,10 +2,11 @@ import requests
 import math
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import login as django_login, logout as django_logout
+from django.contrib.auth import login as django_login, logout as django_logout, authenticate
 from django.http import JsonResponse
 from django.db.models import Count
 from django.utils import timezone as dj_tz
+from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import UserCar, Car
 from stations.models import Booking as StationBooking
 
@@ -24,29 +25,20 @@ def get_distance(lat1, lon1, lat2, lon2):
 
 def login_view(request):
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
+        username = request.POST.get("username", "").strip()
+        password = request.POST.get("password", "")
 
-        res = requests.post(
-            f"{API_BASE}/auth/login/",
-            json={"username": username, "password": password}
-        )
-
-        if res.status_code == 200:
-            data = res.json()
-            request.session["token"] = data["access"]
-            request.session["username"] = username
-            # Also authenticate with Django so user.is_authenticated works in templates
-            try:
-                user_obj = User.objects.get(username=username)
-                user_obj.backend = 'django.contrib.auth.backends.ModelBackend'
-                django_login(request, user_obj)
-            except User.DoesNotExist:
-                pass
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            refresh = RefreshToken.for_user(user)
+            request.session["token"] = str(refresh.access_token)
+            request.session["username"] = user.username
+            user.backend = "django.contrib.auth.backends.ModelBackend"
+            django_login(request, user)
             request.session.save()
             return redirect("home")
 
-        return render(request, "web/login.html", {"error": "Invalid credentials"})
+        return render(request, "web/login.html", {"error": "Invalid username or password"})
 
     return render(request, "web/login.html")
 
@@ -209,13 +201,13 @@ def stations_view(request):
             try:
                 user_lat = float(user_lat)
                 user_lon = float(user_lon)
-                radius = float(radius)
+                radius_float = float(radius)
                 for station in stations:
                     if "latitude" in station and "longitude" in station:
                         station["distance"] = round(
                             get_distance(user_lat, user_lon,
                                          float(station["latitude"]), float(station["longitude"])), 2)
-                stations = [s for s in stations if s.get("distance", 999) <= radius]
+                stations = [s for s in stations if s.get("distance", 999) <= radius_float]
                 stations = sorted(stations, key=lambda x: x.get("distance", 999))
             except (ValueError, TypeError):
                 pass
@@ -362,57 +354,49 @@ def charging_session_view(request):
 
 def signup_view(request):
     if request.method == "POST":
-        username = request.POST.get("username")
-        email = request.POST.get("email")
-        password = request.POST.get("password")
-        password_confirm = request.POST.get("password_confirm")
+        username = request.POST.get("username", "").strip()
+        email = request.POST.get("email", "").strip()
+        password = request.POST.get("password", "")
+        password_confirm = request.POST.get("password_confirm", "")
 
-        # Validate inputs
-        if not all([username, email, password, password_confirm]):
-            return render(request, "web/signup.html", {"error": "All fields are required"})
+        def signup_error(msg):
+            # Always return to login.html with the signup tab open
+            return render(request, "web/login.html", {"error": msg, "signup_mode": True})
+
+        # Validate inputs (password_confirm is optional — only check if provided)
+        if not all([username, email, password]):
+            return signup_error("All fields are required")
 
         if len(password) < 6:
-            return render(request, "web/signup.html", {"error": "Password must be at least 6 characters"})
+            return signup_error("Password must be at least 6 characters")
 
-        if password != password_confirm:
-            return render(request, "web/signup.html", {"error": "Passwords do not match"})
+        if password_confirm and password != password_confirm:
+            return signup_error("Passwords do not match")
 
         if "@" not in email:
-            return render(request, "web/signup.html", {"error": "Invalid email address"})
+            return signup_error("Invalid email address")
 
-        res = requests.post(
-            f"{API_BASE}/auth/signup/",
-            json={"username": username, "email": email, "password": password}
-        )
+        # --- create user directly (no internal HTTP round-trip) ---
+        if User.objects.filter(username=username).exists():
+            return signup_error("Username already taken")
+        if User.objects.filter(email=email).exists():
+            return signup_error("Email is already registered")
 
-        if res.status_code == 200 or res.status_code == 201:
-            # Auto login after signup
-            login_res = requests.post(
-                f"{API_BASE}/auth/login/",
-                json={"username": username, "password": password}
-            )
-            if login_res.status_code == 200:
-                data = login_res.json()
-                request.session["token"] = data["access"]
-                request.session["username"] = username
-                # Also authenticate with Django so user.is_authenticated works in templates
-                try:
-                    user_obj = User.objects.get(username=username)
-                    user_obj.backend = 'django.contrib.auth.backends.ModelBackend'
-                    django_login(request, user_obj)
-                except User.DoesNotExist:
-                    pass
-                request.session.save()
-                return redirect("home")
-            return redirect("login")
-        else:
-            try:
-                error = res.json().get("error", "Signup failed")
-            except:
-                error = "Signup failed. Please try again."
-            return render(request, "web/signup.html", {"error": error})
+        try:
+            user = User.objects.create_user(username=username, email=email, password=password)
+        except Exception as e:
+            return signup_error(f"Could not create account: {e}")
 
-    return render(request, "web/signup.html")
+        # Auto-login immediately after creation
+        refresh = RefreshToken.for_user(user)
+        request.session["token"] = str(refresh.access_token)
+        request.session["username"] = user.username
+        user.backend = "django.contrib.auth.backends.ModelBackend"
+        django_login(request, user)
+        request.session.save()
+        return redirect("home")
+
+    return render(request, "web/login.html", {"signup_mode": True})
 
 
 def logout_view(request):
