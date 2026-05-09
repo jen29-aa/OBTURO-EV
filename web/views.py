@@ -113,8 +113,10 @@ def select_car(request):
             except Car.DoesNotExist:
                 pass
 
-    res = api_request("GET", "/auth/cars/", token=token)
-    cars = res.json() if res and res.status_code == 200 else []
+    cars = list(Car.objects.all().values(
+        'id', 'name', 'battery_capacity_kwh', 'max_dc_power_kw',
+        'max_ac_power_kw', 'connector_type', 'wltp_range_km'
+    ))
 
     return render(request, "web/select_car.html", {
         "cars": cars,
