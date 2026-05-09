@@ -9,6 +9,8 @@
     <img src="https://img.shields.io/badge/Django%20REST-3.16-red.svg" alt="DRF" />
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
   </p>
+
+  <h3>🌐 <a href="https://obturoev.pythonanywhere.com">Live Demo → obturoev.pythonanywhere.com</a></h3>
 </div>
 
 ---
