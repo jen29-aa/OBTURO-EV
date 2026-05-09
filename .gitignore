@@ -29,4 +29,3 @@ Thumbs.db
 
 # Secrets
 firebase_key.json
-stations/firebase.py
