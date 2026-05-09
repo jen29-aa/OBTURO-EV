@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'accounts',
     'stations.apps.StationsConfig',
     "corsheaders",
-    "web",
+    "web.apps.WebConfig",
 ]
 
 MIDDLEWARE = [
