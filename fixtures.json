@@ -1,6 +1,3 @@
-[StationsConfig] ready() called!
-[StationsConfig] Starting scheduler...
-[Scheduler] Starting APScheduler...
 [
 {
   "model": "auth.user",
@@ -260,8 +257,8 @@
   "model": "sessions.session",
   "pk": "88i9066x5aznkoja44pwk2owtka8qk22",
   "fields": {
-    "session_data": ".eJxVkFtvgkAQhf8Lz4YgLCB9q9qYpbJGRQVeyN6QXZdLBaul6X_vkvji43xz5syc-TX65sJr483gP2FJVlRsRAgPA5wiATtY71y6gB68tMlxEQamFlnE7hVRgcWTuYKyEekJySxBAxR3kSXlXbMHGqiLYmih4eysF2GbJluxkR-OrocoPjw2S9rBqrXwXptXYZUt3910QBWyQ5nJXYlOW5DF6hINTKVxBFKp5OYUinEHS5CiKmiz8TAJRbE1M9w-WE9n5XfNwXZBXAqSaN8eAcjxKthHX-RzjVaH4r1rjIlx6_i1xhXXoaWOPjFyfOvLfMS5YJrar4xgql80NpjE9bkxaVP3V0HMUWI-u50ZNYyr-VP7YlDirtTThYN5YNk4KIBT2Nj2HWwROqNe4XuaT5nlWwVxue96GLsOtgOXOQAQFjgMFNQz_v4BnQWP2w:1wLfg1:tFj2cUTLckPR0an7mvsOIl4FfY9Rk1qMd2ROSrzouc0",
-    "expire_date": "2026-05-23T11:16:57.834Z"
+    "session_data": ".eJxVkFtvgkAQhf8Lz4YgLCB9q9qYpbJGRQVeyN6QXZdLBaul6X_vkvji43xz5syc-TX65sJr483gP2FJVlRsRAgPA5wiATtY71y6gB68tMlxEQamFlnE7hVRgcWTuYKyEekJySxBAxR3kSXlXbMHGqiLYmih4eysF2GbJluxkR-OrocoPjw2S9rBqrXwXptXYZUt3910QBWyQ5nJXYlOW5DF6hINTKVxBFKp5OYUinEHS5CiKmiz8TAJRbE1M9w-WE9n5XfNwXZBXAqSaN8eAcjxKthHX-RzjVaH4r1rjIlx6_i1xhXXoaWOPjFyfOvLfMS5YJrar4xgql80NpjE9bkxaVP3V0HMUWI-u50ZNYyr-VP7YlDirtTThYN5YNk4KIBT2Nj2HWwROqNe4XuaT5nlWwVxue96GLsOtgOXOQAQFjgMFNQz_v4BnQWP2w:1wLfiR:DGsztj3DJ8n10jy0Z4EkwaE9Tg4Z9DzCVycpuPVPBTo",
+    "expire_date": "2026-05-23T11:19:27.829Z"
   }
 },
 {
