@@ -127,19 +127,20 @@ def select_car(request):
 
 
 def stations_view(request):
+    from stations.models import ChargingStation
+    from django.db.models import Avg, Q
+
     token = request.session.get("token")
     username = request.session.get("username")
-    
+
     if not token:
         return redirect("login")
 
-    # Get the current user from database
     try:
         user = User.objects.get(username=username)
     except User.DoesNotExist:
         return redirect("login")
 
-    # Get selected car
     selected_car = None
     try:
         user_car = UserCar.objects.get(user=user)
@@ -155,19 +156,45 @@ def stations_view(request):
     max_price = request.GET.get("max_price", "")
     user_lat = request.GET.get("lat", "")
     user_lon = request.GET.get("lon", "")
-    radius = request.GET.get("radius", "50")  # Default 50 km radius
+    radius = request.GET.get("radius", "50")
 
-    # If no search query and no location, show message
     error_msg = None
     if not keyword and not user_lat:
         error_msg = "Please search for a city or use your location to find stations."
 
-    # ── When a keyword is given, try to geocode it as a location first ──
-    # This lets users type a city/area name and see ALL stations near that place,
-    # rather than only matching stations whose name contains the keyword.
+    # Helper to convert a ChargingStation ORM object to a dict
+    def station_to_dict(st, avg_rating=0):
+        return {
+            "id": st.id,
+            "name": st.name,
+            "address": st.address or "",
+            "latitude": st.latitude,
+            "longitude": st.longitude,
+            "charger_type": st.charger_type,
+            "connector_type": st.connector_type,
+            "power_kw": st.power_kw,
+            "price_per_kwh": st.price_per_kwh,
+            "available_slots": st.available_slots,
+            "total_slots": st.total_slots,
+            "waiting_time": st.waiting_time,
+            "status": st.status,
+            "image_url": st.image_url or "",
+            "description": st.description or "",
+            "operating_hours": st.operating_hours,
+            "is_open_24_7": st.is_open_24_7,
+            "has_parking": st.has_parking,
+            "has_restroom": st.has_restroom,
+            "has_cafe": st.has_cafe,
+            "has_wifi": st.has_wifi,
+            "avg_rating": round(avg_rating or 0, 2),
+        }
+
+    # Build base queryset
+    qs = ChargingStation.objects.annotate(avg_rating=Avg('ratings__rating'))
+
+    # Geocode keyword if given
     geocoded_lat = None
     geocoded_lon = None
-    geocoded_display = None
     if keyword:
         try:
             nom_resp = requests.get(
@@ -181,69 +208,46 @@ def stations_view(request):
                 if nom_data:
                     geocoded_lat = float(nom_data[0]["lat"])
                     geocoded_lon = float(nom_data[0]["lon"])
-                    geocoded_display = nom_data[0].get("display_name", keyword)
         except Exception:
             pass
 
-    # Decide the search centre:
-    # • If the keyword was successfully geocoded → use that location, fetch all stations nearby
-    # • Else fall back to user GPS location with name-based filtering
-    if geocoded_lat is not None:
-        # Location search: fetch ALL stations, filter by distance from geocoded point
-        res = api_request("GET", "/api/map/search/", params={"q": ""})
-        stations = res.json() if res and res.status_code == 200 else []
-        search_lat = geocoded_lat
-        search_lon = geocoded_lon
-        search_radius = float(radius)  # use whatever radius the user selected
-        for station in stations:
-            if "latitude" in station and "longitude" in station:
-                station["distance"] = round(
-                    get_distance(search_lat, search_lon,
-                                 float(station["latitude"]), float(station["longitude"])), 2)
-        stations = [s for s in stations if s.get("distance", 999) <= search_radius]
-        stations = sorted(stations, key=lambda x: x.get("distance", 999))
-        # Override the map centre so the template pans to the searched city
-        user_lat = geocoded_lat
-        user_lon = geocoded_lon
-    else:
-        # Station-name search (or no keyword) + optional GPS radius filter
-        res = api_request("GET", "/api/map/search/", params={"q": keyword if keyword else ""})
-        stations = res.json() if res and res.status_code == 200 else []
+    # If geocoding failed, do name-based search
+    if keyword and geocoded_lat is None:
+        qs = qs.filter(Q(name__icontains=keyword) | Q(address__icontains=keyword))
 
-        if user_lat and user_lon:
-            try:
-                user_lat = float(user_lat)
-                user_lon = float(user_lon)
-                radius_float = float(radius)
-                for station in stations:
-                    if "latitude" in station and "longitude" in station:
-                        station["distance"] = round(
-                            get_distance(user_lat, user_lon,
-                                         float(station["latitude"]), float(station["longitude"])), 2)
-                stations = [s for s in stations if s.get("distance", 999) <= radius_float]
-                stations = sorted(stations, key=lambda x: x.get("distance", 999))
-            except (ValueError, TypeError):
-                pass
-    
-    # Apply other filters
+    # Apply DB-level filters
     if charger_type:
-        stations = [s for s in stations if s.get("charger_type", "DC") == charger_type]
+        qs = qs.filter(charger_type=charger_type)
     if connector_type:
-        stations = [s for s in stations if s.get("connector_type", "CCS2") == connector_type]
+        qs = qs.filter(connector_type=connector_type)
     if min_power:
         try:
-            min_power_val = float(min_power)
-            stations = [s for s in stations if s.get("power_kw", 30) >= min_power_val]
-        except:
+            qs = qs.filter(power_kw__gte=float(min_power))
+        except ValueError:
             pass
     if max_price:
         try:
-            max_price_val = float(max_price)
-            stations = [s for s in stations if s.get("price_per_kwh", 18) <= max_price_val]
-        except:
+            qs = qs.filter(price_per_kwh__lte=float(max_price))
+        except ValueError:
             pass
 
-    # ── Real-time availability: use dataset value, minus any live active bookings ──
+    all_station_objs = list(qs)
+    stations = [station_to_dict(s, s.avg_rating) for s in all_station_objs]
+
+    # Apply distance filtering
+    search_lat = geocoded_lat or (float(user_lat) if user_lat else None)
+    search_lon = geocoded_lon or (float(user_lon) if user_lon else None)
+
+    if search_lat is not None and search_lon is not None:
+        radius_float = float(radius)
+        for s in stations:
+            s["distance"] = round(get_distance(search_lat, search_lon, float(s["latitude"]), float(s["longitude"])), 2)
+        stations = [s for s in stations if s.get("distance", 999) <= radius_float]
+        stations = sorted(stations, key=lambda x: x.get("distance", 999))
+        user_lat = search_lat
+        user_lon = search_lon
+
+    # Real-time availability
     now = dj_tz.now()
     active_bk = StationBooking.objects.filter(
         start_time__lte=now, end_time__gte=now, status='active'
@@ -252,27 +256,14 @@ def stations_view(request):
     for s in stations:
         sid = s.get('id')
         total = s.get('total_slots') or 4
-        # Use stored available_slots from the dataset as the base value.
-        # If it's missing, default to total_slots.
-        db_available = s.get('available_slots')
-        if db_available is None:
-            db_available = total
+        db_available = s.get('available_slots', total)
         live_busy = busy_map.get(sid, 0)
-        # Subtract any real-time bookings that weren't reflected in the stored value.
         s['available_slots'] = max(0, db_available - live_busy)
         s['status'] = 'Available' if s['available_slots'] > 0 else 'Busy'
 
-    # Get unique values for filters
-    all_stations = res.json() if res.status_code == 200 else []
-    charger_types = list(set([s.get("charger_type", "DC") for s in all_stations]))
-    connector_types = list(set([s.get("connector_type", "CCS2") for s in all_stations]))
-    
-    # Debug info
-    print(f"DEBUG: Final stations count: {len(stations)}")
-    print(f"DEBUG: Error message: {error_msg}")
-    print(f"DEBUG: Has location: {bool(user_lat and user_lon)}")
-    
-    # Build car data for the range filter feature
+    charger_types = list(set([s.get("charger_type", "DC") for s in stations]))
+    connector_types = list(set([s.get("connector_type", "CCS2") for s in stations]))
+
     car_range_km = 300
     car_battery_kwh = 40.0
     car_name = "Unknown Car"
@@ -299,10 +290,10 @@ def stations_view(request):
         "has_location": bool(user_lat and user_lon),
         "error_msg": error_msg,
         "auth_token": token,
-        # Range filter data
         "car_range_km": car_range_km,
         "car_battery_kwh": car_battery_kwh,
         "car_name": car_name,
+
     })
 
 
