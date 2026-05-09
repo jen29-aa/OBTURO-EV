@@ -258,60 +258,63 @@
 
       <div class="sp-section">
         <div class="sp-title"><i class="fa fa-sliders"></i> Customize Priorities</div>
-        <div class="normalize-note"><i class="fa fa-wand-magic-sparkles"></i> Weights auto-balance to 100%</div>
+        <div class="normalize-note"><i class="fa fa-wand-magic-sparkles"></i> Use 0–10 numeric weights; values normalize automatically.</div>
+        <div class="weight-warning" id="weightWarning" style="display:none;margin:10px 0 0 0;padding:10px 12px;border-radius:10px;background:rgba(251,146,60,.12);color:#f97316;font-size:12px;font-weight:700;">
+          Use more than one priority. Don’t set only a single criterion to high.
+        </div>
         <div style="margin-top:10px;">
 
           <div class="weight-item" id="priceItem">
             <div class="weight-row">
               <span class="weight-name"><i class="fa fa-indian-rupee-sign" style="color:var(--orange)"></i> Price <span class="ptag ptag-low" id="pricePriority">Low</span></span>
-              <span class="weight-pct"><span id="priceWeight">20</span>%</span>
+              <span class="weight-pct"><span id="priceWeight">2</span></span>
             </div>
-            <input type="range" id="priceSlider" class="wslider" min="0" max="100" value="20" oninput="updateWeights()">
+            <input type="range" id="priceSlider" class="wslider" min="0" max="10" value="2" oninput="updateWeights()">
             <div class="weight-desc">Prefer lower cost per kWh</div>
           </div>
 
           <div class="weight-item" id="powerItem">
             <div class="weight-row">
               <span class="weight-name"><i class="fa fa-bolt" style="color:var(--green)"></i> Power <span class="ptag ptag-med" id="powerPriority">Medium</span></span>
-              <span class="weight-pct"><span id="powerWeight">25</span>%</span>
+              <span class="weight-pct"><span id="powerWeight">3</span></span>
             </div>
-            <input type="range" id="powerSlider" class="wslider" min="0" max="100" value="25" oninput="updateWeights()">
+            <input type="range" id="powerSlider" class="wslider" min="0" max="10" value="3" oninput="updateWeights()">
             <div class="weight-desc">Higher kW = faster charge</div>
           </div>
 
           <div class="weight-item" id="availabilityItem">
             <div class="weight-row">
               <span class="weight-name"><i class="fa fa-plug" style="color:var(--blue)"></i> Availability <span class="ptag ptag-med" id="availabilityPriority">Medium</span></span>
-              <span class="weight-pct"><span id="availabilityWeight">25</span>%</span>
+              <span class="weight-pct"><span id="availabilityWeight">3</span></span>
             </div>
-            <input type="range" id="availabilitySlider" class="wslider" min="0" max="100" value="25" oninput="updateWeights()">
+            <input type="range" id="availabilitySlider" class="wslider" min="0" max="10" value="3" oninput="updateWeights()">
             <div class="weight-desc">More open charging slots</div>
           </div>
 
           <div class="weight-item" id="speedItem">
             <div class="weight-row">
               <span class="weight-name"><i class="fa fa-rocket" style="color:var(--blue)"></i> Speed Rating <span class="ptag ptag-low" id="speedPriority">Low</span></span>
-              <span class="weight-pct"><span id="speedWeight">15</span>%</span>
+              <span class="weight-pct"><span id="speedWeight">2</span></span>
             </div>
-            <input type="range" id="speedSlider" class="wslider" min="0" max="100" value="15" oninput="updateWeights()">
+            <input type="range" id="speedSlider" class="wslider" min="0" max="10" value="2" oninput="updateWeights()">
             <div class="weight-desc">Overall station speed score</div>
           </div>
 
           <div class="weight-item" id="waitItem">
             <div class="weight-row">
               <span class="weight-name"><i class="fa fa-hourglass-half" style="color:var(--orange)"></i> Wait Time <span class="ptag ptag-low" id="waitPriority">Low</span></span>
-              <span class="weight-pct"><span id="waitWeight">15</span>%</span>
+              <span class="weight-pct"><span id="waitWeight">2</span></span>
             </div>
-            <input type="range" id="waitSlider" class="wslider" min="0" max="100" value="15" oninput="updateWeights()">
+            <input type="range" id="waitSlider" class="wslider" min="0" max="10" value="2" oninput="updateWeights()">
             <div class="weight-desc">Shorter queue = higher score</div>
           </div>
 
           <div class="weight-item" id="distanceItem">
             <div class="weight-row">
               <span class="weight-name"><i class="fa fa-location-dot" style="color:var(--red)"></i> Distance <span class="ptag ptag-low" id="distancePriority">None</span></span>
-              <span class="weight-pct"><span id="distanceWeight">0</span>%</span>
+              <span class="weight-pct"><span id="distanceWeight">0</span></span>
             </div>
-            <input type="range" id="distanceSlider" class="wslider" min="0" max="100" value="0" oninput="updateWeights()">
+            <input type="range" id="distanceSlider" class="wslider" min="0" max="10" value="0" oninput="updateWeights()">
             <div class="weight-desc">Closer to your location</div>
           </div>
         </div>
@@ -506,30 +509,41 @@
       updatePriorityIndicator(k+'Priority',k+'Item',v);
     });
     document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));
+    checkSingleHighWarning();
   }
 
   function updatePriorityIndicator(indicatorId, itemId, value){
     const ind=document.getElementById(indicatorId), item=document.getElementById(itemId);
     ind.classList.remove('ptag-high','ptag-med','ptag-low');
     item.classList.remove('high-priority');
-    if(value>=30){ ind.textContent='High'; ind.classList.add('ptag-high'); item.classList.add('high-priority'); }
-    else if(value>=15){ ind.textContent='Medium'; ind.classList.add('ptag-med'); }
+    if(value>=8){ ind.textContent='High'; ind.classList.add('ptag-high'); item.classList.add('high-priority'); }
+    else if(value>=4){ ind.textContent='Medium'; ind.classList.add('ptag-med'); }
     else if(value>0){ ind.textContent='Low'; ind.classList.add('ptag-low'); }
     else { ind.textContent='None'; ind.classList.add('ptag-low'); }
+  }
+
+  function checkSingleHighWarning(){
+    const keys=['price','power','availability','speed','wait','distance'];
+    const values=keys.map(k=>+document.getElementById(k+'Slider').value);
+    const highCount=values.filter(v=>v>=8).length;
+    const lowCount=values.filter(v=>v<=2).length;
+    const warning = highCount===1 && lowCount>=4;
+    document.getElementById('weightWarning').style.display = warning ? 'block' : 'none';
   }
 
   function applyPreset(preset){
     document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));
     const btn=document.getElementById('preset-'+preset); if(btn) btn.classList.add('active');
     const presets={
-      fastest:   {price:10,power:40,availability:25,speed:20,wait:5,distance:0},
-      cheapest:  {price:50,power:10,availability:20,speed:10,wait:5,distance:5},
-      balanced:  {price:20,power:25,availability:25,speed:15,wait:15,distance:0},
-      convenient:{price:10,power:15,availability:30,speed:10,wait:10,distance:25}
+      fastest:   {price:1,power:9,availability:6,speed:7,wait:2,distance:0},
+      cheapest:  {price:10,power:2,availability:5,speed:2,wait:2,distance:1},
+      balanced:  {price:2,power:3,availability:3,speed:2,wait:2,distance:0},
+      convenient:{price:1,power:2,availability:6,speed:2,wait:2,distance:3}
     };
     const w=presets[preset];
     if(w){
       Object.entries(w).forEach(([k,v])=>{ document.getElementById(k+'Slider').value=v; document.getElementById(k+'Weight').textContent=v; updatePriorityIndicator(k+'Priority',k+'Item',v); });
+      checkSingleHighWarning();
       // Auto-rank if location is already set
       const lat=document.getElementById('userLat').value;
       const lon=document.getElementById('userLon').value;

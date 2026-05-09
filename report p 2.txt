@@ -1,0 +1,1283 @@
+AIRMATE: NFC AIRPORT TOOL
+A PROJECT REPORT (PHASE-2)
+by
+ABEL BINOY (VJC20CS002)
+in partial fulfillment for the award of the degree
+of
+BACHELOR OF TECHNOLOGY
+in
+COMPUTER SCIENCE AND ENGINEERING
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+APRIL 2025
+AIRMATE: NFC AIRPORT TOOL
+A PROJECT REPORT (PHASE-2)
+by
+ABEL BINOY (VJC20CS002)
+in partial fulfillment for the award of the degree
+of
+BACHELOR OF TECHNOLOGY
+in
+COMPUTER SCIENCE AND ENGINEERING
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+under the guidance
+of
+Ms. ARIYA T K
+Assistant Professor, CSE Dept.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+APRIL 2025
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+Department of Computer Science and Engineering
+Vision
+Moulding socially responsible and professionally competent Computer Engineers to adapt
+to the dynamic technological landscape
+Mission
+1. Foster the principles and practices of computer science to empower life-long learning and
+build careers in software and hardware development.
+2. Impart value education to elevate students to be successful, ethical and effective problem￾solvers to serve the needs of the industry, government, society and the scientific community.
+3. Promote industry interaction to pursue new technologies in Computer Science and provide
+excellent infrastructure to engage faculty and students in scholarly research activities.
+Program Educational Objectives
+Our Graduates
+1. Shall have creative aid critical reasoning skills to solve technical problems ethically and
+responsibly to serve the society.
+2. Shall have competency to collaborate as a team member and team leader to address social,
+technical and engineering challenges.
+3. Shall have ability to contribute to the development of the next generation of information
+technology either through innovative research or through practice in a corporate setting
+4. Shall have potential to build start-up companies with the foundations, knowledge and expe￾rience they acquired from undergraduate education
+Program Outcomes
+1. Engineering knowledge:Apply the knowledge of mathematics, science, engineering funda￾mentals, and an engineering specialization to the solution of complex engineering problems.
+2. Problem analysis:Identify, formulate, review research literature, and analyze complex en￾gineering problems reaching substantiated conclusions using first principles of mathematics,
+natural sciences, and engineering sciences
+3. Design / development of solutions:Design solutions for complex engineering problems and
+design system components or processes that meet the specified needs with appropriate con￾sideration for the public health and safety, and the cultural, societal, and environmental con￾siderations.
+4. Conduct investigations of complex problems:Use research-based knowledge and research
+methods including design of experiments, analysis and interpretation of data, and synthesis
+of the information to provide valid conclusions.
+5. Modern tool usage:Create, select, and apply appropriate techniques, resources, and modern
+engineering and IT tools including prediction and modelling to complex engineering activi￾ties with an understanding of the limitations.
+6. The engineer and society:Apply reasoning informed by the contextual knowledge to assess
+societal, health, safety, legal and cultural issues and the consequent responsibilities relevant
+to the professional engineering practice.
+7. Environment and sustainability:Understand the impact of the professional engineering so￾lutions in societal and environmental contexts, and demonstrate the knowledge of, and need
+for sustainable development.
+8. Ethics:Apply ethical principles and commit to professional ethics and responsibilities and
+norms of the engineering practice
+9. Individual and team work:Function effectively as an individual, and as a member or leader
+in diverse teams, and in multidisciplinary settings
+10. Communication:Communicate effectively on complex engineering activities with the engi￾neering community and with society at large, such as, being able to comprehend and write
+effective reports and design documentation, make effective presentations, and give and re￾ceive clear instructions.
+11. Project management and finance: Demonstrate knowledge and understanding of the en￾gineering and management principles and apply these to one’s own work, as a member and
+unread in a team, to manage projects and in multidisciplinary environments.
+12. Life-long learning:Recognize the need for, and have the preparation and ability to engage in
+independent and life-long learning in the broadest context of technological change.
+Program Specific Outcomes
+1. Ability to integrate theory and practice to construct software systems of varying complexity
+2. Able to Apply Computer Science skills, tools and mathematical techniques to analyse, design
+and model complex systems
+3. Ability to design and manage small-scale projects to develop a career in a related industry.
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+BONAFIDE CERTIFICATE
+This is to certify that the project report (phase-2) entitled “ NFC AIRPORT TOOL” is a bonafide
+record of the work done by ABEL BINOY (VJC19CS002) in partial fulfillment of the re￾quirements for the award of the Degree of Bachelor of Technology in Computer Science and
+Engineering of APJ Abdul Kalam Technological University.
+Internal Supervisor External Supervisor
+Project Coordinator Head of Department
+ACKNOWLEDGEMENT
+First and foremost, I thank God Almighty for His divine grace and blessings in making all these
+possible. May he continue to lead us in the years. It is our privilege to render our heartfelt thanks
+to our beloved Manager, Rev. Msgr. Dr. Pius Malekandathil , our director Rev. Fr. Paul Parathazham
+and our Principal Dr. K K Rajan for providing us the opportunity to do this project report (phase-1)
+during the Fourth year (2023) of my B.Tech degree course. We are deeply thankful to our Head
+of the Department, Dr. Amel Austine for his support and encouragement. We would like to express
+our sincere gratitude and heartfelt thanks to our Project Guide Ms.Ariya T K, Assistant Professor,
+Department of Computer Science and Engineering for her motivation, assistance and help for
+the project. We also extend our sincere thanks to our mentor Mentor Name and Designation for
+enlightnening us with industry based knowledge and expertise. We also express sincere thanks our
+Project Coordinator Dr. Neenu Daniel, Associate Professor, Department of Computer Science and
+Engineering for her guidance and support. We also thank all the staff members of the Computer
+Science Department for providing their assistance and support. Last, but not the least, We Would
+like to thank all our friends and family for their valuable feedback from time to time as well as
+their help and encouragement.
+DECLARATION
+We undersigned hereby declare that the project report “AIRMATE: NFC AIRPORT TOOL”, sub￾mitted for partial fulfillment of the requirements for the award of the Degree of Bachelor of Tech￾nology of the APJ Abdul Kalam Technological University is a bonafide work done by ourself
+under the supervision of Ms. Ariya T K. This submission represents ideas in my own words and
+where ideas or words of others have been included, We have adequately and accurately cited and
+referenced the original sources. We also declare that we have adhered to the ethics of academic
+honesty and integrity and have not misrepresented or fabricated any data or idea or fact or source
+in my submission. We understand that any violation of the above will be a cause for disciplinary
+action by the institute and/or the University and can also evoke penal action from the sources
+which have thus not been properly cited or formed the basis for the award of any degree, diploma
+or similar title of any other University.
+Place: Vazhakulam
+ABEL BINOY
+Date:
+MARTIN ANTONY
+VARUN MOHAMMED
+ABSTRACT
+The AirMate NFC AIRPORT TOOL is a mobile application that revolutionizes the airport ex￾perience for travelers through NFC technology integration. With NFC-based flight information
+access, electronic boarding passes, luggage tracking, and airport services, the app streamlines the
+travel process. Additionally, real-time flight updates, interactive airport maps, and travel assis￾tance features enhance the traveler’s experience. To further augment convenience, a centralized
+travel itinerary management platform is incorporated. Prioritizing security and privacy, the app
+employs robust measures to protect user data. The AirMate NFC AIRPORT TOOL has the poten￾tial to redefine the airport experience, providing a streamlined, secure, and personalized journey
+from check-in to departure.To further augment the traveler’s experience, the AirMate NFC AIR￾PORT TOOL incorporates a centralized travel itinerary management platform. This centralized
+hub allows users to effortlessly manage their travel plans, including flight details, hotel reserva￾tions, rental car information, and any other pertinent travel documents, ensuring that all essential
+information is readily accessible in one convenient location.
+Contents
+List of Figures i
+List of Tables iii
+List of Abbreviations iii
+1 INTRODUCTION 1
+1.1 Problem Statement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.2 Objective . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3 Scope . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2 LITERATURE SURVEY 3
+2.1 ANDA:An Innovative Micro-Location Mobile Ticketing Solution Based on NFC
+and BLE Technologies. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.1 Methodology of ANDA Mobile Tracking Solution . . . . . . . . . . . . . . 3
+2.1.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2 SCsec: A Secure Near Field Communication System via Screen Camera Commu￾nication . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.1 Proposed Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.2 Experimental Setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.2.3 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.2.4 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.2.5 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.3 RONFC: A Novel Enabler-Independent NFC Protocol for
+Mobile Transactions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.3.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.3.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.3.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.3.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.4 An ISO/IEC 7816-4 Application Layer Approach to Mitigate Relay Attacks on
+Near Field Communication . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.4.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.4.2 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.4.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.4.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.5 A Novel NFC-Based Secure Protocol for Merchant
+Transactions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2.5.1 Proposed Mobile Payment System . . . . . . . . . . . . . . . . . . . . . . 13
+2.5.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.5.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.5.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+3 PROPOSED SYSTEM 16
+3.1 Process Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+3.1.1 Process Flow Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+3.1.2 Architecture Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.1.3 Use case Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.1.4 Data flow diagram Level 0 . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.1.5 Data flow diagram Level 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.1.6 Data flow diagram Level 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+3.1.7 Class Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.2 System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.2.1 Hardware Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.2.2 Software Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.2.3 Flutter . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.2.4 MongoDB . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.2.5 Node.js . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.3 System Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.3.1 Module Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+3.3.2 Database Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+3.3.3 Interface Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+3.4 Implementation Details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+3.5 Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+3.5.1 Test Cases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+3.5.2 Unit Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+3.5.3 Integration Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+3.5.4 Validation Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+3.5.5 User Acceptance Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+3.6 Performance Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+4 CONCLUSION 29
+References iii
+Appendix A Jira Reports iv
+Appendix B Sample Code v
+Appendix C Screenshots xviii
+List of Figures
+2.1 Anda architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 SCSec Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.3 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.4 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.5 Proposed defense-in-depth approach . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.1 Process Flow Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+3.2 Architecture Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.3 Use case diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.4 Data Flow Diagram Level 0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.5 Data Flow Diagram Level 1-User . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.6 Data Flow Diagram Level 1-User . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+3.7 Class diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+C.1 Registration Page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xviii
+C.2 Login In Page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xix
+C.3 Credentials page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xix
+C.4 Gender details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xx
+C.5 Personal details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xx
+C.6 Aadhaar details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xxi
+C.7 Passport details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xxi
+i
+List of Abbreviations
+NFC Near Field Communication
+BLE Bluetooth Low Energy
+RAM Random Access Memory
+SES Secure Elements
+MPA Mobile Payment Applications
+AES Advanced Encryption Standard
+DDOS Distributed Denial Of Service
+DOS Denial of Service
+MFA Multi-Factor Authentication
+PEEC Partial-Element Electric Circuit
+iii
+AIRMATE: NFC AIRPORT TOOL
+Chapter 1
+INTRODUCTION
+In today’s fast-paced world, travelers seek seamless and efficient airport experiences. NFC (Near
+Field Communication) technology is emerging as a game-changer in the aviation industry, rev￾olutionizing the way passengers navigate airports and enhancing their overall travel experience.
+NFC-enabled airport apps are transforming traditional airport processes, offering a plethora of
+benefits to both passengers and airport operators.
+An NFC-enabled airport app is a mobile application that utilizes NFC technology to facilitate con￾tactless interactions between passengers and NFC-enabled infrastructure within an airport. These
+interactions enable a range of functionalities, streamlining various aspects of the passenger jour￾ney, from check-in to boarding.
+NFC technology relies on radio waves to transmit data between two devices when they are brought
+close together. NFC-enabled airport apps utilize this technology by embedding NFC chips or
+tags within airport infrastructure, such as kiosks, scanners, and beacons. When a passenger’s
+NFC-enabled smartphone or passport approaches these NFC-enabled elements, data is exchanged
+wirelessly, enabling seamless interactions and providing valuable information.
+1.1 Problem Statement
+Traditional airport processes are often cumbersome, time-consuming, and inefficient, leading to
+frustration and inconvenience for passengers. The current system relies heavily on paper docu￾mentation, manual data entry, and physical interactions, creating bottlenecks and delays at various
+stages of the passenger journey. Additionally, the current system lacks personalization, making it
+difficult for passengers to access relevant information and tailored recommendations.
+Dept. of Computer Science & Engineering, VJCET Page 1
+AIRMATE: NFC AIRPORT TOOL
+1.2 Objective
+1. Reduce wait times and congestion at check-in counters, baggage drop stations, and boarding
+gates by automating routine processes and enabling contactless interactions.
+2. Deliver targeted information and recommendations to passengers based on their location, flight
+details, and preferences, providing a more personalized and convenient travel experience.
+3.Optimize resource allocation, reduce manual data entry, and gain data-driven insights to enhance
+overall airport efficiency and decision-making.
+1.3 Scope
+1. Passengers can initiate check-in on their NFC-enabled smartphones, receive digital boarding
+passes directly from the app, and proceed to security checkpoints without the need for physical
+tickets.
+2. Passengers can attach NFC-enabled baggage tags to their luggage and drop off their bags at
+designated stations, eliminating paperwork and manual scanning.
+3. Upon reaching the boarding gate, passengers can tap their NFC-enabled boarding passes on
+scanners to verify their identity and proceed to the boarding area.
+4. The app can provide real-time updates on flight status, gate changes, transit information, and
+important announcements, ensuring passengers are well-informed throughout their journey.
+5. NFC beacons strategically placed throughout the airport can deliver personalized recommen￾dations for restaurants, shops, lounges, and other amenities based on passenger preferences and
+travel history.
+Dept. of Computer Science & Engineering, VJCET Page 2
+AIRMATE: NFC AIRPORT TOOL
+Chapter 2
+LITERATURE SURVEY
+2.1 ANDA:An Innovative Micro-Location Mobile Ticketing Solu￾tion Based on NFC and BLE Technologies.
+Mobile ticketing services allow urban transport passengers to travel in a convenient and easy way,
+enhancing their travelling experience. In recent years several mobile ticketing services have started
+to be developed and launched, but there is still a lot to be done in terms of its effectiveness,
+efficiency and innovation. This paper presents a micro-location mobile ticketing solution based on
+Near Field Communication (NFC) and Bluetooth Low Energy (BLE) technologies, called Anda.
+This solution is based on a check-in/be-out scheme and requires the minimum intervention from
+the passenger. It is really innovative in the urban transport field, as it takes advantage of BLE
+technology not usually used for this purpose, it is based on a concept of post-billing with a fare
+optimization algorithm associated and it allows the micro-location of passengers throughout their
+journeys. This paper details the architecture of the solution and its mode of operation. It also
+presents the evaluation methodology that was followed during the pilot trial that took place in the
+Metropolitan Area of Porto (AMP), Portugal, during one year with 140 real passengers. A set of
+design lessons were identified as a result of the field tests and materialized in five mobile ticketing
+design dimensions, constituting important contributions to the design of future mobile ticketing
+services. Anda was commercially deployed in the AMP in 2018 and is used by thousands of
+passengers every day.
+2.1.1 Methodology of ANDA Mobile Tracking Solution
+The evaluation of the proposed mobile ticketing solution consisted on testing the mobile applica￾tion and the other components during a pilot trial. It was tested in a real environment, in the city
+of Porto. The tests involved 140 real passengers, who used the mobile application during their
+daily trips. In the first months the participants could only use the Anda in four pre-selected lines
+Dept. of Computer Science & Engineering, VJCET Page 3
+AIRMATE: NFC AIRPORT TOOL
+of metro, train and buses (where the beacons were installed). Then, as the BLE beacons and the
+SAM cards were installed in the network, the test lines started to expand, spreading to the entire
+AMP network.
+It should be noted that before proceeding with the pilot trial, an extensive series of tests and devel￾opments were carried out to design a single, integrated solution that could be tested with potential
+customers. These tests consisted in the exploration of the mobile ticketing service concept and
+codesign of the solution involving several stakeholders, in the evaluation of the BLE technology
+component in order to study the feasibility of the technology to be used in the transport context, de￾fine the requirements the beacons should fulfill and to decide the location and number of beacons
+that should be installed. Also, evaluation of the mobile application UI was carried out by experts
+through heuristic evaluation and end users through usability testing and a monitoring platform was
+developed to detect technology-based errors in real-time.
+2.1.2 Model Architecture
+Figure 2.1: Anda architecture
+2.1.3 Advantages
+1. Convenience and Efficiency: Anda offers a convenient and efficient ticketing solution, reduc￾ing the intervention required from passengers with its check-in/be-out scheme.
+2. Post-Billing System: The post-billing system, coupled with a fare optimization algorithm,
+can contribute to fair and cost-effective pricing for passengers.
+Dept. of Computer Science & Engineering, VJCET Page 4
+AIRMATE: NFC AIRPORT TOOL
+2.1.4 Disadvantages
+1. Initial Implementation Costs: The deployment of advanced technologies and the develop￾ment of a sophisticated ticketing system may incur high initial implementation costs.
+2. Privacy Concerns: The micro-location tracking feature raises potential privacy concerns, as
+passengers may be uncomfortable with their movements being monitored and recorded.
+Dept. of Computer Science & Engineering, VJCET Page 5
+AIRMATE: NFC AIRPORT TOOL
+2.2 SCsec: A Secure Near Field Communication System via Screen
+Camera Communication
+With the increasing popularity of short range communication services, such as contact less pay￾ment and electronic toll collection, screen camera communication and near field communication
+(NFC) have received considerable attention from both industry and academia. Existing short range
+communication technologies face challenges from deployment, compatibility, and security issues.
+In this work, we target the security challenges, specifically the eavesdropping attack, of screen
+camera communication systems. We propose SCsec, a secure screen-camera communication sys￾tem. On one hand, SCsec achieves computationally secure communication between the transmitter
+and receiver, preventing the eavesdroppers beyond a certain range from learning anything about
+the content of the communication. On the other hand, SCsec achieves throughput that is compara￾ble to existing screen camera communication schemes. We extensively evaluate the performance
+of our system with real world experiments on multiple devices. Numerous experiment results
+show that our system achieves both high security and comparable communication efficiency with
+existing screen camera communication systems.
+2.2.1 Proposed Model
+The SCsec system consists of two main components: the transmitter and the receiver.
+Transmitter: The transmitter is responsible for generating the data to be transmitted, encrypt￾ing the data, and modulating the encrypted data onto the screen. The data is encrypted using a
+symmetric-key encryption algorithm. The encrypted data is then modulated onto the screen using
+a light modulation technique. The modulated data is then captured by the receiver.
+Receiver : The receiver is responsible for capturing the modulated data, demodulating the data,
+and decrypting the decrypted data. The modulated data is captured by the camera. The demodu￾lated data is then decrypted using the same symmetric-key encryption algorithm that was used by
+the transmitter. The decrypted data is then processed by the receiver.
+SCsec system utilizes several security mechanisms to achieve secure communication:
+Encryption: Encryption is used to protect the confidentiality of the transmitted data. Only the
+intended receiver can decrypt the data.
+Physical layer security: Physical layer security is used to protect the integrity of the transmitted
+data. Eavesdroppers who are not in close proximity to the transmitter and receiver will not be able
+to capture the transmitted data.
+Dept. of Computer Science & Engineering, VJCET Page 6
+AIRMATE: NFC AIRPORT TOOL
+Authentication: Authentication is used to ensure that the receiver is authentic. This prevents
+man-in-the-middle attacks.
+The goal is to securely transmit data from the transmitter to the legal receiver with data rate
+comparable to current screen camera communication systems. In this work, we assume that the
+eavesdropping device of the attacker is offthe-shelf camera with similar capability of mobile de￾vices. Further, we do not consider jamming attack in this paper. The jamming signal of screen
+camera communication, which is also visible light, can be easily detected and located by Alice
+and Bob. To achieve this goal, we decompose the problem into two subproblems: key distribution
+and data communication.
+2.2.2 Experimental Setup
+The boundary for legal receiver and eavesdropper is chosen based on the change of RGB norm
+on the receiver with respect to angle and distance. We observe a sudden change of the received
+RGB both as the distance and respective angle changes. To see whether this phenomenon is
+common among different devices, we use three transmitters (Dell 230WP7, Lenovo Y580 and
+Macbook Air 2013) and three receivers (iPhone 6, Huawei Mate8 and Kindle Fire HD4) to conduct
+preliminary experiments. Together, we have 9 pairs of transmitter and receivers. To see whether
+the phenomenon is common among different colors, we randomly choose 10 colors. We record
+the change of the RGB norm with the increase of vertical angle, horizontal angle and distance
+between the transmitter and the receiver. The test environment is without light source except the
+transmitter and the receiver.
+2.2.3 Model Architecture
+Figure 2.2: SCSec Architecture
+Dept. of Computer Science & Engineering, VJCET Page 7
+AIRMATE: NFC AIRPORT TOOL
+2.2.4 Advantages
+1. Comparable Throughput: SCsec maintains communication efficiency by achieving through￾put comparable to existing screen-camera communication schemes.
+2. Relevance to Short-Range Communication Services: The focus on short-range communi￾cation services, such as contactless payment and electronic toll collection, makes SCsec
+relevant to contemporary technological trends, potentially contributing to the security im￾provement of widely used applications.
+2.2.5 Disadvantages
+1. Long-Range Communication Considerations: The paper does not provide detailed insights
+into the limitations and considerations for long-range communication scenarios.
+2. Interoperability Concerns: The lack of information on the interoperability of SCsec with
+other screen-camera communication systems or existing short-range communication tech￾nologies may hinder its adoption.
+Dept. of Computer Science & Engineering, VJCET Page 8
+AIRMATE: NFC AIRPORT TOOL
+2.3 RONFC: A Novel Enabler-Independent NFC Protocol for
+Mobile Transactions
+The use of near field communication (NFC) technology for contactless mobile transactions has be￾come popular in the past decade with the availability of this technology in mobile devices. Today,
+there are millions of the NFC-enabled mobile handsets in the market, with mobile handset man￾ufacturers and mobile network operators enabling m-wallet solutions using the secure elements
+(SEs) that they own, thus can remotely control, on the devices. While this approach gives full con￾trol to the SE owner to activate any mobile transaction system on a device, having a more flexible
+approach would increase the benefits that end users could obtain from this technology in a variety
+of use cases. In this paper, we introduce a novel protocol for the NFC-based mobile transaction
+procedure, which uses tamper-resistant SEs that are already installed at the transaction terminals,
+and is mobile handset manufacturer and mobile network operator-independent. We evaluate and
+show the feasibility of the use of our proposed model with common mobile electronic payment
+scenarios. The evaluation results demonstrate that the proposed solution is promising for adop￾tion as a secure NFC transaction model, which will have applications in various security-sensitive
+IoT scenarios, including but not limited to, mobile identification, healthcare, payment, and access
+control.
+2.3.1 Methodology
+The authors implemented a prototype including the Card Provider, Terminal Provider, and Central
+Authority entities, which are all Java applications running on the same server. They also imple￾mented a PC application simulating a Payment Terminal, a Smart Card simulating the SE of the
+Payment Terminal, and a Smart Card simulating Card Emulation. The authors repeated the experi￾ments 20 times and reported the minimum, maximum, and average response times in milliseconds
+for the different transaction execution time components. They also analyzed the security of the
+individual system components and their role in overall system security. Finally, they described the
+proposed approach, giving an overview of the system components and their interactions through
+the use case of a mobile payment transaction, followed by the details of the transaction execution
+flow.
+Dept. of Computer Science & Engineering, VJCET Page 9
+AIRMATE: NFC AIRPORT TOOL
+2.3.2 Model Architecture
+Figure 2.3: Architecture
+2.3.3 Advantages
+1. Enhanced Security: The use of tamper-resistant Secure Elements (SEs) at transaction termi￾nals significantly enhances the security of NFC-based mobile transactions. This is crucial in
+safeguarding sensitive user information and financial data.
+2. Versatility for IoT Scenarios: The protocol’s applicability to security-sensitive Internet of
+Things (IoT) scenarios, including mobile identification, healthcare, payment, and access con￾trol, adds versatility to its usage beyond traditional mobile payments.
+2.3.4 Disadvantages
+1. Transition Challenges: The introduction of a novel protocol may face challenges during the
+transition from existing systems. Compatibility issues with legacy systems and the need for
+a widespread upgrade could slow down adoption.
+2. Industry Collaboration Requirements: Achieving widespread adoption may necessitate col￾laboration and consensus among stakeholders in the mobile industry. Coordination between
+mobile handset manufacturers, network operators, and other entities is critical for successful
+implementation.
+Dept. of Computer Science & Engineering, VJCET Page 10
+AIRMATE: NFC AIRPORT TOOL
+2.4 An ISO/IEC 7816-4 Application Layer Approach to Mitigate
+Relay Attacks on Near Field Communication
+NFC technology, widely used in access control and contactless payments, faces security chal￾lenges, especially concerning relay attacks. Despite the perceived security in its short operating
+distance, NFC is vulnerable to such attacks, compromising its integrity. This article demonstrates
+how standard hardware can exploit NFC through relay attacks and proposes a countermeasure.
+The countermeasure achieved a 100% detection rate in experiments involving over 10,000 trans￾actions on various contactless cards and devices, with a low false positive rate of 0.38%–0.86%.
+Implementation of the countermeasure only added 0.22 seconds to transaction time, ensuring a
+minimal impact on user experience. This research emphasizes the need for robust security mea￾sures to address NFC vulnerabilities in real-world applications.
+2.4.1 Methodology
+The research methodology involves a systematic review of NFC vulnerabilities, focusing on re￾lay attacks. A practical implementation of a relay attack is conducted to demonstrate potential
+exploitation. A novel countermeasure, utilizing the ISO/IEC 7816-4 protocol, is proposed and
+translated into a realistic prototype. Rigorous empirical tests measure its performance, including
+detection rate and impact on transaction time. Results inform an analysis of the countermeasure’s
+efficacy against relay attacks. A literature review contextualizes the proposed solution within ex￾isting relay attack countermeasures. The study concludes by summarizing findings and suggesting
+future research directions.
+2.4.2 Architecture
+Figure 2.4: Architecture
+Dept. of Computer Science & Engineering, VJCET Page 11
+AIRMATE: NFC AIRPORT TOOL
+2.4.3 Advantages
+1.Convenience: NFC facilitates simple communication and data exchanges between devices, mak￾ing it convenient for various applications such as contactless payments, access control, and auto￾mated fare collection.
+2.Short Operating Range: The inherently short operating distance of NFC (typically about 4 cm)
+is often considered an advantage, ensuring intentional interaction and limiting potential attack
+vectors.
+2.4.4 Disadvantages
+1.Vulnerability to Relay Attacks: Despite its short operating range, NFC is susceptible to relay
+attacks. In these attacks, communication between an NFC reader and tag is intercepted and relayed
+by an attacker, potentially compromising security.
+2.Lack of Adequate Standards: Technical standards for NFC may lack sufficient protection for the
+communication channel, as evidenced by successful relay attacks. Revisions to these standards
+are suggested to incorporate support for distance-bounding protocols.
+Dept. of Computer Science & Engineering, VJCET Page 12
+AIRMATE: NFC AIRPORT TOOL
+2.5 A Novel NFC-Based Secure Protocol for Merchant
+Transactions
+The unprecedented growth of mobile applications promoted the usage of these mobile applica￾tions for payments. The current research works in mobile payments and commerce are prone to
+reverse-engineering attacks and lacked transport layer protection, so these research works do not
+ensure security. Therefore, such attacks on Mobile Payment Applications (MPA) will be success￾ful, which leads to severe financial loss. To address these issues, we propose a secure framework
+incorporating a defensein-depth approach for Near Field Communication (NFC) based mobile
+payment frameworks. Our defensein-depth approach has three levels, i.e., Defense at hardware,
+mobile application, and communication level. We have proposed a NFC based Secure Protocol
+for Mobile Transaction (NSPMT) protocol and successfully verified a mobile payment protocol
+with BAN (Burrows, Abadi, and Needham) logic and Scyther tool, and our proposed protocol
+overcome multi-protocol attack, RAM (Random Access Memory) scrapping attack, DOS (Denial
+Of Service), DDOS (Distributed Denial Of Service), and Phlashing attacks. Our proposed mobile
+Payment system overcomes the known mobile application vulnerabilities, including Heartbleed
+and ROBOT (Return Of Bleichenbacher’s Oracle Threat). Our proposed protocol ensures all the
+security properties and the energy and communication cost and computational cost are far less
+than the existing works in the literature. Finally, we have successfully implemented our proto￾col using kotlin language in Android Studio, with two Mobile Payment Applications (MPA) and
+POS Payment Application (PPA), Elliptic Curve Digital Signature Algorithm (ECDSA) is used
+and Advanced Encryption Standard (AES) with GCM (Galois/Counter Mode) mode is used for
+encryption and decryption of Customer Payment Data at MPA and PPA.
+2.5.1 Proposed Mobile Payment System
+Customer (C), Merchant (M), Bank (B), Mobile Network Operator (MNO), Payment Gateway
+(PG) and Certifying Authority (CA) are the entities and Wireless Public Key Infrastructure (WPKI),
+White Box Cryptography (WBC), Near Field Communication (NFC) are the technologies involved
+in the proposed secure mobile payment system.We incorporate security in our proposed framework
+because adding security at the end of the development phase can be very costly. So, our proposed
+framework incorporates a defense in depth approach.
+The manufacturer of UICC and HSM requests CA for a Chip certificate. CA issues a chip
+certificate to the SE and HSM chip. EAL4+ (Evaluation Assurance Level 4+) certificate is issued
+by CA for integrated circuit (IC) chip. CA also issues a certificate to the operating system (OS),
+which excludes applications. In our proposed mobile payment system, customers possess UICC in
+Dept. of Computer Science & Engineering, VJCET Page 13
+AIRMATE: NFC AIRPORT TOOL
+the smartphone as a SE, and the merchant uses the Hardware Security Module in its POS. WPKI
+ensures end to end security as UICC and HSM have WPKI functionality to generate and securely
+store client’s and merchant’s credentials, including private keys and X.509 certificates.
+MPA is in the UICC of the smartphone; MPA shares a symmetric key between the Bank (B)
+and the Customer (C). PPA is in the HSM of the Merchant’s POS. PPA shares a symmetric key
+between the Bank (B) and the POS.
+The proposed Mobile Payment framework’s security does not rely on network layer security
+as it is susceptible to eavesdropping attacks. All the entities involved in our proposed Mobile
+Payment framework use CA-signed certificates. The entities involved in the ecosystem implement
+certificate pinning, ensuring communication security. Bank detects DoS attacks from activity
+profiling, change-point detection, and wavelet-based signal analysis detection techniques. The
+Bank only communicates with the legitimate subscribers.
+2.5.2 Model Architecture
+Figure 2.5: Proposed defense-in-depth approach
+2.5.3 Advantages
+1. Verified NFC-Based Protocol: The successful verification of the NFC-based Secure Protocol
+for Mobile Transaction (NSPMT) using BAN logic and Scyther tool instills confidence in the
+security and reliability of the proposed protocol. This validation demonstrates a proactive and
+rigorous approach to security.
+2. Protection Against Diverse Attacks: The framework’s ability to address various types of at￾tacks, including multi-protocol attacks, RAM scraping, Denial of Service (DOS), Distributed
+Dept. of Computer Science & Engineering, VJCET Page 14
+AIRMATE: NFC AIRPORT TOOL
+Denial of Service (DDOS), and Phlashing attacks, provides a high level of protection against
+a wide range of potential threats.
+2.5.4 Disadvantages
+1. Resource Intensiveness during Verification: The use of verification tools such as BAN logic
+and Scyther may be resource-intensive during the development and testing phases. This could
+potentially impact the efficiency of the development process.
+2. Complex Implementation: The defense-in-depth approach and the incorporation of multi￾ple security layers might result in a more complex implementation. This complexity could
+potentially lead to challenges in system maintenance, updates, and troubleshooting.
+Dept. of Computer Science & Engineering, VJCET Page 15
+AIRMATE: NFC AIRPORT TOOL
+Chapter 3
+PROPOSED SYSTEM
+The proposed System AIRMATE: NFC AIRPORT TOOL aims to revolutionize the airport
+travel experience by leveraging NFC technology and providing a comprehensive suite of features
+and functionalities. At its core, the app utilizes NFC tags strategically placed throughout the
+airport to enable users to access real-time flight information, display electronic boarding passes,
+track checked luggage, and gain access to various airport services seamlessly.
+Beyond NFC-based interactions, the app offers a range of valuable tools and services, including
+interactive airport maps with real-time navigation, real-time flight status updates, travel assistance
+features, personalized travel itinerary management, multilingual support, accessibility features,
+and robust security measures.
+By combining NFC capabilities with a comprehensive set of features, the AIRMATE: NFC AIR￾PORT TOOL has the potential to transform the airport experience for travelers, providing a stream￾lined, secure, and personalized journey from check-in to departure.
+3.1 Process Overview
+1. Project Planning
+a. Define Project Scope and Objectives: Clearly outline the specific goals and functionalities
+of the AIRMATE: NFC AIRPORT TOOL.
+b. Identify Target Audience: Understand the needs and preferences of the target users to
+tailor the app’s features accordingly.
+c. Establish Project Timeline and Milestones: Create a detailed project timeline with mile￾stones to track progress and ensure timely completion.
+Dept. of Computer Science & Engineering, VJCET Page 16
+AIRMATE: NFC AIRPORT TOOL
+d. Assemble Project Team: Bring together a team with expertise in NFC technology, mobile
+app development, user experience design, and project management.
+Requirements Gathering and Analysis
+a. Gather User Requirements: Conduct user research and surveys to gather insights into user
+needs, expectations, and pain points.
+b. Analyze User Feedback: Analyze the collected user data to identify common themes,
+prioritize features, and refine the app’s design.
+c. Define Functional and Non-functional Requirements: Clearly define the functional re￾quirements (what the app should do) and non-functional requirements (performance, usabil￾ity, security, etc.).
+Design and Development.
+a. App Design: Create user interface (UI) and user experience (UX) designs that are intuitive,
+user-friendly, and visually appealing.
+b. NFC Integration: Develop NFC-based features, ensuring reliable communication and
+secure data handling.
+c. Airport Data Integration: Integrate real-time flight information, airport maps, and other
+relevant airport data sources.
+d. Software Development: Implement the app’s code, utilizing appropriate programming
+languages and development frameworks.
+Testing and Quality Assurance
+a. Unit Testing: Perform unit testing to ensure that individual components of the app function
+correctly.
+b. Integration Testing: Conduct integration testing to verify that different components of the
+app interact seamlessly.
+c. User Acceptance Testing (UAT): Engage a group of representative users to test the app’s
+functionality, usability, and overall experience.
+Dept. of Computer Science & Engineering, VJCET Page 17
+AIRMATE: NFC AIRPORT TOOL
+d. Performance Testing: Evaluate the app’s performance under various load conditions and
+network scenarios
+Deployment and Maintenance
+a. App Store Deployment: Publish the app on relevant app stores, such as Google Play and
+Apple App Store.
+b. Monitoring and Support: Continuously monitor the app’s performance, address user feed￾back, and provide ongoing maintenance and support.
+c. Security Updates: Regularly release security updates to address any vulnerabilities and
+maintain a high level of data protection. . Feature Enhancements: Implement new features
+and enhancements based on user needs and market trends.
+3.1.1 Process Flow Diagram
+Figure 3.1: Process Flow Diagram
+Dept. of Computer Science & Engineering, VJCET Page 18
+AIRMATE: NFC AIRPORT TOOL
+3.1.2 Architecture Diagram
+Figure 3.2: Architecture Diagram
+3.1.3 Use case Diagram
+Figure 3.3: Use case diagram
+Dept. of Computer Science & Engineering, VJCET Page 19
+AIRMATE: NFC AIRPORT TOOL
+3.1.4 Data flow diagram Level 0
+Figure 3.4: Data Flow Diagram Level 0
+3.1.5 Data flow diagram Level 1
+Figure 3.5: Data Flow Diagram Level 1-User
+Dept. of Computer Science & Engineering, VJCET Page 20
+AIRMATE: NFC AIRPORT TOOL
+3.1.6 Data flow diagram Level 2
+Figure 3.6: Data Flow Diagram Level 1-User
+Dept. of Computer Science & Engineering, VJCET Page 21
+AIRMATE: NFC AIRPORT TOOL
+3.1.7 Class Diagram
+Figure 3.7: Class diagram
+3.2 System Requirements
+3.2.1 Hardware Requirements
+The hardware requirements consist of a laptop with a quadcore processor with 8GB RAM or more
+with a Hard Disk of 500GB or above to run the server and a mobile device with NFC to run the
+application.
+3.2.2 Software Requirements
+The softwares are generally for coding and execution of algorithms.The software platforms used
+in this system are Flutter,MongoDB,Node.js.
+Dept. of Computer Science & Engineering, VJCET Page 22
+AIRMATE: NFC AIRPORT TOOL
+3.2.3 Flutter
+Flutter is a cross-platform framework developed by Google for building natively compiled applica￾tions for mobile, web, and desktop from a single codebase. It uses the Dart programming language
+and offers a rich set of pre-built widgets for creating beautiful and responsive user interfaces. Flut￾ter’s hot reload feature allows developers to quickly see changes in their code without restarting
+the application, speeding up the development process. With its fast performance, expressive UI,
+and native-like experience across platforms, Flutter has gained popularity among developers for
+creating visually appealing and performant applications.
+3.2.4 MongoDB
+MongoDB is a popular open-source NoSQL database that uses a document-oriented data model.
+Instead of tables and rows like in traditional relational databases, MongoDB stores data in flexible,
+JSON-like documents with dynamic schemas, making it easy to store and retrieve complex data
+structures. It is designed for scalability and high performance, capable of handling large volumes
+of data and high throughput applications. MongoDB offers features such as automatic sharding for
+horizontal scaling, replica sets for high availability, and rich query capabilities, making it suitable
+for a wide range of use cases, including web and mobile applications, real-time analytics, and
+content management systems.
+3.2.5 Node.js
+Node.js is an open-source, server-side JavaScript runtime environment built on Chrome’s V8
+JavaScript engine. It allows developers to execute JavaScript code outside of a web browser,
+enabling them to build scalable, high-performance network applications. Node.js uses an event￾driven, non-blocking I/O model, making it lightweight and efficient for handling concurrent con￾nections and asynchronous operations. It has a vast ecosystem of packages available through
+npm (Node Package Manager), providing developers with a wide range of tools and libraries for
+building various types of applications, including web servers, APIs, microservices, and real-time
+applications. Node.js is widely used in modern web development due to its speed, scalability, and
+versatility.
+3.3 System Design
+Include the detailed design of the following sections.
+Dept. of Computer Science & Engineering, VJCET Page 23
+AIRMATE: NFC AIRPORT TOOL
+3.3.1 Module Design
+Describe the design of each module used.
+Module 1
+Design of module 1
+Module 2
+Design of module 2
+so on...
+3.3.2 Database Design
+Describe the design of your database
+3.3.3 Interface Design
+Describe the Interface design of your work.
+3.4 Implementation Details
+Implementing AIRMATE: NFC AIRPORT TOOL requires careful consideration of various tech￾nical aspects and coordination with airport authorities.
+Firstly, for NFC integration, it’s essential to strategically install NFC tags throughout the airport
+at key locations such as check-in counters, security checkpoints, boarding gates, baggage claim
+areas, and airport lounges. Additionally, a backend system needs development to manage NFC tag
+data, including flight information, boarding pass details, and luggage tracking. Furthermore, NFC
+reading capabilities should be integrated into the mobile app for both Android and iOS platforms,
+ensuring compatibility with a wide range of devices.
+Secondly, regarding the comprehensive feature set, real-time flight information can be fetched
+through integration with airport or airline APIs. Travel assistance features like weather updates,
+currency conversion, and local transportation information should be implemented. Personalized
+travel itinerary management can be facilitated by allowing users to input their travel details. Se￾curity measures like encryption for sensitive data transmission and storage, as well as secure au￾thentication methods like biometric authentication or two-factor authentication, are crucial.
+Thirdly, ensuring a streamlined experience involves designing the app interface to be intuitive and
+user-friendly, with clear navigation and minimal steps required to access key functionalities. App
+Dept. of Computer Science & Engineering, VJCET Page 24
+AIRMATE: NFC AIRPORT TOOL
+performance should be optimized to ensure quick loading times and smooth operation, even in
+areas with poor network connectivity. Regular user testing and feedback gathering are essential
+for continuous improvement.
+Fourthly, collaboration with airport authorities is necessary. This involves coordinating with air￾port authorities, airlines, and other stakeholders to obtain necessary permissions and access to
+airport infrastructure for installing NFC tags and integrating with existing systems. Compliance
+with airport regulations, data protection laws, and industry standards related to passenger infor￾mation handling and security is vital.
+3.5 Testing
+Coding conventions are a set of guidelines for a specific programming language that recom￾mend programming style, practices and methods for each aspect of a piece program written in this
+language. These conventions usually cover file organization, indentation, comments, declarations,
+statements, white space, naming conventions, programming practices, programming principles,
+programming rules of thumb, architectural best practices, etc. These are guidelines for software
+structural quality. Software programmers are highly recommended to follow these guidelines to
+help improve the readability of their source code and make software maintenance easier.
+3.5.1 Test Cases
+The objective of system testing is to ensure that all individual programs are working as ex￾pected, that the programs link together to meet the requirements specified and to ensure that the
+computer system and the associated clerical and other procedures work together. The initial phase
+of system testing is the responsibility of the analyst who determines what conditions are to be
+tested, generates test data, produced a schedule of expected results, runs the tests and compares
+the computer produced results with the expected results with the expected results. The analyst may
+also be involved in procedures testing. When the analyst is satisfied that the system is working
+properly, he hands it over to the users for testing. The importance of system testing by the user
+must be stressed. Ultimately it is the user must verify the system and give the go-ahead. During
+testing, the system is used experimentally to ensure that the software does not fail, i.e., that it will
+run according to its specifications and in the way users expect it to. Special test data is input for
+processing (test plan) and the results are examined to locate unexpected results. A limited number
+of users may also be allowed to use the system so analysts can see whether they try to use it in
+unexpected ways. It is preferably to find these surprises before the organization implements the
+system and depends on it. In many organizations, testing is performed by person other than those
+Dept. of Computer Science & Engineering, VJCET Page 25
+AIRMATE: NFC AIRPORT TOOL
+who write the original programs. Using persons who do not know how certain parts were designed
+or programmed ensures more complete and unbiased testing and more reliable software.
+Parallel running is often regarded as the final phase of system testing. Since he parallel opera￾tion of two systems is very demanding in terms of user resources it should be embarked on only if
+the user is satisfied with the results of testing – it should not be started if problems are known to
+exist. Testing is the major quality control measure during software development. Its basic func￾tion is to detect errors in the software. Thus, the goal of testing is to uncover requirement design
+and coding errors in the program. Testing is the process of correcting a program with intends of
+finding an error. Different types of testing are, 1. Unit Testing 2. Integrated Testing 3. Black Box
+Testing 4. White Box Testing 5. Validation Testing 6. User Acceptance Testing
+3.5.2 Unit Testing
+In computer programming, unit testing is a method by which individual units of source code,
+sets of one or more computer program modules together with associated control data, usage proce￾dures, and operating procedures are tested to determine if they are fit for use In this testing we test
+each module individual and integrated the overall system. Unit testing focuses verification efforts
+on the smaller unit of software design in the module. This is also known as module testing. The
+modules of the system are tested separately. The testing is carried out during programming stage
+itself. In this testing step each module is found to working satisfactory as regard to the expected
+output from the module. There are some validation checks for verifying the data input given by
+the user which both the formal and validity of the entered. It is very easy to find error debug the
+system.
+INCLUDE FIGURES WHEREVER NECESSARY
+We have continued Unit Testing from the starting of the coding phase itself. Whenever we
+completed one small sub module, some amount of testing was done based on the requirements
+to see if the functionality is aligned to the gathered requirements. Testing was done based on the
+requirements to see if the functionality is aligned to the gathered requirements
+3.5.3 Integration Testing
+Integration testing (sometimes called integration and testing, abbreviated I&T) is the phase
+in software testing in which individual software modules are combined and tested as a group.
+Software components may be integrated in an iterative way or all together (”big bang”). Normally
+the former is considered a better practice since it allows interface issues to be located more quickly
+and fixed. Data can be lost across an interface; one module can have an adverse effort on the other
+sub functions when combined by, may not produce the desired major functions. Integrated testing
+Dept. of Computer Science & Engineering, VJCET Page 26
+AIRMATE: NFC AIRPORT TOOL
+is the systematic testing for constructing the uncover errors within the interface. This testing
+was done with sample data. The developed system has run success full for this sample data.
+The need for integrated test is to find the overall system performance. Integration testing is a
+logical extension of unit testing. In its simplest form, two units that have already been tested are
+combined into a component and the interface between them is tested. A component, in this sense,
+refers to an integrated aggregate of more than one unit. Integration testing identifies problems
+that occur when units are combined. By using a test plan that requires you to test each unit and
+ensure the viability of each before combining units, you know that any errors discovered when
+combining units are likely related to the interface between units. This method reduces the number
+of possibilities to a far simpler level of analysis. Progressively larger groups of tested software
+components corresponding to elements of the architectural design are integrated and tested until
+the software works as a system.
+3.5.4 Validation Testing
+At the culmination of Black Box testing, software is completely assembled as a package, inter￾face errors have been uncovered and corrected and final series of software tests, Validation tests
+begins. Validation testing can be defined many was but a simple definition is that validation suc￾ceeds when the software functions in a manner that can be reasonably accepted by the customer.
+After validation test has been conducted one of the two possible conditions exists. 1. The function
+or performance characteristics confirm to specification and are accepted. 2. A derivation from
+specification uncovered and a deficiency list is created.
+3.5.5 User Acceptance Testing
+Acceptance Testing is a level of the software testing process where a system is tested for accept￾ability. User Acceptance testing is the software testing process where system tested for acceptabil￾ity & validates the end-to-end business flow. Such type of testing executed by client in separate
+environment & confirms whether system meets the requirements as per requirement specification
+or not. UAT is performed after System Testing is done and all or most of the major defects have
+been fixed. This testing is to be conducted in the final stage of Software Development Life Cycle
+(SDLC) prior to system being delivered to a live environment. UAT users or end users are con￾centrating on end-to-end scenarios & typically involves running a suite of tests on the completed
+system. User Acceptance testing also known as Customer Acceptance testing (CAT), if the system
+is being built or developed by an external supplier. The CAT or UAT are the final confirmation
+from the client before the system is ready for production. The business customers are the pri￾mary owners of these UAT tests. These tests are created by business customers and articulated in
+Dept. of Computer Science & Engineering, VJCET Page 27
+AIRMATE: NFC AIRPORT TOOL
+business domain languages. So ideally it is collaboration between business customers, business
+analysts, testers and developers. It consists of test suites which involve multiple test cases & each
+test case contains input data (if required) as well as the expected output. The result of test case is
+either a pass or fail.
+3.6 Performance Analysis
+Include your performance analysis details. Tables,graphs etc can be included.
+Dept. of Computer Science & Engineering, VJCET Page 28
+AIRMATE: NFC AIRPORT TOOL
+Chapter 4
+CONCLUSION
+In conclusion, The proposed AIRMATE: NFC AIRPORT TOOL has the potential to revolutionize
+the airport experience by providing a streamlined, secure, and personalized journey from check￾in to departure. Through the integration of NFC technology, real-time information services, and
+comprehensive travel management tools, this tool aims to address the key pain points of air travel
+and enhance the overall travel experience. By providing passengers with NFC-based function￾alities like accessing flight information, using electronic boarding passes, tracking luggage, and
+seamlessly accessing airport services, the app empowers users with convenient access to essential
+information and services. Furthermore, the app provides real-time flight status updates, interactive
+airport maps, and travel assistance features, keeping travelers informed and well-equipped to nav￾igate the airport with ease. Additionally, the centralized travel management platform allows users
+to effortlessly manage their travel itineraries, reducing the hassle of juggling multiple documents
+and reducing the risk of last-minute surprises. Overall, the AIRMATE: NFC AIRPORT TOOL
+offers a unique solution to address the key pain points of air travel, making the airport experience
+more streamlined, secure, and personalized for travelers.
+Dept. of Computer Science & Engineering, VJCET Page 29
+References
+[1] T. Dahlberg, J. Guo, and J. Ondrus, “A critical review of mobile payment research,”
+Electron. Commerce Res. Appl., vol. 14, no. 5, pp. 265–284, 2015. [Online]. Available:
+http://linkinghub.elsevier.com/retrieve/pii/S156742231500054X
+[2] A. Kumar, N. Saxena, G. Tsudik, and E. Uzun, “Caveat eptor: A comparative study of secure
+device pairing methods,” in Pervasive Computing and Communications, 2009. PerCom 2009.
+IEEE International Conference on. IEEE, 2009, pp. 1–10
+[3] P. Pourghomi, M. Q. Saeed, and G. Ghinea, “A secure cloud-based NFC mobile payment
+protocol,” Int. J. Adv. Comput. Sci. Appl., vol. 5, no. 10, pp. 24–31, 2014..
+[4] S. Guizani, “Relay attacks concerns in wireless ad hoc, sensors, and RFID networks,” Wire￾less Commun. Mobile Comput., vol. 16, no. 11, pp. 1431–1435, Aug. 2016 .
+[5] Introduction to Secure Elements. Accessed: Feb. 9, 2021. [Online]. Available:
+https://globalplatform.org/wp-content/uploads/ 2018/05/Introduction-to-Secure-Element-
+15May2018.pdf
+iii
+Appendix A
+Jira Reports
+INCLUDE JIRA REPORTS: BURN UP, BURN DOWN, VELOCITY
+iv
+Appendix B
+Sample Code
+import ’dart:convert’;
+import ’package:airmate/screens/admin/adminHome.dart’;
+import ’package:airmate/screens/homeScreen.dart’;
+import ’package:airmate/screens/userRegistration/registerScreen.dart’;
+import ’package:crypto/crypto.dart’;
+import ’package:flutter/material.dart’;
+import ’package:flutter/widgets.dart’;
+import ’package:google_fonts/google_fonts.dart’;
+import ’package:page_transition/page_transition.dart’;
+import ’package:flutter_secure_storage/flutter_secure_storage.dart’;
+import ’package:shared_preferences/shared_preferences.dart’;
+import ’package:http/http.dart’ as http;
+const storage = FlutterSecureStorage();
+class LoginPage extends StatefulWidget {
+const LoginPage({super.key});
+@override
+State<LoginPage> createState() => _LoginPageState();
+}
+class _LoginPageState extends State<LoginPage> {
+TextEditingController emailController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
+v
+AIRMATE: NFC AIRPORT TOOL
+void login(String username, String password, context) async {
+if (emailController.text.trim() == ’airmate.dev@gmail.com’ &&
+passwordController.text.trim() == ’Airmate@123’) {
+Navigator.pushReplacement(
+context,
+PageTransition(
+child: HomeScreen(), type: PageTransitionType.bottomToTop));
+}
+}
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+body: SingleChildScrollView(
+keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+child: Column(
+children: [
+Container(
+width: MediaQuery.of(context).size.width,
+height: MediaQuery.of(context).size.height * 0.35,
+decoration: BoxDecoration(
+color: Color.fromARGB(245, 0, 0, 0),
+//image: DecorationImage(
+// image: AssetImage(’assets/bg1.jpg’),
+// fit: BoxFit.cover,
+// opacity: 0.65)
+),
+child: Padding(
+padding: const EdgeInsets.symmetric(
+horizontal: 25.0, vertical: 45),
+child: Column(
+mainAxisAlignment: MainAxisAlignment.end,
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Row(
+Dept. of Computer Science & Engineering, VJCET Page vi
+AIRMATE: NFC AIRPORT TOOL
+children: [
+Text(
+’airmate’,
+style: GoogleFonts.raleway(
+color: Colors.white,
+letterSpacing: 0,
+fontWeight: FontWeight.w600,
+fontSize: 22),
+),
+Text(
+’.’,
+style: GoogleFonts.raleway(
+color: Colors.red,
+letterSpacing: 0,
+fontWeight: FontWeight.w600,
+fontSize: 22),
+),
+],
+),
+Spacer(),
+Text(
+"Welcome back!, you’ve been missed",
+style: GoogleFonts.urbanist(
+color: Colors.grey,
+fontSize: 13,
+fontWeight: FontWeight.w400,
+letterSpacing: 0),
+),
+const SizedBox(
+height: 8,
+),
+Text(’enter your email address to proceed’,
+style: GoogleFonts.urbanist(
+color: Colors.white,
+fontSize: 21,
+fontWeight: FontWeight.bold,
+Dept. of Computer Science & Engineering, VJCET Page vii
+AIRMATE: NFC AIRPORT TOOL
+letterSpacing: 0)),
+],
+),
+)),
+Container(
+width: MediaQuery.of(context).size.width,
+height: MediaQuery.of(context).size.height * 0.65,
+padding: EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+child: Column(
+//mainAxisAlignment: MainAxisAlignment.spaceBetween,
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+TextField(
+keyboardType: TextInputType.emailAddress,
+style: GoogleFonts.raleway(
+color: Colors.black,
+fontWeight: FontWeight.w400,
+letterSpacing: 0),
+controller: emailController,
+cursorColor: Colors.grey,
+decoration: InputDecoration(
+label: Text(
+’email’,
+style: GoogleFonts.urbanist(color: Colors.grey),
+),
+focusedBorder: OutlineInputBorder(
+borderSide: BorderSide(
+color: Colors.black,
+)),
+border: OutlineInputBorder(
+borderSide: BorderSide(color: Colors.black)),
+)),
+const SizedBox(
+height: 15,
+),
+TextField(
+Dept. of Computer Science & Engineering, VJCET Page viii
+AIRMATE: NFC AIRPORT TOOL
+//obscureText: !showPassword,
+keyboardType: TextInputType.emailAddress,
+style: GoogleFonts.raleway(
+color: Colors.black,
+fontWeight: FontWeight.w400,
+letterSpacing: 0),
+controller: passwordController,
+cursorColor: Colors.grey,
+decoration: InputDecoration(
+suffixIcon: IconButton(
+icon: Icon(
+Icons.visibility_off,
+color: Colors.grey,
+),
+onPressed: () {
+setState(() {
+//showPassword = !showPassword;
+});
+},
+),
+label: Text(
+’password’,
+style: GoogleFonts.urbanist(color: Colors.grey),
+),
+focusedBorder: OutlineInputBorder(
+borderSide: BorderSide(
+color: Colors.black,
+)),
+border: OutlineInputBorder(
+borderSide: BorderSide(color: Colors.black)),
+)),
+const SizedBox(
+height: 15,
+),
+Row(
+children: [
+Dept. of Computer Science & Engineering, VJCET Page ix
+AIRMATE: NFC AIRPORT TOOL
+Text(
+"Don’t have an account?",
+style: GoogleFonts.urbanist(
+color: const Color.fromARGB(255, 0, 0, 0),
+fontWeight: FontWeight.w400,
+fontSize: 12),
+),
+const SizedBox(
+width: 5,
+),
+GestureDetector(
+onTap: () {
+Navigator.push(
+context,
+PageTransition(
+child: RegisterScreen(),
+type: PageTransitionType.rightToLeft));
+},
+child: Text(
+’Create Account’,
+style: GoogleFonts.urbanist(
+color: Colors.black,
+fontWeight: FontWeight.bold,
+fontSize: 13),
+)),
+],
+)
+],
+),
+)
+],
+),
+),
+floatingActionButton: FloatingActionButton(
+backgroundColor: Colors.black,
+onPressed: () {
+Dept. of Computer Science & Engineering, VJCET Page x
+AIRMATE: NFC AIRPORT TOOL
+login(emailController.text.trim(), passwordController.text.trim(),
+context);
+},
+child: Icon(
+Icons.arrow_forward,
+color: Colors.white,
+)),
+);
+}
+}
+import ’package:airmate/screens/components/airmateLogoLight.dart’;
+import ’package:airmate/screens/userRegistration/passwordScreen.dart’;
+import ’package:flutter/cupertino.dart’;
+import ’package:flutter/material.dart’;
+import ’package:flutter/widgets.dart’;
+import ’package:google_fonts/google_fonts.dart’;
+import ’package:page_transition/page_transition.dart’;
+class RegisterScreen extends StatefulWidget {
+const RegisterScreen({super.key});
+@override
+State<RegisterScreen> createState() => _RegisterScreenState();
+}
+class _RegisterScreenState extends State<RegisterScreen> {
+TextEditingController firstnameController = TextEditingController();
+TextEditingController middlenameController = TextEditingController();
+TextEditingController lastnameController = TextEditingController();
+TextEditingController emailController = TextEditingController();
+String generateFullName(String first, String last) {
+return ’$first $last’;
+}
+Dept. of Computer Science & Engineering, VJCET Page xi
+AIRMATE: NFC AIRPORT TOOL
+Color labelColor = Colors.grey;
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+body: SingleChildScrollView(
+keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
+child: Column(
+children: [
+Container(
+width: MediaQuery.of(context).size.width,
+height: MediaQuery.of(context).size.height * 0.35,
+decoration: BoxDecoration(
+color: Color.fromARGB(245, 0, 0, 0),
+),
+child: Padding(
+padding: const EdgeInsets.symmetric(
+horizontal: 25.0, vertical: 45),
+child: Column(
+mainAxisAlignment: MainAxisAlignment.end,
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Row(
+children: [
+GestureDetector(
+onTap: () {
+Navigator.pop(context);
+},
+child: Icon(
+Icons.arrow_back_ios,
+color: Colors.white,
+),
+),
+Spacer(),
+AirmateLogoLight()
+],
+Dept. of Computer Science & Engineering, VJCET Page xii
+AIRMATE: NFC AIRPORT TOOL
+),
+Spacer(),
+Text(
+"Hey, Welcome to Airmate",
+style: GoogleFonts.urbanist(
+color: Colors.grey,
+fontSize: 17,
+fontWeight: FontWeight.w400,
+letterSpacing: 0),
+),
+const SizedBox(
+height: 8,
+),
+Text(
+’Enter your details to proceed with user registration’,
+style: GoogleFonts.urbanist(
+color: Colors.white,
+fontSize: 21,
+fontWeight: FontWeight.bold,
+letterSpacing: 0)),
+],
+),
+)),
+Container(
+width: MediaQuery.of(context).size.width,
+height: MediaQuery.of(context).size.height * 0.65,
+padding: EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+child: Column(
+//mainAxisAlignment: MainAxisAlignment.spaceBetween,
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+TextField(
+keyboardType: TextInputType.emailAddress,
+style: GoogleFonts.raleway(
+color: Colors.black,
+fontWeight: FontWeight.w400,
+Dept. of Computer Science & Engineering, VJCET Page xiii
+AIRMATE: NFC AIRPORT TOOL
+letterSpacing: 0),
+controller: firstnameController,
+cursorColor: Colors.grey,
+decoration: InputDecoration(
+label: Text(
+’First Name’,
+style: GoogleFonts.urbanist(color: Colors.grey),
+),
+focusedBorder: OutlineInputBorder(
+borderSide: BorderSide(
+color: Colors.black,
+)),
+border: OutlineInputBorder(
+borderSide: BorderSide(color: Colors.black)),
+)),
+const SizedBox(
+height: 15,
+),
+TextField(
+keyboardType: TextInputType.emailAddress,
+style: GoogleFonts.raleway(
+color: Colors.black,
+fontWeight: FontWeight.w400,
+letterSpacing: 0),
+controller: middlenameController,
+cursorColor: Colors.grey,
+decoration: InputDecoration(
+label: Text(
+’Middle Name’,
+style: GoogleFonts.urbanist(color: Colors.grey),
+),
+focusedBorder: OutlineInputBorder(
+borderSide: BorderSide(
+color: Colors.black,
+)),
+border: OutlineInputBorder(
+Dept. of Computer Science & Engineering, VJCET Page xiv
+AIRMATE: NFC AIRPORT TOOL
+borderSide: BorderSide(color: Colors.black)),
+)),
+const SizedBox(
+height: 15,
+),
+TextField(
+keyboardType: TextInputType.emailAddress,
+style: GoogleFonts.raleway(
+color: Colors.black,
+fontWeight: FontWeight.w400,
+letterSpacing: 0),
+controller: lastnameController,
+cursorColor: Colors.grey,
+decoration: InputDecoration(
+label: Text(
+’Last Name’,
+style: GoogleFonts.urbanist(color: Colors.grey),
+),
+focusedBorder: OutlineInputBorder(
+borderSide: BorderSide(
+color: Colors.black,
+)),
+border: OutlineInputBorder(
+borderSide: BorderSide(color: Colors.black)),
+)),
+const SizedBox(
+height: 15,
+),
+TextField(
+keyboardType: TextInputType.emailAddress,
+style: GoogleFonts.raleway(
+color: Colors.black,
+fontWeight: FontWeight.w400,
+letterSpacing: 0),
+controller: emailController,
+cursorColor: Colors.grey,
+Dept. of Computer Science & Engineering, VJCET Page xv
+AIRMATE: NFC AIRPORT TOOL
+decoration: InputDecoration(
+label: Text(
+’Email’,
+style: GoogleFonts.urbanist(color: Colors.grey),
+),
+focusedBorder: OutlineInputBorder(
+borderSide: BorderSide(
+color: Colors.black,
+)),
+border: OutlineInputBorder(
+borderSide: BorderSide(color: Colors.black)),
+)),
+],
+),
+)
+],
+),
+),
+floatingActionButton: FloatingActionButton(
+backgroundColor: Colors.black,
+onPressed: () async {
+if (firstnameController.text.isEmpty) {
+ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+backgroundColor: Colors.black,
+content: Text(
+’Enter First Name’,
+style: GoogleFonts.urbanist(color: Colors.white),
+)));
+} else if (lastnameController.text.isEmpty) {
+ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+backgroundColor: Colors.black,
+content: Text(
+’Enter Last Name’,
+style: GoogleFonts.urbanist(color: Colors.white),
+)));
+} else if (emailController.text.isEmpty) {
+Dept. of Computer Science & Engineering, VJCET Page xvi
+AIRMATE: NFC AIRPORT TOOL
+ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+backgroundColor: Colors.black,
+content: Text(
+’Enter Email Address’,
+style: GoogleFonts.urbanist(color: Colors.white),
+)));
+} else if (!emailController.text.contains(’@gmail.com’)) {
+ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+backgroundColor: Colors.black,
+content: Text(
+’Enter Valid Email’,
+style: GoogleFonts.urbanist(color: Colors.white),
+)));
+} else {
+Navigator.push(
+context,
+PageTransition(
+child: PasswordScreen(
+firstName: firstnameController.text.trim(),
+middleName: middlenameController.text.trim(),
+lastName: lastnameController.text.trim(),
+email: emailController.text.trim()),
+type: PageTransitionType.rightToLeft));
+}
+},
+child: Icon(
+Icons.arrow_forward,
+color: Colors.white,
+)),
+);
+}
+}
+Dept. of Computer Science & Engineering, VJCET Page xvii
+Appendix C
+Screenshots
+Figure C.1: Registration Page
+xviii
+AIRMATE: NFC AIRPORT TOOL
+Figure C.2: Login In Page
+Figure C.3: Credentials page
+Dept. of Computer Science & Engineering, VJCET Page xix
+AIRMATE: NFC AIRPORT TOOL
+Figure C.4: Gender details
+Figure C.5: Personal details
+Dept. of Computer Science & Engineering, VJCET Page xx
+AIRMATE: NFC AIRPORT TOOL
+Figure C.6: Aadhaar details
+Figure C.7: Passport details
+Dept. of Computer Science & Engineering, VJCET Page xxi

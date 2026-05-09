@@ -514,6 +514,9 @@
     document.getElementById('stationName').textContent=d.name;
     document.getElementById('stationAddress').textContent=d.address||'Address not available';
 
+    const btn = document.getElementById('favoriteBtn');
+    if(btn) btn.classList.toggle('fav-active', !!d.is_favorited);
+
     const r=parseFloat(d.avg_rating||0), cnt=d.ratings_count||d.recent_reviews?.length||0;
     document.getElementById('avgRating').textContent=r.toFixed(1);
     document.getElementById('ratingsCount').textContent=`${cnt} review${cnt!==1?'s':''}`;
@@ -592,11 +595,12 @@
     if(d.recent_reviews?.length){
       rc.innerHTML='';
       d.recent_reviews.forEach(rv=>{
+        const username = rv.username || 'User';
         const s='★'.repeat(rv.rating)+'☆'.repeat(5-rv.rating);
         rc.innerHTML+=`<div class="review-card">
           <div class="rev-header">
-            <div class="rev-avatar">${(rv.user||'U')[0].toUpperCase()}</div>
-            <div><div class="rev-user">${rv.user||'User'}</div><div class="rev-date">${rv.created_at||''}</div></div>
+            <div class="rev-avatar">${username[0].toUpperCase()}</div>
+            <div><div class="rev-user">${username}</div><div class="rev-date">${rv.created_at||''}</div></div>
           </div>
           <div class="rev-stars">${s}</div>
           <div class="rev-text">${rv.review||'Great station!'}</div>
@@ -632,22 +636,61 @@
     try{
       const res=await fetch('/api/favourites/toggle/',{method:'POST',headers:{'Authorization':`Bearer ${AUTH_TOKEN}`,'Content-Type':'application/json','X-CSRFToken':getCookie('csrftoken')},body:JSON.stringify({station_id:stationId})});
       const d=await res.json();
-      if(res.ok) btn.classList.toggle('fav-active',d.action==='added');
-    }catch(e){}
+      if(res.ok){
+        if(d.action === 'added') btn.classList.add('fav-active');
+        else if(d.action === 'removed') btn.classList.remove('fav-active');
+        else btn.classList.toggle('fav-active');
+      }
+    }catch(e){ console.warn('Favorite toggle error', e); }
   }
 
   function navigateToStation(){ if(stationData) window.open(`https://www.google.com/maps/dir/?api=1&destination=${stationData.latitude},${stationData.longitude}`,'_blank'); }
 
-  function openRatingModal(){ document.getElementById('ratingModal').classList.add('open'); }
-  function closeRatingModal(){ document.getElementById('ratingModal').classList.remove('open'); }
+  function openRatingModal(){
+    resetRatingModal();
+    document.getElementById('ratingModal').classList.add('open');
+  }
+  function closeRatingModal(){
+    document.getElementById('ratingModal').classList.remove('open');
+    resetRatingModal();
+  }
   function setRating(n){ selectedRating=n; document.querySelectorAll('#starPicker button').forEach((b,i)=>b.classList.toggle('lit',i<n)); }
   async function submitRating(){
     if(!selectedRating){alert('Please select a star rating');return;}
     try{
-      const res=await fetch(`/api/stations/${stationId}/rating/`,{method:'POST',headers:{'Authorization':`Bearer ${AUTH_TOKEN}`,'Content-Type':'application/json','X-CSRFToken':getCookie('csrftoken')},body:JSON.stringify({rating:selectedRating,review:document.getElementById('reviewText').value})});
-      if(res.ok){closeRatingModal();alert('Thanks for your review!');loadStationDetails();}
-      else{const d=await res.json();alert(d.error||'Failed to submit');}
-    }catch(e){alert('Error submitting');}
+      const res=await fetch('/api/stations/rate/',{
+        method:'POST',
+        headers:{
+          'Authorization':`Bearer ${AUTH_TOKEN}`,
+          'Content-Type':'application/json',
+          'X-CSRFToken':getCookie('csrftoken')
+        },
+        body:JSON.stringify({
+          station_id: stationId,
+          rating:selectedRating,
+          review:document.getElementById('reviewText').value.trim()
+        })
+      });
+      if(res.ok){
+        closeRatingModal();
+        resetRatingModal();
+        alert('Thanks for your review!');
+        loadStationDetails();
+      } else {
+        const d=await res.json();
+        alert(d.error||'Failed to submit review');
+      }
+    }catch(e){
+      alert('Error submitting review. Please try again.');
+    }
+  }
+
+  function resetRatingModal(){
+    selectedRating=0;
+    document.getElementById('reviewText').value='';
+    document.querySelectorAll('#starPicker button').forEach((b)=>b.classList.remove('lit'));
+    const ratingAlert=document.getElementById('ratingAlert');
+    if(ratingAlert) ratingAlert.textContent='';
   }
   function getCookie(n){const m=document.cookie.match('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)');return m?m.pop():'';}
 

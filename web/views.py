@@ -1,5 +1,7 @@
 import requests
 import math
+import logging
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login as django_login, logout as django_logout, authenticate
@@ -10,7 +12,32 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import UserCar, Car
 from stations.models import Booking as StationBooking
 
-API_BASE = "http://127.0.0.1:8000"  # backend base URL
+API_BASE = getattr(settings, 'API_BASE', 'http://127.0.0.1:8000')
+API_SESSION = requests.Session()
+LOG = logging.getLogger(__name__)
+
+
+def api_request(method, endpoint, token=None, params=None, json_data=None, timeout=5):
+    url = f"{API_BASE.rstrip('/')}/{endpoint.lstrip('/')}"
+    headers = {"Accept": "application/json"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    try:
+        if method == "GET":
+            return API_SESSION.get(url, headers=headers, params=params, timeout=timeout)
+        if method == "POST":
+            return API_SESSION.post(url, headers=headers, json=json_data, timeout=timeout)
+        if method == "PUT":
+            return API_SESSION.put(url, headers=headers, json=json_data, timeout=timeout)
+        if method == "DELETE":
+            return API_SESSION.delete(url, headers=headers, timeout=timeout)
+
+        LOG.warning("Unsupported API request method: %s", method)
+        return None
+    except requests.RequestException as exc:
+        LOG.warning("API request failed: %s %s %s", method, url, exc)
+        return None
 
 
 def get_distance(lat1, lon1, lat2, lon2):
@@ -44,15 +71,9 @@ def login_view(request):
 
 def get_current_user(token):
     """Get current user from token"""
-    try:
-        res = requests.get(
-            f"{API_BASE}/auth/user/",
-            headers={"Authorization": f"Bearer {token}"}
-        )
-        if res.status_code == 200:
-            return res.json()
-    except:
-        pass
+    res = api_request("GET", "/auth/user/", token=token)
+    if res and res.status_code == 200:
+        return res.json()
     return None
 
 def select_car(request):
@@ -92,15 +113,8 @@ def select_car(request):
             except Car.DoesNotExist:
                 pass
 
-    res = requests.get(
-        f"{API_BASE}/auth/cars/",
-        headers={"Authorization": f"Bearer {token}"}
-    )
-
-    if res.status_code == 200:
-        cars = res.json()
-    else:
-        cars = []
+    res = api_request("GET", "/auth/cars/", token=token)
+    cars = res.json() if res and res.status_code == 200 else []
 
     return render(request, "web/select_car.html", {
         "cars": cars,
@@ -174,8 +188,8 @@ def stations_view(request):
     # • Else fall back to user GPS location with name-based filtering
     if geocoded_lat is not None:
         # Location search: fetch ALL stations, filter by distance from geocoded point
-        res = requests.get(f"{API_BASE}/api/map/search/", params={"q": ""})
-        stations = res.json() if res.status_code == 200 else []
+        res = api_request("GET", "/api/map/search/", params={"q": ""})
+        stations = res.json() if res and res.status_code == 200 else []
         search_lat = geocoded_lat
         search_lon = geocoded_lon
         search_radius = float(radius)  # use whatever radius the user selected
@@ -191,11 +205,8 @@ def stations_view(request):
         user_lon = geocoded_lon
     else:
         # Station-name search (or no keyword) + optional GPS radius filter
-        res = requests.get(
-            f"{API_BASE}/api/map/search/",
-            params={"q": keyword if keyword else ""},
-        )
-        stations = res.json() if res.status_code == 200 else []
+        res = api_request("GET", "/api/map/search/", params={"q": keyword if keyword else ""})
+        stations = res.json() if res and res.status_code == 200 else []
 
         if user_lat and user_lon:
             try:
@@ -425,18 +436,12 @@ def dashboard_view(request):
         pass
 
     # Get bookings
-    bookings_res = requests.get(
-        f"{API_BASE}/api/bookings/my/",
-        headers={"Authorization": f"Bearer {token}"}
-    )
-    bookings = bookings_res.json() if bookings_res.status_code == 200 else []
+    bookings_res = api_request("GET", "/api/bookings/my/", token=token)
+    bookings = bookings_res.json() if bookings_res and bookings_res.status_code == 200 else []
 
     # Get favorites
-    favorites_res = requests.get(
-        f"{API_BASE}/api/favourites/list/",
-        headers={"Authorization": f"Bearer {token}"}
-    )
-    favorites = favorites_res.json() if favorites_res.status_code == 200 else []
+    favorites_res = api_request("GET", "/api/favourites/list/", token=token)
+    favorites = favorites_res.json() if favorites_res and favorites_res.status_code == 200 else []
 
     return render(request, "web/dashboard.html", {
         "selected_car": selected_car,
@@ -469,24 +474,17 @@ def bookings_view(request):
         action = request.POST.get("action")
         
         if action == "cancel" and booking_id:
-            cancel_res = requests.post(
-                f"{API_BASE}/api/bookings/cancel/",
-                json={"booking_id": int(booking_id)},
-                headers={"Authorization": f"Bearer {token}"}
-            )
+            cancel_res = api_request("POST", "/api/bookings/cancel/", token=token, json_data={"booking_id": int(booking_id)})
             
-            if cancel_res.status_code == 200:
+            if cancel_res and cancel_res.status_code == 200:
                 return redirect("bookings")  # Reload to show updated status
             else:
-                error_msg = cancel_res.json().get("error", "Failed to cancel booking")
+                error_msg = cancel_res.json().get("error", "Failed to cancel booking") if cancel_res is not None else "Failed to cancel booking"
                 print(f"Cancel error: {error_msg}")
     
     # Get bookings
-    bookings_res = requests.get(
-        f"{API_BASE}/api/bookings/my/",
-        headers={"Authorization": f"Bearer {token}"}
-    )
-    bookings = bookings_res.json() if bookings_res.status_code == 200 else []
+    bookings_res = api_request("GET", "/api/bookings/my/", token=token)
+    bookings = bookings_res.json() if bookings_res and bookings_res.status_code == 200 else []
     
     # Categorize bookings by status and date
     bookings_upcoming = []
@@ -570,11 +568,8 @@ def favorites_view(request):
         return redirect("login")
 
     # Get favorites
-    favorites_res = requests.get(
-        f"{API_BASE}/api/favourites/list/",
-        headers={"Authorization": f"Bearer {token}"}
-    )
-    favorites = favorites_res.json() if favorites_res.status_code == 200 else []
+    favorites_res = api_request("GET", "/api/favourites/list/", token=token)
+    favorites = favorites_res.json() if favorites_res and favorites_res.status_code == 200 else []
 
     return render(request, "web/favorites.html", {
         "favorites": favorites,
@@ -596,11 +591,8 @@ def peer_chargers_view(request):
         return redirect("login")
 
     # Get peer chargers nearby
-    chargers_res = requests.get(
-        f"{API_BASE}/api/p2p/chargers/nearby/",
-        headers={"Authorization": f"Bearer {token}"}
-    )
-    chargers = chargers_res.json() if chargers_res.status_code == 200 else []
+    chargers_res = api_request("GET", "/api/p2p/chargers/nearby/", token=token)
+    chargers = chargers_res.json() if chargers_res and chargers_res.status_code == 200 else []
 
     return render(request, "web/peer_chargers.html", {
         "chargers": chargers,
@@ -623,29 +615,19 @@ def book_station_view(request, station_id):
 
     # Fetch station details so the template can display them
     station = {}
-    try:
-        station_res = requests.get(
-            f"{API_BASE}/api/stations/{station_id}/detail/",
-            headers={"Authorization": f"Bearer {token}"}
-        )
-        if station_res.status_code == 200:
-            station = station_res.json()
-    except Exception:
-        pass
+    station_res = api_request("GET", f"/api/stations/{station_id}/detail/", token=token)
+    if station_res and station_res.status_code == 200:
+        station = station_res.json()
 
     if request.method == "POST":
         start_time = request.POST.get("start_time")
         end_time = request.POST.get("end_time")
 
-        book_res = requests.post(
-            f"{API_BASE}/api/book/",
-            headers={"Authorization": f"Bearer {token}"},
-            json={
-                "station_id": station_id,
-                "start_time": start_time,
-                "end_time": end_time,
-            }
-        )
+        book_res = api_request("POST", "/api/book/", token=token, json_data={
+            "station_id": station_id,
+            "start_time": start_time,
+            "end_time": end_time,
+        })
 
         if book_res.status_code == 200:
             return redirect("bookings")

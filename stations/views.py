@@ -602,8 +602,8 @@ def active_bookings(request):
             'charger_type': booking.station.charger_type,
             'power_kw': booking.station.power_kw,
             'address': booking.station.address,
-            'latitude': booking.station.latitude,
-            'longitude': booking.station.longitude,
+            'station_latitude': booking.station.latitude,
+            'station_longitude': booking.station.longitude,
         })
     
     return Response({'bookings': bookings_data, 'count': len(bookings_data)})
@@ -808,9 +808,9 @@ def toggle_favourite(request):
 
     if not created:
         fav.delete()
-        return Response({"message": "Removed from favourites"})
+        return Response({"message": "Removed from favourites", "action": "removed"})
 
-    return Response({"message": "Added to favourites"})
+    return Response({"message": "Added to favourites", "action": "added"})
 
 
 @api_view(["GET"])
@@ -1371,11 +1371,19 @@ def station_detail(request, station_id):
         {
             'rating': r.rating,
             'review': 'Great station!',  # Default review text
-            'user': r.user.username,
+            'username': r.user.username,
             'created_at': timezone.localtime(r.created_at).strftime('%Y-%m-%d %H:%M')
         }
         for r in recent_ratings
     ]
+
+    # Add favourite status when user is authenticated
+    try:
+        data['is_favorited'] = False
+        if request.user and request.user.is_authenticated:
+            data['is_favorited'] = FavouriteStation.objects.filter(user=request.user, station=station).exists()
+    except Exception:
+        data['is_favorited'] = False
     
     return Response(data)
 

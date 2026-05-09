@@ -194,7 +194,7 @@ def send_booking_confirmation_email(user, booking, station):
             <table width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td align="center">
-                  <a href="http://127.0.0.1:8000/bookings/"
+                  <a href="{booking_url}"
                      style="display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#0040c1,#0066ff);color:#ffffff;text-decoration:none;border-radius:10px;font-size:15px;font-weight:700;letter-spacing:0.5px;">
                     View My Bookings &#8594;
                   </a>
@@ -220,6 +220,8 @@ def send_booking_confirmation_email(user, booking, station):
 </body>
 </html>"""
 
+        booking_url = f"{getattr(settings, 'API_BASE', 'http://127.0.0.1:8000').rstrip('/')}/bookings/"
+
         plain_message = f"""Booking Confirmed – Obturo
 ================================
 Hi {user_name},
@@ -244,7 +246,7 @@ Total Payable     : Rs.{total_amount}
 
 Please arrive 10 minutes early. Cancellations must be made at least 2 hours before check-in.
 
-View bookings: http://127.0.0.1:8000/bookings/
+View bookings: {booking_url}
 
 Thank you for using Obturo!
 """

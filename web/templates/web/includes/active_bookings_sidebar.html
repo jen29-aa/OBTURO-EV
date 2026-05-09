@@ -295,9 +295,11 @@
                  d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
         };
 
-        var dirUrl = (b.station_latitude && b.station_longitude)
-          ? 'https://www.google.com/maps/dir/?api=1&destination=' + b.station_latitude + ',' + b.station_longitude
+        var dirUrl = (b.station_latitude !== null && b.station_latitude !== undefined && 
+                      b.station_longitude !== null && b.station_longitude !== undefined)
+          ? 'https://www.google.com/maps/dir/?api=1&destination=' + parseFloat(b.station_latitude) + ',' + parseFloat(b.station_longitude)
           : '/route-map/';
+
 
         html += '<div class="abs-card" onclick="openBookingDetails(' + b.id + ')">' +
           '<div class="abs-card-accent ' + accentClass + '"></div>' +

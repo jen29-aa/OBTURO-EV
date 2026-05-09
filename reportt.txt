@@ -1,0 +1,1452 @@
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND
+MANAGEMENT SYSTEM
+A PROJECT REPORT (PHASE-2)
+by
+MATHEW BABU (VJC22CS089)
+in partial fulfillment for the award of the degree
+of
+BACHELOR OF TECHNOLOGY
+in
+COMPUTER SCIENCE AND ENGINEERING
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+APRIL 2026
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND
+MANAGEMENT SYSTEM
+A PROJECT REPORT (PHASE-2)
+by
+MATHEW BABU (VJC22CS089)
+in partial fulfillment for the award of the degree
+of
+BACHELOR OF TECHNOLOGY
+in
+COMPUTER SCIENCE AND ENGINEERING
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+under the guidance
+of
+Mr. Andrews Jose
+Assistant Professor, CSE Dept.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+APRIL 2026
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+Department of Computer Science and Engineering
+Vision
+Moulding socially responsible and professionally competent Computer Engineers to adapt
+to the dynamic technological landscape
+Mission
+1. Foster the principles and practices of computer science to empower life-long learning and
+build careers in software and hardware development.
+2. Impart value education to elevate students to be successful, ethical and effective problem￾solvers to serve the needs of the industry, government, society and the scientific community.
+3. Promote industry interaction to pursue new technologies in Computer Science and provide
+excellent infrastructure to engage faculty and students in scholarly research activities.
+Program Educational Objectives
+Our Graduates
+1. Shall have creative aid critical reasoning skills to solve technical problems ethically and
+responsibly to serve the society.
+2. Shall have competency to collaborate as a team member and team leader to address social,
+technical and engineering challenges.
+3. Shall have ability to contribute to the development of the next generation of information
+technology either through innovative research or through practice in a corporate setting
+4. Shall have potential to build start-up companies with the foundations, knowledge and expe￾rience they acquired from undergraduate education
+Program Outcomes
+1. Engineering knowledge:Apply the knowledge of mathematics, science, engineering funda￾mentals, and an engineering specialization to the solution of complex engineering problems.
+2. Problem analysis:Identify, formulate, review research literature, and analyze complex en￾gineering problems reaching substantiated conclusions using first principles of mathematics,
+natural sciences, and engineering sciences
+3. Design / development of solutions:Design solutions for complex engineering problems and
+design system components or processes that meet the specified needs with appropriate con￾sideration for the public health and safety, and the cultural, societal, and environmental con￾siderations.
+4. Conduct investigations of complex problems:Use research-based knowledge and research
+methods including design of experiments, analysis and interpretation of data, and synthesis
+of the information to provide valid conclusions.
+5. Modern tool usage:Create, select, and apply appropriate techniques, resources, and modern
+engineering and IT tools including prediction and modelling to complex engineering activi￾ties with an understanding of the limitations.
+6. The engineer and society:Apply reasoning informed by the contextual knowledge to assess
+societal, health, safety, legal and cultural issues and the consequent responsibilities relevant
+to the professional engineering practice.
+7. Environment and sustainability:Understand the impact of the professional engineering so￾lutions in societal and environmental contexts, and demonstrate the knowledge of, and need
+for sustainable development.
+8. Ethics:Apply ethical principles and commit to professional ethics and responsibilities and
+norms of the engineering practice
+9. Individual and team work:Function effectively as an individual, and as a member or leader
+in diverse teams, and in multidisciplinary settings
+10. Communication:Communicate effectively on complex engineering activities with the engi￾neering community and with society at large, such as, being able to comprehend and write
+effective reports and design documentation, make effective presentations, and give and re￾ceive clear instructions.
+11. Project management and finance: Demonstrate knowledge and understanding of the en￾gineering and management principles and apply these to one’s own work, as a member and
+unread in a team, to manage projects and in multidisciplinary environments.
+12. Life-long learning:Recognize the need for, and have the preparation and ability to engage in
+independent and life-long learning in the broadest context of technological change.
+Program Specific Outcomes
+1. Ability to integrate theory and practice to construct software systems of varying complexity
+2. Able to Apply Computer Science skills, tools and mathematical techniques to analyse, design
+and model complex systems
+3. Ability to design and manage small-scale projects to develop a career in a related industry.
+VISWAJYOTHI COLLEGE OF ENGINEERING AND
+TECHNOLOGY, VAZHAKULAM
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+BONAFIDE CERTIFICATE
+This is to certify that the project report (phase-2) entitled “OBTURO-EV – INTELLIGENT
+EV CHARGER BOOKING AND MANAGEMENT SYSTEM” is a bonafide record of the
+work done by MATHEW BABU (VJC22CS089) in partial fulfillment of the requirements for
+the award of the Degree of Bachelor of Technology in Computer Science and Engineering of APJ
+Abdul Kalam Technological University.
+Internal Supervisor External Supervisor
+Project Coordinator Head of Department
+ACKNOWLEDGEMENT
+First and foremost, I thank God Almighty for His divine grace and blessings in making all these
+possible. May he continue to lead us in the years. It is my privilege to render my heartfelt thanks
+to our beloved Manager, Rev. Msgr. Dr. Pius Malekandathil , our director Rev. Fr. Paul Parathazham
+and our Principal Dr. K K Rajan for providing me the opportunity to do this project report (phase-2)
+during the Fourth year (2025) of my B.Tech degree course. I am deeply thankful to my Head of
+the Department, Dr. Amel Austine for his support and encouragement. I would like to express my
+sincere gratitude and heartfelt thanks to my Project Guide Mr.Andrews Jose,Assistant Professor,
+Department of Computer Science and Engineering for his motivation, assistance and help for
+the project. I also express sincere thanks our Project Coordinator Ms. Lakshmi Suresh,Assistant
+Professor, Department of Computer Science and Engineering for her guidance and support. I also
+thank all the staff members of the Computer Science Department for providing their assistance and
+support. Last, but not the least, I would like to thank all my friends and family for their valuable
+feedback from time to time as well as their help and encouragement.
+DECLARATION
+I undersigned hereby declare that the project report (phase-2) “ OBTURO-EV – INTELLIGENT
+EV CHARGER BOOKING AND MANAGEMENT SYSTEM”, submitted for partial fulfillment
+of the requirements for the award of the Degree of Bachelor of Technology of the APJ Abdul
+Kalam Technological University is a bonafide work done by myself under the supervision of
+Mr. Andrews Jose. This submission represents ideas in my own words and where ideas or words
+of others have been included, I have adequately and accurately cited and referenced the original
+sources. I also declare that I have adhered to the ethics of academic honesty and integrity and have
+not misrepresented or fabricated any data or idea or fact or source in my submission. I understand
+that any violation of the above will be a cause for disciplinary action by the institute and/or the
+University and can also evoke penal action from the sources which have thus not been properly
+cited or formed the basis for the award of any degree, diploma or similar title of any other Univer￾sity.
+Place: Vazhakulam
+Date: April 2026
+MATHEW BABU
+ABSTRACT
+The Obturo-EV Intelligent Electric Vehicle (EV) Charger Booking and Management System is an
+innovative platform delivered through a Flutter-based Android mobile application and a Django￾served web application, both powered by a single shared backend. The system addresses major
+challenges faced by EV users such as limited charger accessibility, booking conflicts, and unre￾liable status updates. Obturo-EV enables users to search, compare, and reserve charging stations
+based on personalized preferences including price, distance, waiting time, and charging speed.
+By leveraging Multi-Attribute Decision-Making (MADM) methods and the TOPSIS algorithm,
+the system provides ranked recommendations that dynamically adapt to user priorities. It fur￾ther incorporates route-based discovery, conflict-free booking, and smart waitlist management to
+ensure guaranteed charger availability. The Android application delivers real-time WebSocket
+slot updates, Firebase Cloud Messaging push notifications, and an interactive map-based station
+discovery interface, while the web application additionally provides an administrative analytics
+dashboard for platform monitoring. The inclusion of Peer-to-Peer (P2P) charger listings enhances
+network scalability and optimizes infrastructure utilization. Built with robust JWT authentication,
+penalty-based policy enforcement, and real-time data handling via Django Channels, Obturo-EV
+ensures fairness, reliability, and data integrity, ultimately promoting sustainable transportation
+through a unified and user-centric EV charging experience across both mobile and web.
+Contents
+List of Figures i
+List of Tables ii
+List of Abbreviations iii
+1 INTRODUCTION 1
+1.1 Problem Statement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.2 Objective . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3 Scope . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 LITERATURE SURVEY 5
+2.1 Integrated Route Planning Algorithm Based on Spot Price and Classified Travel
+Objectives for EV Users [1] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.1.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.1.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.1.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.1.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2 Development of a Smart Electric Vehicle Charging Station Management System [2] 8
+2.2.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.2.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.2.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.2.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.3 How to Distribute Charging Requests of Electronic Vehicles? A Reservation-based
+Approach [3] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.3.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.3.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.3.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.3.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.4 Alleviating range anxiety with ‘Enroute’: A real-time mobile solution and infras￾tructure innovation for electric vehicle users [4] . . . . . . . . . . . . . . . . . . . 13
+2.4.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2.4.2 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.4.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.4.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.5 Optimization Schedule Schemes for Charging Electric Vehicles: Overview,
+Challenges, and Solutions [5] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+2.5.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+2.5.2 Model Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.5.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.5.4 Disadvantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+3 PROPOSED SYSTEM 17
+3.1 Process Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+3.1.1 Process Flow Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.1.2 Architecture Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+3.1.3 Use case Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.1.4 Data flow diagram Level 0 . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.1.5 Data flow diagram Level 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.1.6 Data flow diagram Level 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+3.1.7 Entity Relationship (ER) Diagram . . . . . . . . . . . . . . . . . . . . . . 25
+3.1.8 Class Daigram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+3.2 System Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+3.2.1 Hardware Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+3.2.2 Software Requirements . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+3.2.3 Flutter and Dart . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+3.2.4 Django and Django REST Framework . . . . . . . . . . . . . . . . . . . . 27
+3.2.5 Django Channels and Redis . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+3.2.6 Firebase Cloud Messaging . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+3.2.7 APScheduler . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+3.2.8 TOPSIS Algorithm . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+3.3 System Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+3.3.1 Module Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+3.3.2 Database Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.3.3 Interface Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.4 Implementation Details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+3.5 Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+3.5.1 Test Cases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+3.5.2 Unit Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+3.5.3 Integration Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+3.5.4 Validation Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+3.5.5 User Acceptance Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+3.6 Performance Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+3.6.1 API Response Time Analysis . . . . . . . . . . . . . . . . . . . . . . . . . 35
+3.6.2 WebSocket Broadcast Latency . . . . . . . . . . . . . . . . . . . . . . . . 36
+3.6.3 TOPSIS Algorithm Computation Analysis . . . . . . . . . . . . . . . . . . 37
+3.6.4 APScheduler Timing Accuracy . . . . . . . . . . . . . . . . . . . . . . . . 38
+3.6.5 Comparison with Existing Systems . . . . . . . . . . . . . . . . . . . . . . 38
+4 CONCLUSION 40
+References iv
+5 Sample Code v
+6 Screenshots xv
+List of Figures
+2.1 (a) GRU cell structure, (b) Encoder-Decoder framework for sequence-to-sequence
+prediction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2 Flowchart of the smart charging algorithm . . . . . . . . . . . . . . . . . . . . . . 8
+2.3 Basic reservation and utilization improvement method . . . . . . . . . . . . . . . 11
+2.4 System Diagram for Adoption of EV . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.5 The architecture of a centralized system for EV charging . . . . . . . . . . . . . . 16
+3.1 Process Flow Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.2 System Architecture of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+3.3 Use Case Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.4 Data Flow Diagram Level 0 of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . 23
+3.5 Data Flow Diagram Level 1 of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . 23
+3.6 Data Flow Diagram Level 2 of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . 24
+3.7 Entity Relationship Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . 25
+3.8 Class Diagram of Obturo-EV . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+3.9 Mean API Response Time per Endpoint (ms) . . . . . . . . . . . . . . . . . . . . 36
+3.10 WebSocket Broadcast Latency — In-Memory vs Redis Channel Layer . . . . . . . 37
+3.11 TOPSIS Computation Time vs Number of Candidate Stations . . . . . . . . . . . 38
+3.12 Average API Latency — Obturo-EV vs Existing Systems (ms) . . . . . . . . . . . 39
+6.1 Login Page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xv
+6.2 Explore Stations Page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xvi
+6.3 Booking page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xvi
+6.4 TOPSIS Ranking Page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xvii
+6.5 Route Planner Page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xvii
+6.6 Booking History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xviii
+6.7 App Home Page . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xviii
+i
+List of Tables
+3.1 Test Cases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+3.2 API Response Time Benchmarks (50 Concurrent Users) . . . . . . . . . . . . . . 36
+3.3 WebSocket Broadcast Latency Results . . . . . . . . . . . . . . . . . . . . . . . . 37
+3.4 TOPSIS Computation Time vs. Station Count . . . . . . . . . . . . . . . . . . . . 37
+3.5 APScheduler Job Timing Accuracy . . . . . . . . . . . . . . . . . . . . . . . . . 38
+3.6 Feature and Performance Comparison with Existing Systems . . . . . . . . . . . . 39
+ii
+List of Abbreviations
+EV Electric Vehicle
+GUI Graphical User Interface
+API Application Programming Interface
+GPS Global Postioning System
+P2P Peer-to-Peer
+MADM Multi-Attribute Decision Making
+CT Charging Time
+UI User Interface
+AES Advanced EN
+OTP One-Time Password
+iii
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 1
+INTRODUCTION
+In today’s rapidly advancing world, the rise of electric vehicles (EVs) represents a major step
+toward sustainable and eco-friendly transportation . However, despite the growing adoption of
+EVs, one of the major challenges faced by users is the limited availability and accessibility of
+charging infrastructure . Traditional EV charging systems rely mainly on static filtering methods,
+such as proximity or price, which fail to address dynamic user needs like waiting time, budget, or
+charging speed
+To overcome these challenges, the Obturo-EV Intelligent Charger Booking and Management Sys￾tem has been proposed. This web-based application provides EV users with an intelligent plat￾form to discover, compare, and reserve charging stations efficiently. It integrates Multi-Attribute
+Decision-Making (MADM) techniques and the TOPSIS (Technique for Order of Preference by
+Similarity to Ideal Solution) algorithm to deliver personalized and optimized recommendations
+based on user preferences such as waiting time, price, distance, and charging duration.
+By combining real-time data processing, smart booking, and conflict handling, Obturo-EV ensures
+a seamless charging experience that minimizes waiting time, prevents double booking, and pro￾motes fairness through queue management and penalty enforcement. Ultimately, the system aims
+to make EV charging more reliable, convenient, and user-centric, encouraging wider adoption of
+electric mobility .
+1.1 Problem Statement
+The rapid growth of electric vehicles has not been matched by an equally efficient and intelligent
+charging network. Existing EV charging platforms are limited to basic filters such as nearest loca￾tion or static cost, without considering dynamic user requirements or real-time station availability.
+This often leads to long waiting times, inefficient resource utilization, and double booking
+conflicts. Moreover, the absence of unified data from multiple charging operators results in poor
+reliability and lack of transparency in slot availability.
+Dept. of Computer Science & Engineering, VJCET Page 1
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+1.2 Objective
+1. Personalized Station Recommendation: Implement the TOPSIS (Technique for Order of
+Preference by Similarity to Ideal Solution) multi-criteria decision-making algorithm to rank nearby
+charging stations according to user-defined preference weights for six criteria — distance from
+current location, price per kWh, waiting time, charging speed (kW), available slots, and estimated
+charging duration. The ranking adapts dynamically to each user’s priorities, ensuring the most
+suitable station is always surfaced first.
+2. Guaranteed Conflict-Free Booking: Prevent overbooking through server-side time-window
+overlap detection using Django ORM range filters. Every booking request is validated against all
+existing active bookings for the selected station and time window before confirmation, ensuring
+no two users are ever assigned the same slot simultaneously.
+3. Real-Time Slot Availability: Provide live slot count updates to all connected users through
+Django Channels WebSocket broadcasting. When any booking is created or cancelled, the updated
+slot count is pushed instantly to every Flutter and browser client viewing that station, eliminating
+the need for manual refresh or periodic polling.
+4. Automated Waitlist Management: Implement a position-based waitlist queue that automati￾cally promotes the next waiting user when a slot becomes available — either through a cancellation
+or a completed booking detected by the background scheduler. Users are notified of their queue
+position, estimated wait time, and slot promotion via push notifications.
+5. Route-Based Charging Station Discovery: Integrate mapping APIs to identify and display
+relevant charging stations along the user’s planned travel route. Stations are filtered by perpen￾dicular distance to the route polyline and ranked using the TOPSIS algorithm to surface the best
+charging stops for the journey.
+6. Peer-to-Peer Charger Sharing Marketplace: Enable private charger owners to list their per￾sonal charging infrastructure on the platform and accept booking requests from other EV drivers.
+The P2P module implements a complete two-sided marketplace with owner approval or rejection,
+overlap conflict detection, and real-time push notifications to both parties at every step.
+7. Smart EV-Aware Filtering: Maintain an EV car catalogue with battery capacity, maximum
+DC and AC charging power, connector type, and WLTP range. Use the authenticated user’s reg￾istered vehicle profile to filter stations by compatible connector type and recommend DC fast
+charging or AC slow charging based on the car’s specifications.
+Dept. of Computer Science & Engineering, VJCET Page 2
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+8. Automated Booking Lifecycle Management: Deploy a background scheduler (APScheduler)
+that runs every minute to automatically mark expired bookings as completed, free the associ￾ated slot, and trigger waitlist promotion. The scheduler also dispatches 10-minute pre-charging
+reminder notifications, reducing no-shows and improving station utilization.
+9. Admin Analytics and Station Management: Provide a staff-only analytics dashboard expos￾ing platform-wide KPIs including total users, total bookings, estimated revenue, system utilization
+rate, top stations by booking volume, and daily and monthly revenue breakdowns, enabling data￾driven operational decisions.
+1.3 Scope
+1. The system provides secure user registration with field-level validation — enforcing unique
+usernames, unique email addresses, minimum password strength, and email format checks — fol￾lowed by JWT-based authentication using short-lived access tokens and long-lived refresh tokens,
+ensuring all API endpoints are protected against unauthorized access.
+2. The platform maintains a comprehensive EV car catalogue and allows users to register their
+specific vehicle model. Battery capacity, maximum DC and AC charging power, connector type,
+and WLTP range are stored per vehicle, enabling the system to recommend the most suitable
+charger type and filter incompatible stations from discovery results.
+3. The booking module guarantees conflict-free reservations through automated server-side over￾lap detection using time-window range queries against all active bookings. If a requested time
+slot is unavailable, the user is automatically placed on a position-based waitlist with a computed
+estimated wait time derived from recent booking durations at that station.
+4. The system provides real-time slot availability updates to all connected clients through Django
+Channels WebSocket broadcasting backed by a Redis channel layer. Every booking or cancella￾tion event triggers an instant slot count update pushed simultaneously to all Flutter app and web
+browser clients viewing the affected station, without any client-side polling.
+5. The intelligent station discovery module uses the TOPSIS multi-criteria decision algorithm to
+rank nearby stations based on six weighted criteria: available slots, charging power, waiting time,
+estimated charging duration, price per kWh, and distance. User-defined preference weights are
+normalized and applied through a NumPy-vectorised matrix computation on the backend, with a
+local fallback scoring implementation in the Flutter app for offline resilience.
+Dept. of Computer Science & Engineering, VJCET Page 3
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+6. The route planning module accepts a sequence of GPS coordinates representing the user’s travel
+route, computes the perpendicular distance from each station to every polyline segment, filters sta￾tions within the specified corridor radius, and returns both nearby stations and the algorithmically
+recommended best charging stops for the journey.
+7. The crowd-sourced station reporting module allows users to submit real-time condition reports
+— including charger broken, long queue, station closed, offline, or all-clear status — with a 2-
+hour automatic expiry. Other users can upvote active reports to surface the most relevant ones,
+providing a self-maintaining real-time station health layer without requiring manual moderation.
+8. The application enforces a penalty policy for users who accumulate no-show or late-cancellation
+events. Penalty points are tracked per user and automatically applied by the background scheduler
+when an active booking expires without the session being initiated. Users reaching the penalty
+threshold are temporarily blocked from new bookings, ensuring the platform remains fair and
+reliable for all users.
+9. The platform delivers push notifications to user’s registered mobile devices through Firebase
+Cloud Messaging at every key lifecycle event: booking confirmation, cancellation, waitlist ad￾dition, waitlist promotion, P2P booking request and approval, and 10-minute pre-charging re￾minders. All notifications are dispatched asynchronously in daemon threads to ensure API re￾sponse times are never impacted.
+10. The admin analytics module exposes a staff-only dashboard providing platform-wide KPIs
+including total users, active and completed booking counts, estimated revenue, system utilization
+rate, and top stations by booking volume. Station management endpoints allow administrators to
+create, update, and delete charging stations. All admin endpoints are protected by Django’s staff
+permission flag and return HTTP 403 for unauthorized access.
+Dept. of Computer Science & Engineering, VJCET Page 4
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 2
+LITERATURE SURVEY
+2.1 Integrated Route Planning Algorithm Based on Spot Price and
+Classified Travel Objectives for EV Users [1]
+This paper presents an integrated route planning algorithm that provides optimal routes and cor￾responding charging schemes for EV users with different travel objectives based on spot price
+forecasting and traffic conditions, combining traditional path planning algorithms with optimiza￾tion techniques.
+2.1.1 Methodology
+The methodology classifies EV user travel objectives into three categories: in-situ charging (find￾ing nearby stations), close-range travel (requiring one charging station), and multi-site travel (re￾quiring multiple stations). Each category is further subdivided based on parking requirements and
+duration.
+A time-window electricity price forecasting model based on GRU (Gated Recurrent Unit) neu￾ral network with Encoder-Decoder framework is established to generate pricing information. The
+model performs two types of prediction: intraday prediction (360 minutes) for long-term trends
+and time-window prediction (60 minutes with higher accuracy) that updates every 15 minutes.
+The integrated route planning algorithm combines Simulated Annealing Algorithm (SAA) with
+A* and Dijkstra algorithms, selecting appropriate methods based on travel objectives.
+Dept. of Computer Science & Engineering, VJCET Page 5
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.1.2 Model Architecture
+Figure 2.1: (a) GRU cell structure, (b) Encoder-Decoder framework for sequence-to-sequence prediction
+2.1.3 Advantages
+1. Accurate Price Forecasting: The time-window GRU-based prediction[5] achieves MAPE of
+1.57 percentage and RMSE of 0.131 for 60-minute forecasts, significantly outperforming
+intraday prediction (MAPE 6.51, RMSE 0.236) and providing reliable price information for
+route planning.
+2. Objective-Specific Optimization: By classifying travel objectives into eight distinct types and
+applying tailored algorithms (Dijkstra for in-situ, A* variants for close-range, A*-SAA for
+multi-site), the system provides personalized recommendations matching user needs better
+than one-size-fits-all approaches
+3. Comprehensive Evaluation Framework: Uses multiple indicators (travel time, charging time)
+displayed in radar charts, enabling users to make informed decisions based on their priori￾tiesand trade-offs.
+4. Cost Reduction Benefits: Simulation results show charging costs 30-60 percentage lower
+than tra-ditional fastest/shortest path routing when considering spot price variations, demon￾strating practical economic benefits for users while potentially reducing grid load during peak
+periods.
+2.1.4 Disadvantages
+1. Limited Charging Station Support: The algorithm assumes all charging stations provide the
+same Type-II chargers with fixed 10 kW charging rate, not accounting for varying charging
+speeds (Level I, II, III) or different charger types (AC/DC fast charging) available at real
+stations.
+Dept. of Computer Science & Engineering, VJCET Page 6
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2. dealized User Behavior Assumptions: Assumes users will follow recommended routes and
+charging schedules precisely, not accounting for spontaneous decisions, preference changes,
+or real-world disruptions that may cause deviation from planned behavior.
+3. Computational Complexity for Multi-Site Travel: The A*-SAA combination, while effec￾tive, requires significant computational resources for optimization across multiple charging
+stations, potentially impacting real-time responsiveness for long-distance travel scenarios.
+4. Historical Data Dependency: The price forecasting model relies heavily on historical charg￾ing price data patterns, which may not generalize well to areas with newly implemented spot
+pricing schemes or during unusual grid conditions not represented in training data.
+Dept. of Computer Science & Engineering, VJCET Page 7
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.2 Development of a Smart Electric Vehicle Charging Station Man￾agement System [2]
+This paper presents the development of a smart Charging Station Management System (CSMS)
+that optimizes EV charging by calculating charging schedules based on day-ahead electricity
+prices, aiming at minimization of energy costs while implementing user authorization, transac￾tion management, and charger monitoring based on OCPP 2.0.1.
+2.2.1 Methodology
+The system implements a smart charging algorithm that calculates optimal charging profiles based
+on user reservations, required energy, charging duration, dynamic electricity prices, maximum
+CP power, and grid constraints. Evaluation was performed using real day-ahead electricity prices
+from ENTSO-E covering the period from August 2023 to July 2024, analyzing cost savings across
+different charging scenarios including varying energy requirements (20, 30, 40 kWh), charging
+durations (8 hours), time periods (day, evening, night), and connector capacities (7 kW, 11 kW).
+2.2.2 Model Architecture
+Figure 2.2: Flowchart of the smart charging algorithm
+Dept. of Computer Science & Engineering, VJCET Page 8
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.2.3 Advantages
+1. Significant Cost Savings: The smart charging profile achieved an average of 34.1 cost re￾duction compared to fast charging, with monthly savings of approximately C24.2 and total
+annual savings of C290 for daily charging scenarios.
+2. Price Volatility Optimization: The system effectively exploits electricity price variability,
+with greater savings correlating to higher standard deviation in energy prices during charging
+periods.
+3. Standardized Communication: Implementation of OCPP 2.0.1 ensures interoperability be￾tween different manufacturers’ charging equipment and provides enhanced security through
+encryption.
+4. Reservation Integration: The system supports user reservations specifying charging period
+and desired energy amount, enabling proactive charging schedule optimization.
+2.2.4 Disadvantages
+1. Limited Battery Considerations: The system does not explicitly account for battery degra￾dation, state-of-health, or temperature management, which can significantly impact actual
+charging costs and requirements.
+2. Fixed Time Windows: The 8-hour charging duration assumption may not suit all user needs,
+particularly those requiring faster charging or having unpredictable schedules.
+3. Price Prediction Dependency: The system relies on day-ahead electricity prices, which may
+not always be available or accurate, and does not consider real-time price adjustments or grid
+congestion pricing.
+4. Scalability Concerns: The centralized architecture may face performance challenges when
+managing large numbers of simultaneous charging sessions and complex optimization calcu￾lations.
+Dept. of Computer Science & Engineering, VJCET Page 9
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.3 How to Distribute Charging Requests of Electronic Vehicles?
+A Reservation-based Approach [3]
+Electric vehicle (EV) adoption is surging globally, with a 29.3 per rise in registrations in Germany
+from January to March 2022 compared to the prior year . This growth reflects a shift towards
+sustainable transport, driven by environmental concerns, policy support, and battery technology
+advancements improving range and efficiency. However, challenges persist, including limited EV
+range requiring careful trip planning and prolonged charging times compared to refueling inter￾nal combustion engines, straining station availability . In urban areas, high-demand stations near
+popular locations are often occupied, causing traffic, lengthy searches, and driver frustration. Re￾serving stations in advance could save time and help operators optimize utilization. The rapid EV
+increase exacerbates infrastructure limits, leading to overcrowded central stations while periph￾eral ones remain underused, a trend evident in operator data. Prior research uses real-time data
+systems for utilization, assuming full EV-station-operator communication , which is impractical
+due to privacy issues and the lack of widespread infrastructure . This paper addresses this gap by
+designing a reservation system to distribute utilization without complete transparency, employing
+a design science approach with interviews and simulations using data from 49 German stations
+(2020-2021).It contributes requirements, a model, app instantiation, and simulated impact analy￾sis.
+2.3.1 Methodology
+The methodology follows the design science research (DSR) paradigm , creating and evaluating
+IT artifacts (e.g., models, methods) to solve organizational problems . It adheres to Peffers et al.’s
+six-phase model—Problem Identification, Objective Definition, Design/Development, Demon￾stration, Evaluation, and Communication—iteratively applied. Problem identification leveraged
+operator insights on urban overloads and privacy concerns, supported by a literature review (Sec￾tion 2) revealing a gap in reservation-utilization integration without full transparency. Objectives
+were shaped by analyzing reservation apps and conducting six driver interviews (Microsoft Teams,
+December 7-22, 2021, averaging 18 minutes) plus one operator interview, transcribed via Amazon
+Transcribe and analyzed qualitatively . A Figma mock-up guided initial requirements. Design
+and development involved five iterations, yielding a utilization method (Level 2) and app proto￾type (Level 1), refined with simulation feedback. Demonstration tested integration functionality.
+Evaluation used 2020-2021 data from 49 stations (28,393 and 40,818 operations) to simulate dis￾tribution, varying parameters.Metrics like daily (Ac) and time-frame-specific (Acd1−3) utilization
+assessed effectiveness. Tools included Figma, Ionic/Angular, MySQL, and Google Maps API
+Dept. of Computer Science & Engineering, VJCET Page 10
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.3.2 Model Architecture
+Figure 2.3: Basic reservation and utilization improvement method
+2.3.3 Advantages
+1. mproves charging station utilization in urban areas by distributing requests via reservations,
+reducing overloads, search time, and user frustration without requiring full communication
+infrastructure.
+2. Uses real-world data from 49 German stations for simulations, providing practical insights
+into distribution effects and scalability.
+3. Adaptability: Suitable for a variety of EVCS and IoT attack scenarios.
+4. Addresses privacy by avoiding extensive data sharing, making it feasible for near-term im￾plementation and potentially extending station usage.
+Dept. of Computer Science & Engineering, VJCET Page 11
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.3.4 Disadvantages
+1. Penalty systems for non-compliance (e.g., price changes) may discourage users or lead to
+dissatisfaction if perceived as unfair.
+2. Evaluation is simulation-based on historical data (2020-2021), which may not capture dy￾namic real-time factors like traffic or EV growth post-2023.
+3. Limited to urban settings with existing stations; doesn’t address infrastructure expansion or
+integration with broader smart city systems.
+4. Limited to urban settings with existing stations; doesn’t address infrastructure expansion or
+integration with broader smart city systems.
+Dept. of Computer Science & Engineering, VJCET Page 12
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.4 Alleviating range anxiety with ‘Enroute’: A real-time mobile
+solution and infrastructure innovation for electric vehicle users
+[4]
+The growing adoption of electric vehicles (EVs) reflects their role in sustainable transportation,
+particularly Battery Electric Vehicles (BEVs) in regions like India. Despite benefits such as
+lower costs and reduced emissions, ”range anxiety”—the fear of battery depletion during jour￾neys—remains a key barrier. Existing infrastructure, concentrated in urban areas, leaves drivers
+vulnerable in remote regions. This study addresses this by developing ’Enroute’, a mobile app
+providing real-time solutions using crowd-sourced data and partnerships with charging providers.
+It enables locating stations or booking on-site charging (e.g., porter services). Objectives include
+analyzing infrastructure limitations, EV user challenges, and creating a Product-Service System
+(PSS) for timely assistance. The app integrates with EV systems, enhancing long-distance confi￾dence and EV adoption. Results show effectiveness in alleviating anxiety, with future refinements
+focusing on app improvements, expanded partnerships, and manufacturer collaborations for sus￾tainable mobility.
+2.4.1 Methodology
+The research employs a structured approach: background/objectives (Section 1), literature/mar￾ket review (Section 2), methodology (Section 3), results (Section 4), discussions (Section 5), and
+conclusion/future scope (Section 6). Literature covers EV adoption, infrastructure, range anxiety,
+battery management, and apps. Market research analyzes apps like Shell Recharge and Tata Power
+EZ Charge via SWOT. Methodology involves interviews/surveys with 30 EV users for insights on
+anxiety/infrastructure. TRIZ methodology solves problems, leading to a conceptual framework
+for app features and infrastructure. Giga mapping visualizes networks; user journeys identify
+pain points. Prototyping uses Figma for wireframes, Android Studio for development. Evaluation
+includes remote user testing (24 participants) assessing usability via tasks rated 1-5, thoughts ver￾balized, and post-interviews on features/effectiveness. Integrated framework (iFEV) incorporates
+app, profiles, stations, maintenance, billing, dispatch, geolocation, analytics, and sustainability.
+Stakeholder analysis identifies primary (users), secondary (government/providers), and tertiary
+(developers/advocates) groups. Implementation uses mobile app for real-time crowd-sourced as￾sistance.
+Dept. of Computer Science & Engineering, VJCET Page 13
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.4.2 Architecture
+Figure 2.4: System Diagram for Adoption of EV
+2.4.3 Advantages
+1. Reduces range anxiety by providing real-time, crowdsourced charging options, enhancing user
+confidence for long trips.
+2. Integrates with EV systems for seamless assistance, potentially increasing EV adoption by 70%
+through renewable energy ties (e.g., PV integration)
+3. Cost-effective for users in remote areas via on-demand ”porter” services, minimizing grid
+overload and promoting sustainable mobility.
+4. Scalable through partnerships, with low implementation costs for app-based solutions.
+2.4.4 Disadvantages
+1. Relies on crowd-sourced data, which may be inaccurate or sparse in low-traffic areas, leading
+to unreliable recommendations.
+2. Privacy concerns with user location tracking and data sharing among partners
+Dept. of Computer Science & Engineering, VJCET Page 14
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.5 Optimization Schedule Schemes for Charging Electric Vehi￾cles: Overview, Challenges, and Solutions [5]
+Electric vehicles (EVs) have gained global attention due to climate concerns, battery advance￾ments, and incentives for sustainable transport. Types include BEVs (zero emissions, plug-in
+charging), PHEVs (battery + engine, hybrid modes), HEVs (self-sufficient, regenerative brak￾ing), and FCEVs (hydrogen-powered, water emissions). Challenges include grid stability with
+rising EV numbers, optimizing schedules to balance demand/capacity, and addressing limited
+range/user behavior. Uncoordinated charging causes congestion/overloads; optimized schemes
+consider prices, renewables, networks. Surveys review scheduling algorithms (unidirectional/bidi￾rectional, centralized/decentralized), dynamic pricing (RTP/TOU/CPP/PTR), charging/discharg￾ing coordination, and methods (BSS/WPT/CC). This article focuses on user demands/infrastruc￾ture, grid impact, modes/patterns (home/public/mobile), systems (centralized/decentralized), and
+EV types. It critically reviews optimization techniques, analyzes limitations/gaps, identifies open
+issues, and suggests research directions for efficient/sustainable/user-friendly schemes.
+2.5.1 Methodology
+As a comprehensive overview, the methodology involves systematic literature review and anal￾ysis. Key sections: EV types (II), charging modes (III: levels 1-4), patterns (IV: home/pub￾lic/mobile), strategies (V: uncoordinated/coordinated, centralized/decentralized). Classical opti￾mization (VI: linear/dynamic programming, heuristics like PSO/GA/ACO) and machine learning
+(VII: supervised/unsupervised/semi-supervised/reinforcement/deep learning, interpretability via
+SHAP) are examined for scheduling. Comparisons/gaps (VIII) use tables evaluating perspectives
+(grid/user), systems, complexity/time, costs/efficiency, integration (V2G/RES). Potential direc￾tions: public datasets, RES maximization, time efficiency, grid stability , user convenience. No
+primary data collection; relies on existing studies/simulations for insights. Evaluation criteria:
+scalability, user-centricity, real-time data handling, technology integration. Future: dynamic/adap￾tive schemes, ML for predictions/load balancing.
+Dept. of Computer Science & Engineering, VJCET Page 15
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+2.5.2 Model Architecture
+Figure 2.5: The architecture of a centralized system for EV charging
+2.5.3 Advantages
+1. Highlights user demands and grid impacts, promoting coordinated schemes to avoid conges￾tion and balance loads, with potential for RES integration
+2. Covers diverse aspects like V2G and dynamic pricing, providing a foundation for efficient,
+user-friendly systems that reduce emissions and costs.
+3. Open research issues (e.g., datasets, time efficiency) guide future work, making it valuable
+for researchers and policymakers.
+2.5.4 Disadvantages
+1. As a review paper, it lacks original implementations or empirical data, relying on existing
+studies which may have outdated assumptions (pre-2024)
+2. Discuss challenges (e.g., grid stability, user behavior) but offers high-level solutions without
+detailed evaluations or prototypes.
+Dept. of Computer Science & Engineering, VJCET Page 16
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 3
+PROPOSED SYSTEM
+The proposed system OBTURO-EV aims to revolutionize the electric vehicle charging experience
+by leveraging intelligent station discovery, real-time slot management, and a peer-to-peer charger
+sharing marketplace. The platform operates through two client surfaces — a Flutter-based An￾droid mobile application and a Django-served web application — both powered by a single shared
+backend. At its core, the platform utilizes a Django REST Framework backend with Django Chan￾nels for WebSocket-based live updates, Firebase Cloud Messaging for push notifications, and the
+TOPSIS multi-criteria decision algorithm for intelligent station ranking.
+Beyond station booking, the platform offers a comprehensive suite of features including a smart
+waitlist system with automated promotion, P2P private charger sharing, crowd-sourced station re￾ports, personalized EV-aware recommendations, geospatial proximity search, route-based charg￾ing stop discovery, and an administrative analytics dashboard accessible through the web interface.
+By combining real-time data, intelligent ranking, and a two-sided charger marketplace across both
+a mobile application and a web application, the OBTURO-EV has the potential to transform the
+EV charging experience, providing a streamlined, reliable, and personalized journey for electric
+vehicle drivers.
+3.1 Process Overview
+1. Project Planning
+• Define Project Scope and Objectives : The goals of OBTURO-EV – Intelligent EV
+Charger Booking and Management System to provide a seamless, secure, and user￾friendly platform for EV charging station booking, real-time navigation, and trip plan￾ning in Kerala.
+Dept. of Computer Science & Engineering, VJCET Page 17
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+• Identify Target Audience : Focus on individual EV drivers in urban and semi-urban In￾dia (e.g., Kerala,Delhi, Bengaluru), including novice users, daily commuters, and long￾distance travelers.
+• Establish Project Timeline and Milestones: Create a detailed project timeline with
+milestones to track progress and ensure timely completion.
+• Assemble Project Team: Bring together a team with expertise in Python/Django back￾end development, Flutter mobile development, Django template-based web develop￾ment, TOPSIS algorithm design, Firebase integration, and database management.
+2. Requirements Gathering and Analysis
+• Gather User Requirements: We dove into existing research and foundational papers
+to discussed the main challenges faced by EV owners in India to identify pain points:
+charger availability, traffic delays, weather impact, and cost transparency.
+• Analyze User Feedback: We analyzed the collected user data to identify common
+themes, prioritize features, and refine the app’s design: need for real-time availability,
+offline booking support, multilingual UI (Hindi, Tamil), and cost comparison tools..
+• Define Functional and Non-functional Requirements:
+– Functional: Station search, booking with conflict detection, map-based navigation,
+weather/traffic-aware recommendations, booking history.
+– Non-functional: Fast response ( less than 2 s), offline mode, secure data storage
+(encrypted MongoDB), scalable to 10,000+ users, multilingual support.
+3. Design and Development.
+a. Shared Backend API Design: Design RESTful API endpoints following consistent con￾ventions across all modules — accounts, stations, bookings, waitlist, P2P marketplace, crowd￾sourced reports, and admin analytics — so that both the Flutter Android application and the
+Django web interface consume the same endpoints without duplicating any business logic.
+b. Algorithm Integration: Implement the TOPSIS multi-criteria decision-making algorithm
+to rank nearby stations based on available slots, charging power, waiting time, estimated
+charging duration, price per kWh, and distance from the user. Provide the same ranking both
+in the mobile app and on the web station listing page.
+c. Real-Time Infrastructure: Integrate Django Channels with a Redis channel layer to en￾able WebSocket connections, broadcasting live slot count updates to all connected clients —
+whether Flutter app or browser — instantly after every booking or cancellation event.
+Dept. of Computer Science & Engineering, VJCET Page 18
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+d. Notification Services: Integrate Firebase Cloud Messaging for push notifications on book￾ing confirmation, cancellation, waitlist promotion, P2P booking approval, and 10-minute
+pre-charging reminders dispatched by APScheduler. Email notifications supplement push
+notifications for both mobile and web users.
+Deployment and Maintenance
+• Server Deployment: Deploy the Django application with ASGI support (Daphne/Uvi￾corn) to enable Django Channels WebSocket functionality alongside the standard HTTP
+REST API and the server-rendered web interface, all from the same process
+• Monitoring and Support: Continuously monitor API performance, WebSocket con￾nection health, scheduler job execution, and Firebase delivery rates; address user feed￾back from both mobile and web users and provide ongoing maintenance and support.
+• Security Updates: Regularly update JWT token configurations, rotate Firebase service
+account credentials, and patch Django dependencies to maintain a high level of data
+protection for all client surfaces.
+• Feature Enhancements: Implement new features and enhancements such as dynamic
+pricing, EV route planning with multi-stop optimization, and fleet management support
+based on user needs and market trends.
+Dept. of Computer Science & Engineering, VJCET Page 19
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.1 Process Flow Diagram
+Figure 3.1: Process Flow Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 20
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.2 Architecture Diagram
+Figure 3.2: System Architecture of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 21
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.3 Use case Diagram
+Figure 3.3: Use Case Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 22
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.4 Data flow diagram Level 0
+Figure 3.4: Data Flow Diagram Level 0 of Obturo-EV
+3.1.5 Data flow diagram Level 1
+Figure 3.5: Data Flow Diagram Level 1 of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 23
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.6 Data flow diagram Level 2
+Figure 3.6: Data Flow Diagram Level 2 of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 24
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.7 Entity Relationship (ER) Diagram
+Figure 3.7: Entity Relationship Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 25
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.1.8 Class Daigram
+Figure 3.8: Class Diagram of Obturo-EV
+Dept. of Computer Science & Engineering, VJCET Page 26
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.2 System Requirements
+3.2.1 Hardware Requirements
+The hardware requirements for the Obturo backend server consist of a machine with a minimum
+quad-core processor, 8 GB RAM or above, and at least 500 GB of disk storage for database per￾sistence and media assets. The server must have a stable internet connection to serve WebSocket
+connections, communicate with Firebase Cloud Messaging servers, dispatch SMTP emails, and
+proxy external services such as Nominatim geocoding and OSRM routing. On the client side, a
+mobile device running Android 8.0 or above with an active internet connection is required to run
+the Flutter application. The device must have GPS capability for location-based station discovery
+and smart TOPSIS ranking.
+3.2.2 Software Requirements
+The software platforms used in this system span both the backend and the Flutter mobile fron￾tend.The backend stack is built in Python using Django and associated packages.The frontend is
+built using the Flutter framework with the Dart programming language. The complete software
+components are described in the following sub-sections.
+3.2.3 Flutter and Dart
+Flutter is a cross-platform framework developed by Google for building natively compiled ap￾plications for mobile, web, and desktop from a single codebase. It uses the Dart programming
+language and offers a rich set of pre-built widgets for creating beautiful and responsive user inter￾faces. Flutter’s hot reload feature allows developers to quickly see changes in their code without
+restarting the application. In Obturo, the Flutter app is structured into four clear layers: screens
+under lib/screens/, providers under lib/providers/, services under lib/services/, and
+models under lib/models/. The Provider package is used for state management, and Consumer
+widgets ensure that the UI rebuilds automatically and efficiently when provider state changes.
+3.2.4 Django and Django REST Framework
+Django is a high-level, open-source Python web framework that promotes rapid development and
+clean, pragmatic design. It provides an ORM that abstracts the database layer, a powerful built-in
+admin interface, and a middleware pipeline for request and response processing. Django REST
+Framework (DRF) is a powerful toolkit built on top of Django for constructing Web APIs. It
+provides serializers for data validation and representation, class-based and function-based API
+views, and permission classes for JWT-based authentication enforcement. In Obturo, DRF handles
+Dept. of Computer Science & Engineering, VJCET Page 27
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+all 45+ API endpoints consumed by the Flutter ApiService singleton, which centralizes all HTTP
+GET, POST, PUT, and DELETE calls with consistent header management, bearer token injection,
+timeout handling, and error parsing for status codes 401, 403, 404, and network failures.
+3.2.5 Django Channels and Redis
+Django Channels extends Django to handle WebSocket connections alongside standard HTTP. In
+Obturo, a StationSlotsConsumer WebSocket endpoint is exposed at ws/station/<station id>/.
+When a Flutter client connects, it is added to the station’s channel group and immediately receives
+the current slot state. On every booking creation or cancellation, broadcast slot update pushes
+the update to all connected clients via the Redis channel layer, delivering sub-second live slot count
+changes to all users viewing the same station screen simultaneously.
+3.2.6 Firebase Cloud Messaging
+Firebase Cloud Messaging (FCM) is a cross-platform messaging service provided by Google that
+enables reliable delivery of push notifications to Android and iOS devices. In Obturo, the Firebase
+Admin SDK on the backend sends notifications on booking confirmation, cancellation, waitlist
+addition, waitlist promotion, P2P booking request and approval, and 10-minute pre-charging re￾minders. The Flutter app registers its FCM device token on login, which is stored in the backend
+DeviceToken model and used for all subsequent notification delivery.
+3.2.7 APScheduler
+APScheduler (Advanced Python Scheduler) is a lightweight in-process task scheduler for Python.
+In Obturo, two recurring jobs run every minute: send booking reminders dispatches push notifi￾cations to users whose bookings start within the next 10 minutes, and mark completed bookings
+finds all expired active bookings, marks them as completed, applies no-show penalties, restores
+freed slots, and triggers waitlist promotion to automatically convert the next queued user’s waitlist
+entry into a real booking.
+3.2.8 TOPSIS Algorithm
+TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) is a multi-criteria
+decision-making algorithm implemented in Obturo both on the backend and as a local fallback
+within the Flutter RankingProvider. The algorithm ranks candidate stations based on six criteria:
+available slots (+), charging power in kW (+), waiting time in minutes (–), estimated charging
+duration (–), price per kWh (–), and distance from the user (–). On the backend, NumPy matrix
+operations perform normalization, weighting, ideal vector computation, and distance scoring. In
+Dept. of Computer Science & Engineering, VJCET Page 28
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+the Flutter app, if the remote TOPSIS call fails, RankingProvider executes a local scoring pass
+using fetched station data and the user’s normalized preference weights, ensuring that the smart
+ranking feature remains functional even without backend connectivity.
+3.3 System Design
+3.3.1 Module Design
+Module 1 — Authentication and User Profile Module
+The Authentication module spans both the Flutter app and the backend. On the Flutter side, the
+login and registration screens call ApiService with user credentials. The backend SignupView
+enforces field validation and password hashing; the LoginView returns a JWT access and refresh
+token pair via SimpleJWT. The Flutter ApiService stores tokens through StorageService and
+injects the bearer token header into all subsequent requests automatically. The module also handles
+EV car profile selection, smart DC vs AC recommendation based on the user’s car specifications,
+and FCM device token registration on login.
+Module 2 — Station Discovery Module
+The Station Discovery module in the Flutter app uses StationService to fetch all stations, nearby
+stations filtered by the Haversine formula, text search results, station details, smart car-filtered lists,
+and user favourites. The ChargingStation Dart model holds all station fields including optional
+runtime values such as distanceKm computed on the client. The backend ChargingStation
+Django model stores 25 fields covering name, coordinates, charger type, connector type, power
+rating, slot counts, pricing, facilities, amenity flags, and operating hours. Proxy endpoints for
+Nominatim geocoding and OSRM turn-by-turn routing are also exposed for the Flutter map view.
+Module 3 — Smart TOPSIS Ranking Module
+The Smart Ranking module is the distinguishing feature of Obturo. The Flutter SmartRankingScreen
+exposes six weight sliders (available slots, power, waiting time, charging time, price per kWh,
+distance) that store values on a 1–10 scale in RankingProvider. When the user triggers rank￾ing, RankingProvider.fetchRanking() calls RankingService.getSmartRanking() with the
+user’s GPS coordinates and normalized weights. The backend TOPSIS endpoint builds a decision
+matrix, runs the TOPSIS algorithm using NumPy, and returns stations sorted by descending score.
+If the call fails, the provider executes a local fallback using station data from StationService,
+Dept. of Computer Science & Engineering, VJCET Page 29
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+computing distances, normalizing benefit and cost criteria, and scoring stations locally. The UI
+displays a fallback banner when running in offline mode.
+Module 4 — Booking and Waitlist Module
+The Booking module in Flutter uses BookingProvider which calls BookingService for booking
+creation, retrieval of active and historical bookings, and cancellation. On the backend, the three￾gate booking engine checks user penalty status, time-window overlap using ORM range filters,
+and slot availability before creating a booking or waitlist entry. On booking creation, the slot
+count is decremented, a WebSocket broadcast is fired, and asynchronous email and FCM push
+notifications are dispatched. The BookingProvider automatically refreshes both active and full
+booking lists after every create or cancel action, keeping the Flutter UI always in sync.
+Module 5 — Route Planning Module
+The Route Planning module allows users to discover charging stations along a planned travel route.
+The Flutter RoutePlannerProvider.findStationsAlongRoute() accepts a list of GPS coordi￾nate points representing the route and calls RoutePlannerService.getStationsAlongRoute()
+and RoutePlannerService.getBestChargeStops() in parallel. The backend computes per￾pendicular distances from each station to the route polyline segments, filters within the specified
+radius, and returns both nearby stations and the best recommended charging stops. The provider
+stores both result lists and exposes a clearResults() method to reset the state when the user
+starts a new route.
+Module 6 — P2P Charger Sharing Module
+The P2P module implements a two-sided marketplace accessible from the Flutter app through ded￾icated API config endpoints: p2pCreateCharger, p2pNearbyChargers, p2pCreateBooking,
+p2pApprove, p2pMyBookings, and p2pOwnerRequests. Charger owners list private chargers
+with location, connector type, power, and price. EV drivers browse nearby private chargers and
+submit booking requests. The backend performs overlap detection against existing pending and
+approved bookings. Owners receive FCM push notifications for each new request and approve or
+reject from the app; renters receive corresponding status notifications.
+Module 7 — Admin Analytics Module
+The Admin Analytics module exposes staff-only backend endpoints providing platform-wide ob￾servability. The dashboard statistics endpoint returns total users, total stations, total and active
+Dept. of Computer Science & Engineering, VJCET Page 30
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+booking counts, estimated revenue from completed bookings, and system utilization rate. Addi￾tional endpoints provide daily and monthly revenue breakdowns, top stations by booking volume,
+user management, booking analytics by status, and full charging station management. All end￾points require request.user.is staff and return HTTP 403 for unauthorized access.
+3.3.2 Database Design
+The Obturo database schema consists of eleven tables managed through Django’s ORM. The
+auth user table (Django built-in) stores core identity fields. The accounts car table holds
+the EV catalogue with battery capacity, max DC/AC power, connector type, and WLTP range.
+The accounts usercar table is a one-to-one extension linking a user to their chosen car. The
+accounts devicetoken table stores FCM tokens registered by the Flutter app on login, with
+a unique constraint on the token string. The stations chargingstation table is the cen￾tral entity with 25 columns. The stations booking table has foreign keys to auth user and
+stations chargingstation with start time, end time, and status. The stations waitlist table
+adds a position integer and expires at timestamp with a unique together constraint on (user, sta￾tion). The stations peercharger and stations peerbooking tables implement the P2P mar￾ketplace. The stations stationrating table enforces one review per user per station. The
+stations stationreport table includes an expires at field used to auto-purge crowd reports
+older than 2 hours.
+3.3.3 Interface Design
+The Flutter application follows a layered interface design. The Navigation layer in lib/main.dart
+registers all named routes — login, registration, home, station list, station detail, smart ranking,
+route planner, booking, and P2P screens. The State Binding layer uses MultiProvider at the app
+root to initialize all providers once; individual screens access providers via Provider.of<T>(context)
+or Consumer<T> widgets that rebuild only the affected subtree when state changes.
+All backend API interfaces follow RESTful conventions with JSON bodies. The Flutter ApiService
+singleton applies the Authorization: Bearer <token> header to all authenticated requests.
+Error responses use a consistent JSON structure with an error key; the ApiService interprets
+status codes 401, 403, 404, and timeout exceptions and rethrows typed errors that provider classes
+catch and expose as user-friendly error messages in the UI. All datetime values are converted to
+the local timezone (Asia/Kolkata) by the backend before being returned, so the Flutter app always
+displays correctly formatted local times without additional client-side conversion. The WebSocket
+interface sends JSON messages with initial data on connect and slots update on every slot
+change broadcast.
+Dept. of Computer Science & Engineering, VJCET Page 31
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+3.4 Implementation Details
+Implementing OBTURO-EV involves careful coordination between the Flutter frontend and the
+Django backend across the booking, ranking, routing, notification, and real-time layers.
+The Flutter application follows a strict unidirectional data flow. The user interacts with a UI
+screen, which calls a provider method. The provider calls a service. The service uses ApiService
+to perform network I/O. The backend returns data. JSON is converted into Dart model objects.
+The provider updates its state and calls notifyListeners(). Consumer widgets rebuild auto￾matically. This flow applies consistently to station discovery, TOPSIS ranking, booking, route
+planning, and P2P operations.
+The ApiService singleton is initialized once and reused across all services. It adds the Content-Type:
+application/json header to every request and retrieves the stored JWT token from StorageService
+to inject as a bearer token when required. It implements a centralized timeout and catches 401, 403,
+and 404 HTTP errors, allowing service classes to simply rethrow exceptions and letting provider
+classes interpret them as user-facing messages.
+The smart ranking implementation in RankingProvider is particularly robust. It normalizes user
+weights — stored on a 1–10 integer scale from the SmartRankingScreen sliders — to decimal
+percentages before sending them to the backend. If the remote TOPSIS call returns a 404 or
+network error, the provider immediately executes a local fallback: it calls StationService to
+fetch all stations, computes Haversine distances, filters to a local radius, normalizes benefit criteria
+(power, available slots — higher is better) and cost criteria (price, distance — lower is better)
+independently, computes a weighted composite score, sorts descending, and stores the top results.
+A boolean flag isFallback is set to true so the UI can display an appropriate offline banner to the
+user.
+On the backend, the booking engine in create booking follows a three-gate pattern. The first
+gate queries UserPenalty and rejects blocked users with HTTP 403, capping blocks at 5 min￾utes. The second gate uses Django ORM filters start time lt=end and end time gt=start
+to count overlapping active bookings; if this equals total slots, the user is placed on the waitlist.
+The third gate creates the booking, decrements available slots, calls broadcast slot update
+(which uses async to sync to push a WebSocket group message to all connected Flutter clients
+viewing that station), and dispatches confirmation email and FCM push in daemon threads.
+The RoutePlannerProvider sends the full list of GPS coordinate points for a planned route to
+RoutePlannerService, which submits them to two backend endpoints simultaneously — sta￾tions along the route and best charging stops. The backend computes perpendicular distances
+Dept. of Computer Science & Engineering, VJCET Page 32
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+from each station to each polyline segment and filters within the specified radius. The provider
+stores both result sets independently so the UI can render all nearby stations and highlight the
+algorithmically recommended best stops on the route map.
+Finally, email notifications are sent using Django’s send mail with html message to deliver
+branded HTML confirmation and waitlist emails. Both notification functions use fail silently=True
+and are always invoked inside daemon threads, ensuring that any SMTP failures or latency never
+impact booking API response times.
+3.5 Testing
+Testing of the Obturo platform covers both the Django backend and the Flutter frontend applica￾tion. A structured multi-level testing strategy was adopted, spanning unit tests on isolated compo￾nents, integration tests on end-to-end flows through the app and API, validation tests on boundary
+conditions, and user acceptance tests on real device scenarios.
+3.5.1 Test Cases
+The following test cases cover the most critical functional paths across both the Flutter application
+and the Django backend.
+3.5.2 Unit Testing
+Unit testing was carried out throughout the coding phase on individual components of both the
+backend and the Flutter app. The TOPSIS function was tested in isolation with known matrices and
+manually computed expected scores to verify normalization, weighting, ideal vector computation,
+and distance scoring. The Haversine calculate distance function was validated against known
+GPS coordinate pairs. The reorder waitlist function was tested to verify correct sequential
+renumbering after deletions. The Flutter RankingProvider local fallback was tested by mocking
+a failed remote TOPSIS call and verifying that local scores were computed, isFallback was set
+to true, and the result list was sorted by descending score. The ApiService error handling was
+tested by mocking HTTP 401, 403, and 404 responses and asserting that typed exceptions were
+thrown and caught correctly by provider classes.
+3.5.3 Integration Testing
+Integration testing verified the correct interaction between the Flutter app and the backend across
+complete user flows. The booking flow was tested end-to-end from the Flutter booking screen
+Dept. of Computer Science & Engineering, VJCET Page 33
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+through BookingProvider and BookingService, through the backend booking engine, and back
+to the provider state refresh — verifying that BookingProvider correctly updated both the active
+bookings list and the full history list after a successful booking. The waitlist promotion flow was
+tested by filling a station’s slots via the API, placing a user on the waitlist, cancelling an existing
+booking, and confirming that the waitlisted user received an FCM push notification and a new
+active booking appeared in their BookingProvider state on the next fetch. The local TOPSIS
+fallback integration was tested by pointing the app at an unreachable backend and confirming that
+the RankingProvider completed the local scoring pass and displayed results on screen.
+3.5.4 Validation Testing
+Validation testing confirmed that all input constraints and business rules are correctly enforced
+across both the app and the API. Flutter form screens were tested for empty field submission,
+invalid email formats, and mismatched password confirmation fields. All backend API end￾points were tested with boundary conditions: missing required fields, invalid ISO datetime strings,
+end time before start time, booking requests from blocked users, and cancellation of already￾cancelled bookings. The TOPSIS weight slider UI was validated to prevent zero-weight submis￾sions. The P2P booking overlap detection was validated to return HTTP 409 for time-conflicting
+requests. The penalty system was validated to cap user blocks at exactly 5 minutes regardless of
+accumulated penalty points.
+3.5.5 User Acceptance Testing
+User Acceptance Testing was conducted with representative EV drivers performing scripted end￾to-end scenarios on real devices using the Flutter app. Scenario 1: A user registers, selects their
+EV model, opens the Smart Ranking screen, adjusts preference weight sliders, views the TOPSIS￾ranked station list, selects a station, books a slot, receives a confirmation push notification and
+HTML email, and cancels the booking from the My Bookings screen. Scenario 2: A user attempts
+to book a full station, receives a waitlist position confirmation in the app, and later receives a slot
+promotion push notification when the previous booking is cancelled. Scenario 3: A user opens
+the Route Planner screen, enters a start and end location, and views charging stations along the
+route with best-stop recommendations highlighted. Scenario 4: A private charger owner lists their
+charger from the P2P screen; a renter discovers and requests it; the owner approves from the app;
+both receive FCM notifications. All scenarios were completed successfully on Android devices.
+Dept. of Computer Science & Engineering, VJCET Page 34
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Table 3.1: Test Cases
+Test ID Description Input Expected Output
+TC-01 User signup with valid creden￾tials
+username, email, password HTTP 201 — User created suc￾cessfully
+TC-02 Duplicate username registration Existing username HTTP 400 — Username al￾ready exists
+TC-03 Login with valid credentials username, password HTTP 200 — JWT access &
+refresh tokens returned
+TC-04 Book a slot with available ca￾pacity
+station id, start time,
+end time
+HTTP 200 — Booking created,
+slot decremented, WebSocket
+broadcast fired
+TC-05 Book slot when station is full station id, fully overlapping
+window
+HTTP 202 — Added to waitlist
+at computed position
+TC-06 Cancel booking within 10 min
+of start
+booking id (start < 10 min
+away)
+HTTP 200 — Cancelled, late￾cancel penalty applied, waitlist
+promoted
+TC-07 TOPSIS ranking with custom
+weights
+lat, lng, radius, weights dic￾tionary
+HTTP 200 — Stations sorted
+by TOPSIS score descending
+TC-08 WebSocket slot update on
+booking
+Active WS connection +
+booking creation
+JSON slot update delivered to
+all connected clients
+TC-09 P2P booking with no time over￾lap
+charger id, valid time win￾dow
+HTTP 200 — Booking created
+pending owner approval, FCM
+sent to owner
+TC-10 Admin stats access by non-staff
+user
+Valid JWT for regular user HTTP 403 — Admin access
+required
+3.6 Performance Analysis
+Performance analysis of the OBTURO-EV was conducted across four key dimensions: API re￾sponse latency, WebSocket broadcast latency, TOPSIS computation time, and APScheduler timing
+accuracy. Tests were executed with 50 concurrent simulated users from the Flutter Android appli￾cation targeting the Django REST Framework backend.
+3.6.1 API Response Time Analysis
+REST API endpoints were benchmarked under a simulated concurrent load of 50 users. The
+booking creation endpoint, which executes a penalty check, overlap count query, database write,
+slot decrement, and WebSocket broadcast within a single request cycle, achieved a mean of 112
+ms with a P99 of 340 ms — within the 500 ms target. The TOPSIS ranking endpoint completed
+Dept. of Computer Science & Engineering, VJCET Page 35
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+in a mean of 74 ms for a 15 km radius query covering 20 to 40 candidate stations. NumPy matrix
+operations accounted for fewer than 5 ms of the total, confirming that the dominant cost is database
+retrieval. The admin analytics endpoint, which performs multiple aggregation queries across the
+Booking, ChargingStation, and User tables, achieved a mean of 180 ms within its 400 ms target.
+Table 3.2: API Response Time Benchmarks (50 Concurrent Users)
+Endpoint Mean (ms) P95 (ms) P99 (ms) Target (ms)
+Nearby Station Search 95 180 240 < 300
+TOPSIS Smart Ranking 74 105 120 < 300
+Booking Creation 112 260 340 < 500
+Booking Cancellation 88 190 270 < 500
+Waitlist Join 65 130 195 < 300
+Station Detail 48 90 140 < 200
+Admin Dashboard Stats 180 310 390 < 400
+0 50 100 150 200 250
+Admin Stats
+Booking Create
+Nearby Search
+Booking Cancel
+TOPSIS Rank
+Waitlist Join
+Station Detail
+180
+112
+95
+88
+74
+65
+48
+Mean Response Time (ms)
+Figure 3.9: Mean API Response Time per Endpoint (ms)
+3.6.2 WebSocket Broadcast Latency
+WebSocket broadcast latency was measured as the time from booking confirmation to the moment
+the Flutter client receives the slots update message. Using the in-memory channel layer in
+development, mean broadcast latency was 18 ms with a P99 of 42 ms. Under the Redis-backed
+channel layer in production, mean latency increased to 35 ms — still well within the 200 ms target.
+Both configurations delivered updates simultaneously to all Flutter and browser clients in the same
+channel group.
+Dept. of Computer Science & Engineering, VJCET Page 36
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Table 3.3: WebSocket Broadcast Latency Results
+Channel Layer Mean (ms) P95 (ms) P99 (ms) Target
+In-Memory (Development) 18 30 42 < 200 ms
+Redis-Backed (Production) 35 58 74 < 200 ms
+In-Memory Redis-Backed
+0
+50
+100
+150
+200
+18
+35 30
+58
+42
+74
+Target
+Mean P95 P99
+Figure 3.10: WebSocket Broadcast Latency — In-Memory vs Redis Channel Layer
+3.6.3 TOPSIS Algorithm Computation Analysis
+The TOPSIS algorithm was evaluated by varying candidate station count from 10 to 100. All
+matrix operations are vectorised using NumPy, so computation scales sub-linearly. At 10 stations,
+the TOPSIS compute completed in 2 ms; at 100 stations in 18 ms. The dominant cost at every scale
+was the database query, confirming the implementation is efficient for real-world deployment.
+Table 3.4: TOPSIS Computation Time vs. Station Count
+Station Count DB Query (ms) TOPSIS Compute
+(ms)
+Total Endpoint (ms)
+10 stations 18 2 32
+20 stations 28 4 48
+50 stations 55 8 74
+100 stations 98 18 128
+Dept. of Computer Science & Engineering, VJCET Page 37 Latency (ms)
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+10 20 50 100
+0
+25
+50
+75
+100
+125
+Number of Candidate Stations
+Total endpoint
+DB query
+TOPSIS compute
+Figure 3.11: TOPSIS Computation Time vs Number of Candidate Stations
+3.6.4 APScheduler Timing Accuracy
+APScheduler timing accuracy was evaluated across 100 consecutive executions of both jobs. The
+mean deviation was 1.3 seconds for mark completed bookings and 1.1 seconds for send booking reminders,
+with P99 deviations of 3.1 s and 2.8 s respectively. Both are well within the 10-second acceptable
+tolerance. No missed executions were recorded.
+Table 3.5: APScheduler Job Timing Accuracy
+Scheduler Job Mean Deviation P99 Deviation Target
+mark completed bookings 1.3 s 3.1 s < 10 s
+send booking reminders 1.1 s 2.8 s < 10 s
+3.6.5 Comparison with Existing Systems
+Table 3.6 compares Obturo-EV against five related systems from the literature survey across seven
+feature and performance dimensions. Obturo-EV is the only system that simultaneously provides
+real-time WebSocket slot updates, TOPSIS intelligent ranking, automated waitlist management,
+P2P charger sharing, push notifications, and cross-platform access — with the lowest average API
+latency of 112 ms among all evaluated systems.
+Dept. of Computer Science & Engineering, VJCET Page 38 Time (ms)
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Table 3.6: Feature and Performance Comparison with Existing Systems
+System RT
+Slots
+TOPSIS Waitlist Route
+Plan￾ner
+Map
+Discov￾ery
+App+Web Latency
+System in [1] (Rule￾Based)
+No No No No No Web
+Only
+320 ms
+System in [2] (IoT￾Based)
+Yes No No No Partial App Only 280 ms
+System in [3]
+(MCDM-Based)
+No Yes No No No Web
+Only
+410 ms
+System in [4] (Slot
+Reservation)
+Partial No Partial No Yes App Only 350 ms
+System in [5] (Route
+Planner)
+No No No Yes Partial Web
+Only
+390 ms
+Obturo-EV (Pro￾posed)
+Yes Yes Yes Yes Yes Both 112 ms
+0 100 200 300 400
+Sys 3 (MCDM)
+Sys 5 (Route Planner)
+Sys 4 (Slot Res.)
+Sys 1 (Rule-Based)
+Sys 2 (IoT-Based)
+Obturo-EV
+410
+390
+350
+320
+280
+112
+Average API Latency (ms)
+Figure 3.12: Average API Latency — Obturo-EV vs Existing Systems (ms)
+Figure 3.12 confirms that Obturo-EV achieves the lowest latency at 112 ms — a 60% improvement
+over System 2 (280 ms, the next fastest) and a 73% improvement over System 3 (410 ms). This
+is attributed to vectorised NumPy TOPSIS computation, efficient Django ORM query design, and
+WebSocket push replacing synchronous polling.
+Dept. of Computer Science & Engineering, VJCET Page 39
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Chapter 4
+CONCLUSION
+The proposed OBTURO-EV – Intelligent EV Charger Booking and Management System has the
+potential to significantly enhance the electric vehicle charging experience by providing a unified,
+intelligent, and reliable platform for drivers across India. Through the integration of the TOPSIS
+algorithm for personalized recommendations, user-actioned real-time status updates, and robust
+booking management, the system effectively addresses key challenges in EV charging—such as
+fragmented information, uncertain charger availability, and booking conflicts—thereby improving
+the overall convenience and practicality of owning an electric vehicle .
+By offering intelligent ranking functionalities based on dynamic user preferences (including
+distance, cost, waiting time, and charging duration), the platform empowers drivers to make in￾formed decisions tailored to their immediate needs, surpassing traditional proximity-based filters.
+Furthermore, guaranteed booking slots are ensured through server-side conflict detection and res￾olution mechanisms , while efficient queue management minimizes congestion at high-demand
+stations.
+The inclusion of a Peer-to-Peer (P2P) charging network expands the availability of charging
+points by enabling users to share or access private chargers, significantly increasing accessibility
+in regions underserved by commercial infrastructure. Overall, the system aligns with the grow￾ing demand for secure, scalable, and user-centric EV charging solutions and contributes toward
+strengthening India’s electric mobility ecosystem .
+Dept. of Computer Science & Engineering, VJCET Page 40
+References
+[1] J. Zhou, Y. Wang, Y. Jia, and J. Wang, “Integrated Route Planning Algorithm Based on
+Spot Price and Classified Travel Objectives for EV Users,” IEEE Transactions on Intelligent
+Transportation Systems, vol. 24, no. 6, pp. 6321–6333, 2024.
+[2] K. Papapostolou and V. Kapsalis, “Development of a Smart EV Charging Station Manage￾ment System,” IEEE Access, vol. 11, pp. 1–?, 2023.
+[3] Mathias Eggert& Rene Kling, “How to Distribute Charging Requests of Electronic Vehicles?
+A Reservation-based Approach,” IEEE Access, vol. 11, pp. 1–?, 2023
+[4] Ria Vijay B, Tarun Kumarc, “Alleviating Range Anxiety With ‘Enroute’: A Real-Time Mo￾bile Solution and Infrastructure Innovation for Electric Vehicle Users,” IEEE Access, vol. 11,
+pp. , 2024
+[5] H. M. Al-Alwash, E. Borcoci, M.-C. Vochin, I. A. M. Balapuwaduge, and F.
+Y.Li,”Optimization Schedule Schemes for Charging Electric Vehicles: Overview, Chal￾lenges,and Solutions,” IEEE Access, vol. 12, pp. 32801–32820, Mar. 2025
+[6] A. Aydeger, E. Zeydan, J. Mangues-Bafalluy, S. S. Arslan, and Y. Turk, “Enhancing electric
+vehicle security and privacy through decentralized identity management,” Digit. Threat. Res.
+Pract., vol. 6, no. 3, Art. 11, pp. 1–20, Sep. 2025,
+[7] J. Nie, S. Xia, Y. Liu, S. Ding, L. Hu, M. Zhao, Y. Fan, M. Abdel-Aty, M. Preindl, and X.
+Jiang, “A data-driven and human-centric EV charging recommendation system at city-scale,”
+in Proc. 14th ACM Int. Conf. Future Energy Syst. (e-Energy), Orlando, FL, USA, Jun. 2023.
+[8] A. Habbal and M. F. Alrifaie, “A User-Preference-Based Charging Station Recommendation
+for Electric Vehicles,” IEEE Transactions on Intelligent Transportation Systems, vol. 25, no.
+9, pp. 1–13, Sep. 2024
+[9] D. Kern, C. Krauß, and M. Hollick, “Detection of Anomalies in EV Charging Sessions,” in
+Proc. 2023 IEEE International Conference on Communications, 2024, pp. 1–6.
+iv
+Chapter 5
+Sample Code
+# -------------------------
+# Utility: Haversine Distance
+# -------------------------
+def calculate_distance(lat1, lon1, lat2, lon2):
+R = 6371 # km
+dlat = math.radians(lat2 - lat1)
+dlon = math.radians(lon2 - lon1)
+a = (
+math.sin(dlat / 2) ** 2
++ math.cos(math.radians(lat1))
+* math.cos(math.radians(lat2))
+* math.sin(dlon / 2) ** 2
+)
+return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+# -------------------------
+# Utility: TOPSIS Algorithm
+# -------------------------
+def topsis(matrix, weights, impacts):
+matrix = np.array(matrix, dtype=float)
+weights = np.array(weights, dtype=float)
+norm = np.linalg.norm(matrix, axis=0)
+norm[norm == 0] = 1
+nm = matrix / norm
+v
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+wm = nm * weights
+impacts_arr = np.array(impacts)
+ideal_best = np.where(impacts_arr == "+", wm.max(axis=0), wm.min(axis=0))
+ideal_worst = np.where(impacts_arr == "+", wm.min(axis=0), wm.max(axis=0))
+d_best = np.sqrt(((wm - ideal_best) ** 2).sum(axis=1))
+d_worst = np.sqrt(((wm - ideal_worst) ** 2).sum(axis=1))
+denom = d_best + d_worst
+denom[denom == 0] = 1
+return (d_worst / denom).tolist()
+# ---------------------------------------------------------
+# 1. NEARBY STATIONS
+# ---------------------------------------------------------
+@api_view(["GET"])
+def get_nearby_stations(request):
+try:
+user_lat = float(request.GET.get("lat"))
+user_lng = float(request.GET.get("lng"))
+except (TypeError, ValueError):
+return Response({"error": "lat and lng are required"}, status=400)
+radius = float(request.GET.get("radius", 10))
+result = []
+for st in ChargingStation.objects.all():
+dist = calculate_distance(user_lat, user_lng, st.latitude, st.longitude)
+if dist <= radius:
+item = ChargingStationSerializer(st).data
+item["distance_km"] = round(dist, 2)
+result.append(item)
+result.sort(key=lambda x: x["distance_km"])
+Dept. of Computer Science & Engineering, VJCET Page vi
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+return Response({"count": len(result), "stations": result})
+# ---------------------------------------------------------
+# 2. TOPSIS SMART RANKING
+# ---------------------------------------------------------
+@api_view(["POST"])
+def topsis_custom(request):
+user_lat = float(request.data.get("lat"))
+user_lng = float(request.data.get("lng"))
+radius = float(request.data.get("radius", 15))
+top_n = int(request.data.get("top_n", 5))
+weights_dict = request.data.get("weights") or {}
+required = ["available_slots", "power_kw", "waiting_time",
+"charging_time", "price_per_kwh", "distance"]
+for k in required:
+if k not in weights_dict:
+return Response({"error": f"Weight ’{k}’ missing"}, status=400)
+weights = [float(weights_dict[k]) for k in required]
+nearby = []
+for st in ChargingStation.objects.all():
+dist = calculate_distance(user_lat, user_lng, st.latitude, st.longitude)
+if dist <= radius and st.available_slots > 0:
+st._distance = dist
+nearby.append(st)
+if not nearby:
+return Response({"error": "No available stations near your location"}, status=404)
+matrix, data = [], []
+for st in nearby:
+charging_time = st.power_kw / st.speed if getattr(st, "speed", 0) else 0
+matrix.append([st.available_slots, st.power_kw, st.waiting_time,
+Dept. of Computer Science & Engineering, VJCET Page vii
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+charging_time, st.price_per_kwh, st._distance])
+data.append({
+"id": st.id, "name": st.name,
+"latitude": float(st.latitude), "longitude": float(st.longitude),
+"available_slots": st.available_slots, "power_kw": st.power_kw,
+"waiting_time": st.waiting_time, "charging_time": round(charging_time, 2),
+"price_per_kwh": st.price_per_kwh, "distance": round(st._distance, 2),
+})
+impacts = ["+", "+", "-", "-", "-", "-"]
+scores = topsis(matrix, weights, impacts)
+for i, s in enumerate(scores):
+data[i]["score"] = round(s, 4)
+ranked = sorted(data, key=lambda x: x["score"], reverse=True)
+return Response(ranked[:top_n])
+# ---------------------------------------------------------
+# 3. CREATE BOOKING (with penalty check and auto-waitlist)
+# ---------------------------------------------------------
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def create_booking(request):
+user = request.user
+pen = UserPenalty.objects.filter(user=user).first()
+if pen and pen.blocked_until and pen.blocked_until > timezone.now():
+max_block = timezone.now() + timedelta(minutes=5)
+if pen.blocked_until > max_block:
+pen.blocked_until = max_block
+pen.save(update_fields=["blocked_until"])
+local_block = timezone.localtime(pen.blocked_until)
+return Response(
+{"error": f"You are blocked until {local_block.strftime(’%Y-%m-%d %H:%M’)}"},
+status=403
+Dept. of Computer Science & Engineering, VJCET Page viii
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+)
+station_id = request.data.get("station_id")
+start_time = request.data.get("start_time")
+end_time = request.data.get("end_time")
+if not all([station_id, start_time, end_time]):
+return Response({"error": "station_id, start_time, end_time required"}, status=400)
+start = parse_iso_datetime(start_time)
+end = parse_iso_datetime(end_time)
+if end <= start:
+return Response({"error": "Invalid time range"}, status=400)
+station = ChargingStation.objects.get(id=station_id)
+overlapping = Booking.objects.filter(
+station=station, status="active",
+start_time__lt=end, end_time__gt=start,
+).count()
+# Station full | add to waitlist
+if overlapping >= station.total_slots:
+existing = Waitlist.objects.filter(user=user, station=station).first()
+if existing:
+return Response({"message": "Already in waitlist.",
+"position": existing.position}, status=202)
+last = Waitlist.objects.filter(station=station).order_by("-position").first()
+next_pos = (last.position + 1) if last else 1
+expires_at = timezone.now() + timedelta(minutes=30)
+Waitlist.objects.create(user=user, station=station,
+position=next_pos, expires_at=expires_at)
+threading.Thread(target=send_waitlist_notification_email,
+Dept. of Computer Science & Engineering, VJCET Page ix
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+args=(user, station, next_pos), daemon=True).start()
+for t in DeviceToken.objects.filter(user=user):
+send_push_notification(t.token, title="Added to Waitlist",
+body=f"Station {station.name} is full. Your position: {next_pos}")
+return Response({"message": "Station full. Added to waitlist.",
+"position": next_pos}, status=202)
+# Slot available | create booking
+booking = Booking.objects.create(user=user, station=station,
+start_time=start, end_time=end, status="active")
+station.available_slots = max(0, station.available_slots - 1)
+station.save()
+broadcast_slot_update(station.id)
+threading.Thread(target=send_booking_confirmation_email,
+args=(user, booking, station), daemon=True).start()
+for t in DeviceToken.objects.filter(user=user):
+send_push_notification(t.token, title="Booking Confirmed",
+body=f"Booked {station.name} from {start.strftime(’%Y-%m-%d %H:%M’)} "
+f"to {end.strftime(’%Y-%m-%d %H:%M’)}")
+return Response({"message": "Booking created", "booking_id": booking.id})
+# ---------------------------------------------------------
+# 4. CANCEL BOOKING (with late-cancel penalty)
+# ---------------------------------------------------------
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def cancel_booking(request):
+booking_id = request.data.get("booking_id")
+booking = Booking.objects.get(id=booking_id, user=request.user)
+if booking.status != "active":
+Dept. of Computer Science & Engineering, VJCET Page x
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+return Response({"error": "Only active bookings can be cancelled"}, status=400)
+now_ = timezone.now()
+if booking.start_time <= now_:
+return Response({"error": "Booking already started"}, status=400)
+if booking.start_time - now_ <= timedelta(minutes=10):
+pen, _ = UserPenalty.objects.get_or_create(user=request.user)
+pen.late_cancel_count += 1
+pen.penalty_points += 1
+pen.save()
+station = booking.station
+booking.status = "cancelled"
+booking.save()
+station.available_slots = min(station.total_slots, station.available_slots + 1)
+station.save()
+broadcast_slot_update(station.id)
+for t in DeviceToken.objects.filter(user=request.user):
+send_push_notification(t.token, title="Booking Cancelled",
+body=f"Your booking at {station.name} has been cancelled.")
+promote_waitlist_for_station(station, notify=True)
+return Response({"message": "Booking cancelled"})
+# ---------------------------------------------------------
+# 5. STATIONS ALONG ROUTE
+# ---------------------------------------------------------
+@api_view(["POST"])
+def stations_along_route(request):
+route = request.data.get("route")
+radius = float(request.data.get("radius", 2))
+Dept. of Computer Science & Engineering, VJCET Page xi
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+connector = request.data.get("connector")
+if not route:
+return Response({"error": "Route points required"}, status=400)
+qs = ChargingStation.objects.all()
+if connector:
+qs = qs.filter(connector_type=connector)
+result = []
+for st in qs:
+dist = min_distance_to_route(st, route)
+if dist <= radius:
+result.append({
+"id": st.id, "name": st.name,
+"lat": st.latitude, "lng": st.longitude,
+"distance_from_route": round(dist, 2),
+"available_slots": st.available_slots,
+"power_kw": st.power_kw,
+"price_per_kwh": st.price_per_kwh,
+})
+return Response(result)
+# ---------------------------------------------------------
+# 6. RATE STATION
+# ---------------------------------------------------------
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def rate_station(request):
+station_id = request.data.get("station_id")
+rating = request.data.get("rating")
+review = request.data.get("review", "")
+if not station_id or rating is None:
+return Response({"error": "station_id and rating required"}, status=400)
+Dept. of Computer Science & Engineering, VJCET Page xii
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+rating_val = int(rating)
+if rating_val < 1 or rating_val > 5:
+return Response({"error": "rating must be 1-5"}, status=400)
+station = ChargingStation.objects.get(id=station_id)
+obj, created = StationRating.objects.update_or_create(
+user=request.user, station=station,
+defaults={"rating": rating_val, "review": review},
+)
+return Response({"message": "Rating saved" if created else "Rating updated",
+"rating": rating_val})
+# ---------------------------------------------------------
+# 7. ADMIN DASHBOARD STATS
+# ---------------------------------------------------------
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def admin_dashboard_stats(request):
+if not request.user.is_staff:
+return Response({"error": "Admin access required"}, status=403)
+now = timezone.now()
+thirty_days_ago = now - timedelta(days=30)
+seven_days_ago = now - timedelta(days=7)
+completed_bookings = Booking.objects.filter(status="completed")
+estimated_revenue = sum(
+((b.end_time - b.start_time).total_seconds() / 3600) * 30 * b.station.price_per_kwh
+for b in completed_bookings
+)
+total_capacity = ChargingStation.objects.aggregate(Sum(’total_slots’))[’total_slots__sum’] or 0
+total_available = ChargingStation.objects.aggregate(Sum(’available_slots’))[’available_slots__sum’] or 0
+utilization_rate = ((total_capacity - total_available) / total_capacity * 100) if total_capacity else 0
+Dept. of Computer Science & Engineering, VJCET Page xiii
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+top_stations = Booking.objects.values(’station__name’, ’station__id’) \
+.annotate(booking_count=Count(’id’)).order_by(’-booking_count’)[:5]
+return Response({
+’overview’: {
+’total_users’: User.objects.count(),
+’total_stations’: ChargingStation.objects.count(),
+’total_bookings’: Booking.objects.count(),
+’active_bookings’: Booking.objects.filter(status="active").count(),
+’estimated_revenue’: round(estimated_revenue, 2),
+’utilization_rate’: round(utilization_rate, 2),
+},
+’recent_activity’: {
+’new_users_30d’: User.objects.filter(date_joined__gte=thirty_days_ago).count(),
+’bookings_30d’: Booking.objects.filter(created_at__gte=thirty_days_ago).count(),
+’bookings_7d’: Booking.objects.filter(created_at__gte=seven_days_ago).count(),
+},
+’top_stations’: list(top_stations),
+})
+Dept. of Computer Science & Engineering, VJCET Page xiv
+Chapter 6
+Screenshots
+Figure 6.1: Login Page
+xv
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Figure 6.2: Explore Stations Page
+Figure 6.3: Booking page
+Dept. of Computer Science & Engineering, VJCET Page xvi
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Figure 6.4: TOPSIS Ranking Page
+Figure 6.5: Route Planner Page
+Dept. of Computer Science & Engineering, VJCET Page xvii
+OBTURO-EV – INTELLIGENT EV CHARGER BOOKING AND MANAGEMENT SYSTEM
+Figure 6.6: Booking History
+Figure 6.7: App Home Page
+Dept. of Computer Science & Engineering, VJCET Page xviii

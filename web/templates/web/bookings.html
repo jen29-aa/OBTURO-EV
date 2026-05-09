@@ -424,8 +424,8 @@
 
     const name      = row.dataset.name || '–';
     const addr      = row.dataset.addr || 'Address not available';
-    const lat       = parseFloat(row.dataset.lat) || null;
-    const lon       = parseFloat(row.dataset.lon) || null;
+    const lat       = row.dataset.lat !== undefined && row.dataset.lat !== '' ? parseFloat(row.dataset.lat) : null;
+    const lon       = row.dataset.lon !== undefined && row.dataset.lon !== '' ? parseFloat(row.dataset.lon) : null;
     const connector = row.dataset.connector || 'N/A';
     const power     = row.dataset.power ? row.dataset.power + ' kW' : 'N/A';
     const cost      = row.dataset.cost ? '₹' + parseFloat(row.dataset.cost).toFixed(2) : 'N/A';
@@ -441,7 +441,7 @@
     document.getElementById('dCost').textContent = cost;
     document.getElementById('dQrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=72x72&data=obturo-booking-' + id;
 
-    if (lat && lon) {
+    if (lat !== null && lon !== null) {
       initDetailMap(lat, lon);
       const gmapUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon;
       document.getElementById('mapOpenBtn').href = gmapUrl;
@@ -451,7 +451,7 @@
 
     const btnWrap = document.getElementById('dActionButtons');
     let html = '';
-    if (lat && lon) {
+    if (lat !== null && lon !== null) {
       const gmapDir = 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon;
       html += '<a href="' + gmapDir + '" class="btn-directions" target="_blank"><i class="fa fa-location-arrow"></i> Get Directions</a>';
     }

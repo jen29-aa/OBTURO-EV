@@ -12,7 +12,7 @@ class StationSlotsConsumer(AsyncWebsocketConsumer):
     """
     WebSocket consumer for real-time charging station slot updates.
     
-    Clients connect with: ws://localhost:8000/ws/station/{station_id}/
+    Clients connect with: ws://<host>/ws/station/{station_id}/
     Server broadcasts slot updates to all connected clients for that station.
     """
     

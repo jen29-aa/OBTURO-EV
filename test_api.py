@@ -4,13 +4,14 @@ Comprehensive API Testing Suite for Obturo Backend
 Tests all critical endpoints and validates HTTP status codes
 """
 
+import os
 import requests
 import json
 import sys
 from datetime import datetime, timedelta
 
 # Configuration
-BASE_URL = "http://localhost:8000/api"
+BASE_URL = f"{os.getenv('API_BASE', 'http://localhost:8000').rstrip('/')}/api"
 TIMEOUT = 10
 
 class APITester:
